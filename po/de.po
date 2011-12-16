@@ -1,0 +1,2498 @@
+# translation of de.po to
+# German translations for mednafen package.
+# Copyright (C) 2007 Mednafen Team
+# This file is distributed under the same license as the mednafen package.
+#
+# Dryer Lint, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: mednafen\n"
+"Report-Msgid-Bugs-To: mednafen@fobby.net\n"
+"POT-Creation-Date: 2007-11-10 13:56-0600\n"
+"PO-Revision-Date: 2007-09-30 15:15+0200\n"
+"Last-Translator: Dryer Lint\n"
+"Language-Team:  <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/drivers/main.cpp:56
+msgid "Full-screen horizontal resolution."
+msgstr "Vollbild horizontale Auflösung."
+
+#: src/drivers/main.cpp:57
+msgid "Full-screen vertical resolution."
+msgstr "Vollbild vertikale Auflösung."
+
+#: src/drivers/main.cpp:58
+msgid "The scaling factor for the X axis."
+msgstr "Der Skalierungsfaktor für die X-Achse."
+
+#: src/drivers/main.cpp:59
+msgid "The scaling factor for the Y axis."
+msgstr "Der Skalierungsfaktor für die Y-Achse."
+
+#: src/drivers/main.cpp:60
+msgid "The scaling factor for the X axis in fullscreen mode."
+msgstr "Der Skalierungsfaktor für die X-Achse im Vollbild-Modus."
+
+#: src/drivers/main.cpp:61
+msgid "The scaling factor for the Y axis in fullscreen mode."
+msgstr "Der Skalierungsfaktor für die Y-Achse im Vollbild-Modus."
+
+#: src/drivers/main.cpp:62
+msgid "Enable scanlines with specified transparency."
+msgstr "Scanlines mit angegebener Transparenz aktivieren."
+
+#: src/drivers/main.cpp:63
+msgid "Stretch to fill screen."
+msgstr "Auf ganzen Bildschirm strecken."
+
+#: src/drivers/main.cpp:64
+msgid "Enable bilinear interpolation."
+msgstr "Bilinearen Filter aktivieren."
+
+#: src/drivers/main.cpp:65
+msgid "Enable specified special video scaler."
+msgstr "Angegebenen Spezial-Video-Filter aktivieren."
+
+#: src/drivers/main.cpp:68
+msgid "Enable specified OpenGL pixel shader."
+msgstr "Angegebenen OpenGL Pixel-Shader aktivieren."
+
+#: src/drivers/main.cpp:75
+msgid "Network play server hostname."
+msgstr "Netplay-Server Hostname."
+
+#: src/drivers/main.cpp:76
+msgid "Port to connect to on the server."
+msgstr "Port für die Verbindung mit dem Netplay Server."
+
+#: src/drivers/main.cpp:77
+msgid "Password to connect to the netplay server."
+msgstr "Passwort für die Verbindung mit dem Netplay Server."
+
+#: src/drivers/main.cpp:78
+msgid "Number of local players for network play."
+msgstr "Anzahl lokaler Spieler für Netplay."
+
+#: src/drivers/main.cpp:79
+msgid "Nickname to use for network play chat."
+msgstr "Spitzname für Netplay-Chat."
+
+#: src/drivers/main.cpp:80
+msgid "Key to hash with the MD5 hash of the game."
+msgstr "Schlüssel für Hash mit dem MD5 Hash des Spiels."
+
+#: src/drivers/main.cpp:81
+msgid "Merge input to this player # on the server."
+msgstr "Eingabe mit dieser Spieler-Nummer auf dem Server verbinden."
+
+#: src/drivers/main.cpp:82
+msgid "Use small(tiny!) font for netplay chat console."
+msgstr "Kleine (winzige!) Schrift für Netplay Chat Konsole verwenden."
+
+#: src/drivers/main.cpp:239
+msgid "Enable fullscreen mode."
+msgstr "Vollbild-Modus aktivieren."
+
+#: src/drivers/main.cpp:240
+msgid "Select video driver, \"opengl\" or \"sdl\"."
+msgstr "Video-Treiber wählen, \"opengl\" oder \"sdl\"."
+
+#: src/drivers/main.cpp:241
+msgid "Attempt to synchronize OpenGL page flips to vertical retrace period."
+msgstr ""
+"Versuchen, OpenGL Page Flips mit vertikalem Rücksprung zu synchronisieren "
+"(VSync)."
+
+#: src/drivers/main.cpp:243
+msgid "Fast-forwarding speed multiplier."
+msgstr "Vorspul-Geschwindigkeits-Multiplikator."
+
+#: src/drivers/main.cpp:244
+msgid "Treat the fast-forward button as a toggle."
+msgstr "Den Vorspul-Knopf als Umschalter behandeln."
+
+#: src/drivers/main.cpp:245
+msgid "Silence sound output when fast-forwarding."
+msgstr "Sound-Ausgabe beim Vorspulen deaktivieren."
+
+#: src/drivers/main.cpp:246
+msgid "Auto-fire frequency."
+msgstr "Auto-Feuer Frequenz."
+
+#: src/drivers/main.cpp:247
+msgid "Threshold for detecting a \"button\" press on analog axis, in percent."
+msgstr ""
+"Schwellwert, ab dem ein \"Knopfdruck\" auf einer analogen Achse erkannt "
+"wird, in Prozent."
+
+#: src/drivers/main.cpp:248
+msgid ""
+"The length of time, in milliseconds, that a button/key corresponding to a "
+"\"dangerous\" command like power, reset, exit, etc. must be pressed before "
+"the command is executed."
+msgstr ""
+"Die Zeitdauer in Millisekunden, die ein/e Knopf/Taste zu einem \"gefährlichen"
+"\" Befehl wie Power, Reset, Beenden, etc. gedrückt werden muss, bevor der "
+"Befehl ausgeführt wird."
+
+#: src/drivers/main.cpp:249
+msgid "Disable speed throttling when sound is disabled."
+msgstr "Geschwindigkeits-Drosslung deaktivieren wenn der Ton deaktiviert ist."
+
+#: src/drivers/main.cpp:250
+msgid ""
+"Automatically save and load save states when a game is closed or loaded, "
+"respectively."
+msgstr ""
+"Stand automatisch speichern, wenn ein Spiel beendet wird und laden, wenn das "
+"Spiel wieder gestartet wird."
+
+#: src/drivers/main.cpp:251
+msgid "Select sound driver."
+msgstr "Sound-Treiber wählen."
+
+#: src/drivers/main.cpp:252
+msgid "Select sound output device."
+msgstr "Sound-Ausgabe-Gerät wählen."
+
+#: src/drivers/main.cpp:253
+msgid "Sound volume level, in percent."
+msgstr "Sound-Lautstärke in Prozent."
+
+#: src/drivers/main.cpp:254
+msgid "Enable sound emulation."
+msgstr "Sound-Emulation aktivieren."
+
+#: src/drivers/main.cpp:255
+msgid "Specifies the desired size of the sound buffer, in milliseconds."
+msgstr "Gibt die gewünschte Größe des Sound-Buffers in Millisekunden an."
+
+#: src/drivers/main.cpp:262
+msgid "Specifies the sound playback rate, in frames per second(\"Hz\")."
+msgstr "Gibt den Sound-Wiedergaberate in Bildern pro Sekunde (\"Hz\") an."
+
+#: src/drivers/main.cpp:263
+msgid "Enable the help screen."
+msgstr "Den Hilfe-Bildschirm aktivieren."
+
+#: src/drivers/main.cpp:266 src/drivers/main.cpp:267 src/drivers/main.cpp:268
+#: src/drivers/main.cpp:269
+msgid "Character set for the debugger's memory editor."
+msgstr "Zeichensatz für den Speicher-Editor des Debuggers."
+
+#: src/drivers/main.cpp:271 src/drivers/main.cpp:272 src/drivers/main.cpp:273
+#: src/drivers/main.cpp:274
+msgid "Disassembly font size(xsmall, small, medium, large)."
+msgstr ""
+
+#: src/drivers/main.cpp:373
+msgid "How DARE you interrupt me!\n"
+msgstr "Du WAGST es, mich zu unterbrechen?!\n"
+
+#: src/drivers/main.cpp:377
+msgid "MUST TERMINATE ALL HUMANS\n"
+msgstr "MUSS ALLE MENSCHEN VERNICHTEN\n"
+
+#: src/drivers/main.cpp:381
+msgid "Reach out and hang-up on someone.\n"
+msgstr "-KLICK- Aufgelegt.\n"
+
+#: src/drivers/main.cpp:385
+msgid ""
+"Iyeeeeeeeee!!!  A segmentation fault has occurred.  Have a fluffy day.\n"
+msgstr ""
+"AAARRRRRRRGHHH!!! Ein Segmentierungsfehler ist aufgetreten. Einen "
+"wunderschönen Tag noch.\n"
+
+#: src/drivers/main.cpp:389
+msgid "The pipe has broken!  Better watch out for floods...\n"
+msgstr "Die Pipeline wurde unterbrochen!  Vorsicht vor Ölpfützen...\n"
+
+#: src/drivers/main.cpp:394
+msgid "I told you to be nice to the driver.\n"
+msgstr "Ich sagte doch sei nett zu dem Treiber.\n"
+
+#: src/drivers/main.cpp:398
+msgid "Those darn floating points.  Ne'er know when they'll bite!\n"
+msgstr "Diese verdammten Fließkommata. Sie sind so verdammt schlüpfrig.\n"
+
+#: src/drivers/main.cpp:402
+msgid "Don't throw your clock at the meowing cats!\n"
+msgstr "Schmeiß' deinen Wecker nicht auf die miauenden Katzen!\n"
+
+#: src/drivers/main.cpp:406
+msgid "Abort, Retry, Ignore, Fail?\n"
+msgstr "Abbrechen, Wiederholen, Ignorieren, Versagen?\n"
+
+#: src/drivers/main.cpp:410 src/drivers/main.cpp:414
+msgid "Killing your processes is not nice.\n"
+msgstr "Deine Prozesse zu töten ist nicht nett.\n"
+
+#: src/drivers/main.cpp:426
+#, c-format
+msgid ""
+"\n"
+"Signal %d has been caught and dealt with...\n"
+msgstr ""
+"\n"
+"Signal %d wurde abgefangen und versorgt...\n"
+
+#: src/drivers/main.cpp:510
+msgid "Show help!"
+msgstr "Hilfe zeigen!"
+
+#: src/drivers/main.cpp:511
+msgid "Enable remote mode."
+msgstr ""
+
+#: src/drivers/main.cpp:513
+msgid "Load and boot a CD for the specified system."
+msgstr "Eine CD für das angegebene System laden und booten."
+
+#: src/drivers/main.cpp:515
+msgid "Record sound output to the specified filename in the MS WAV format."
+msgstr ""
+"Sound-Ausgabe als Wave-Datei im MS WAV Format mit dem angegebenen Dateinamen "
+"aufnehmen."
+
+#: src/drivers/main.cpp:519
+msgid "Connect to the remote server and start network play."
+msgstr "Mit entferntem Server verbinden und Netplay starten."
+
+#: src/drivers/main.cpp:524
+#, c-format
+msgid "Usage: %s [OPTION]... [FILE]\n"
+msgstr "Verwendung: %s [OPTION]... [Datei]\n"
+
+#: src/drivers/main.cpp:527
+#, c-format
+msgid ""
+"No command-line arguments specified.\n"
+"\n"
+msgstr ""
+"Keine Kommandozeilen-Argumente angegeben.\n"
+"\n"
+
+#: src/drivers/main.cpp:529
+#, c-format
+msgid ""
+"\tPlease refer to the documentation for option parameters and usage.\n"
+"\n"
+msgstr ""
+"\tFür Options-Parameter und Verwendung bitte in der Dokumentation "
+"nachsehen.\n"
+"\n"
+
+#: src/drivers/main.cpp:546
+msgid "No game filename specified!"
+msgstr "Kein Spiel-Dateiname angegeben!"
+
+#: src/drivers/main.cpp:1037
+#, c-format
+msgid ""
+"Compiled against SDL %u.%u.%u, running with SDL %u.%u.%u\n"
+"\n"
+msgstr ""
+"Kompiliert mit SDL %u.%u.%u, ausgeführt mit SDL %u.%u.%u\n"
+"\n"
+
+#: src/drivers/netplay.cpp:179
+msgid "*** Error intializing SDL_net!"
+msgstr "*** Fehler beim Initialisieren von SDL_net!"
+
+#: src/drivers/netplay.cpp:190
+#, c-format
+msgid "*** Error resolving host \"%s\"!"
+msgstr "*** Fehler beim auflösen von Host \"%s\"!"
+
+#: src/drivers/netplay.cpp:197
+#, c-format
+msgid "*** Error connecting to remote host \"%s\" on port %u!"
+msgstr "*** Fehler beim Verbinden mit entferntem Host \"%s\" auf Port %u!"
+
+#: src/drivers/netplay.cpp:201
+msgid "*** Sending initialization data to server."
+msgstr "*** Sende Initialisierungs-Daten an Server."
+
+#: src/drivers/netplay.cpp:209
+msgid "*** Connection established."
+msgstr "*** Verbindung hergestellt."
+
+#: src/drivers/joystick.cpp:134
+#, c-format
+msgid "Joystick %d - %s - Unique ID: %016llx\n"
+msgstr "Joystick %d - %s - ID: %016llx\n"
+
+#: src/drivers/input.cpp:454
+msgid "Cannot change input device during netplay."
+msgstr "Kann Eingabegerät während Netplay nicht ändern."
+
+#: src/drivers/input.cpp:458
+msgid "Cannot change input device while state rewinding is active."
+msgstr "Eingabegerät kann nicht "
+
+#: src/drivers/input.cpp:477
+#, c-format
+msgid "%s selected on port %d"
+msgstr "%s ausgewählt auf Port %d"
+
+#: src/drivers/input.cpp:556
+msgid "Save state"
+msgstr "Stand speichern"
+
+#: src/drivers/input.cpp:557
+msgid "Load state"
+msgstr "Stand laden"
+
+#: src/drivers/input.cpp:558
+msgid "Save movie"
+msgstr "Film speichern"
+
+#: src/drivers/input.cpp:559
+msgid "Load movie"
+msgstr "Film laden"
+
+#: src/drivers/input.cpp:560
+msgid "Toggle state rewind functionality"
+msgstr "Stand-Zurückspulen Funktionalität aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:562
+msgid "Save state 0 select"
+msgstr "Speicherstand 0 auswählen"
+
+#: src/drivers/input.cpp:563
+msgid "Save state 1 select"
+msgstr "Speicherstand 1 auswählen"
+
+#: src/drivers/input.cpp:564
+msgid "Save state 2 select"
+msgstr "Speicherstand 2 auswählen"
+
+#: src/drivers/input.cpp:565
+msgid "Save state 3 select"
+msgstr "Speicherstand 3 auswählen"
+
+#: src/drivers/input.cpp:566
+msgid "Save state 4 select"
+msgstr "Speicherstand 5 auswählen"
+
+#: src/drivers/input.cpp:567
+msgid "Save state 5 select"
+msgstr "Speicherstand 5 auswählen"
+
+#: src/drivers/input.cpp:568
+msgid "Save state 6 select"
+msgstr "Speicherstand 6 auswählen"
+
+#: src/drivers/input.cpp:569
+msgid "Save state 7 select"
+msgstr "Speicherstand 7 auswählen"
+
+#: src/drivers/input.cpp:570
+msgid "Save state 8 select"
+msgstr "Speicherstand 8 auswählen"
+
+#: src/drivers/input.cpp:571
+msgid "Save state 9 select"
+msgstr "Speicherstand 9 auswählen"
+
+#: src/drivers/input.cpp:573
+msgid "Movie 0 select"
+msgstr "Film 0 auswählen"
+
+#: src/drivers/input.cpp:574
+msgid "Movie 1 select"
+msgstr "Film 1 auswählen"
+
+#: src/drivers/input.cpp:575
+msgid "Movie 2 select"
+msgstr "Film 2 auswählen"
+
+#: src/drivers/input.cpp:576
+msgid "Movie 3 select"
+msgstr "Film 3 auswählen"
+
+#: src/drivers/input.cpp:577
+msgid "Movie 4 select"
+msgstr "Film 4 auswählen"
+
+#: src/drivers/input.cpp:578
+msgid "Movie 5 select"
+msgstr "Film 5 auswählen"
+
+#: src/drivers/input.cpp:579
+msgid "Movie 6 select"
+msgstr "Film 6 auswählen"
+
+#: src/drivers/input.cpp:580
+msgid "Movie 7 select"
+msgstr "Film 7 auswählen"
+
+#: src/drivers/input.cpp:581
+msgid "Movie 8 select"
+msgstr "Film 8 auswählen"
+
+#: src/drivers/input.cpp:582
+msgid "Movie 9 select"
+msgstr "Film 9 auswählen"
+
+#: src/drivers/input.cpp:584
+msgid "Toggle graphics layer 1"
+msgstr "Grafik-Ebene 1 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:585
+msgid "Toggle graphics layer 2"
+msgstr "Grafik-Ebene 2 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:586
+msgid "Toggle graphics layer 3"
+msgstr "Grafik-Ebene 3 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:587
+msgid "Toggle graphics layer 4"
+msgstr "Grafik-Ebene 4 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:588
+msgid "Toggle graphics layer 5"
+msgstr "Grafik-Ebene 5 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:589
+msgid "Toggle graphics layer 6"
+msgstr "Grafik-Ebene 6 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:590
+msgid "Toggle graphics layer 7"
+msgstr "Grafik-Ebene 7 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:591
+msgid "Toggle graphics layer 8"
+msgstr "Grafik-Ebene 8 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:592
+msgid "Toggle graphics layer 9"
+msgstr "Grafik-Ebene 9 aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:594
+msgid "Take screen snapshot"
+msgstr "Bildschirmfoto speichern"
+
+#: src/drivers/input.cpp:595
+msgid "Toggle fullscreen mode"
+msgstr "Vollbild-Modus aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:596
+msgid "Fast-forward"
+msgstr "Vorspulen"
+
+#: src/drivers/input.cpp:597
+msgid "Insert coin"
+msgstr "Münze einwerfen"
+
+#: src/drivers/input.cpp:598
+msgid "Toggle DIP switch view"
+msgstr "DIP-Schalter Ansicht aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:599
+msgid "Select disk/disc"
+msgstr "Diskette/CD wählen"
+
+#: src/drivers/input.cpp:600
+msgid "Insert/Eject disk/disc"
+msgstr "Diskette/CD einlegen/auswerfen"
+
+#: src/drivers/input.cpp:601
+msgid "Activate barcode(for Famicom)"
+msgstr "Barcode (für Famicom) aktivieren"
+
+#: src/drivers/input.cpp:602
+msgid "Grab input"
+msgstr "Eingabe festhalten"
+
+#: src/drivers/input.cpp:603
+msgid "Grab input and disable commands"
+msgstr "Eingabe festhalten und Kommandos deaktivieren"
+
+#: src/drivers/input.cpp:604
+msgid "Configure buttons on virtual port 1"
+msgstr "Knöpfe auf virtuellem Port 1 konfigurieren"
+
+#: src/drivers/input.cpp:605
+msgid "Configure buttons on virtual port 2"
+msgstr "Knöpfe auf virtuellem Port 2 konfigurieren"
+
+#: src/drivers/input.cpp:606
+msgid "Configure command key"
+msgstr "Befehlstaste konfigurieren"
+
+#: src/drivers/input.cpp:607
+msgid "Configure buttons on virtual port 3"
+msgstr "Knöpfe auf virtuellem Port 3 konfigurieren"
+
+#: src/drivers/input.cpp:608
+msgid "Configure buttons on virtual port 4"
+msgstr "Knöpfe auf virtuellem Port 4 konfigurieren"
+
+#: src/drivers/input.cpp:609
+msgid "Configure buttons on virtual port 5"
+msgstr "Knöpfe auf virtuellem Port 5 konfigurieren"
+
+#: src/drivers/input.cpp:610
+msgid "Reset"
+msgstr "Reset"
+
+#: src/drivers/input.cpp:611
+msgid "Power toggle"
+msgstr "Ein-/Aus-Schalter"
+
+#: src/drivers/input.cpp:612
+msgid "Exit"
+msgstr "Beenden"
+
+#: src/drivers/input.cpp:613
+msgid "Rewind"
+msgstr "Zurückspulen"
+
+#: src/drivers/input.cpp:614
+msgid "Rotate screen"
+msgstr "Rotiere Bildschirm"
+
+#: src/drivers/input.cpp:616
+msgid "Toggle netplay console"
+msgstr "Netplay Konsole konfigurieren"
+
+#: src/drivers/input.cpp:617
+msgid "Advance frame"
+msgstr "Frame vorgehen"
+
+#: src/drivers/input.cpp:618
+msgid "Return to normal mode after advancing frames"
+msgstr "Zu normalem Modus zurück kehren nach Frame-Vorgehen"
+
+#: src/drivers/input.cpp:619
+msgid "Toggle cheat console"
+msgstr "Cheat-Konsole konfigurieren"
+
+#: src/drivers/input.cpp:620
+msgid "Enable/Disable cheats"
+msgstr "Cheats konfigurieren"
+
+#: src/drivers/input.cpp:621
+msgid "Toggle frames-per-second display"
+msgstr "Frames-pro-Sekunde Anzeige konfigurieren"
+
+#: src/drivers/input.cpp:622
+msgid "Toggle debugger"
+msgstr "Debugger konfigurieren"
+
+#: src/drivers/input.cpp:623
+msgid "Decrease selected save state slot by 1"
+msgstr "Ausgewählten Speicherstand-Slot um 1 verringern"
+
+#: src/drivers/input.cpp:624
+msgid "Increase selected save state slot by 1"
+msgstr "Ausgewählten Speicherstand-Slot um 1 erhöhen"
+
+#: src/drivers/input.cpp:625
+msgid "Toggle help screen"
+msgstr "Hilfe-Bildschirm aktivieren/deaktivieren"
+
+#: src/drivers/input.cpp:626
+msgid "Select virtual device on virtual input port 1"
+msgstr "Virtuelles Gerät auf virtuellem Eingabe-Port 1 wählen"
+
+#: src/drivers/input.cpp:627
+msgid "Select virtual device on virtual input port 2"
+msgstr "Virtuelles Gerät auf virtuellem Eingabe-Port 2 wählen"
+
+#: src/drivers/input.cpp:628
+msgid "Select virtual device on virtual input port 3"
+msgstr "Virtuelles Gerät auf virtuellem Eingabe-Port 3 wählen"
+
+#: src/drivers/input.cpp:629
+msgid "Select virtual device on virtual input port 4"
+msgstr "Virtuelles Gerät auf virtuellem Eingabe-Port 4 wählen"
+
+#: src/drivers/input.cpp:630
+msgid "Select virtual device on virtual input port 5"
+msgstr "Virtuelles Gerät auf virtuellem Eingabe-Port 5 wählen"
+
+#: src/drivers/input.cpp:785 src/drivers/input.cpp:799
+#: src/drivers/input.cpp:813 src/drivers/input.cpp:827
+#: src/drivers/input.cpp:841
+msgid "Configuration interrupted."
+msgstr "Konfiguration unterbrochen."
+
+#: src/drivers/input.cpp:855 src/drivers/input.cpp:1611
+msgid "Configuration finished."
+msgstr "Konfiguration abgeschlossen."
+
+#: src/drivers/input.cpp:865
+msgid "Press a command key now."
+msgstr "Jetzt den Knopf des Befehls drücken, der neu belegt werden soll."
+
+#: src/drivers/input.cpp:881
+msgid "Input grabbing enabled."
+msgstr "Eingabe-Auffangen aktiviert."
+
+#: src/drivers/input.cpp:883
+msgid "Input grabbing disabled."
+msgstr "Eingabe-Auffangen deaktiviert."
+
+#: src/drivers/input.cpp:899
+msgid "Command processing disabled."
+msgstr "Befehls-Bearbeitung deaktiviert."
+
+#: src/drivers/input.cpp:901
+msgid "Command processing enabled."
+msgstr "Befehls-Bearbeitung aktiviert."
+
+#: src/drivers/input.cpp:926
+msgid "Application of cheats enabled."
+msgstr "Anwendung von Cheats aktiviert."
+
+#: src/drivers/input.cpp:928
+msgid "Application of cheats disabled."
+msgstr "Anwendung von Cheats deaktiviert."
+
+#: src/drivers/input.cpp:960 src/drivers/input.cpp:973
+#: src/drivers/input.cpp:986 src/drivers/input.cpp:999
+#: src/drivers/input.cpp:1012
+#, c-format
+msgid "No buttons to configure for input port %d!"
+msgstr "Keine Knöpfe zu konfigurieren für Port %d!"
+
+#: src/drivers/input.cpp:1059
+msgid "State rewinding functionality enabled."
+msgstr "Stand-Zurückspulen-Funktion aktiviert."
+
+#: src/drivers/input.cpp:1059
+msgid "State rewinding functionality disabled."
+msgstr "Stand-Zurückspulen-Funktion deaktiviert."
+
+#: src/drivers/input.cpp:1239
+msgid "Barcode Entered"
+msgstr "Barcode eingegeben"
+
+#: src/drivers/input.cpp:1241
+msgid "Enter Barcode"
+msgstr "Barcode eingeben"
+
+#: src/drivers/input.cpp:1247
+#, c-format
+msgid "Barcode: %s"
+msgstr "Barcode: %s"
+
+#: src/drivers/video.cpp:299
+msgid "Initializing video...\n"
+msgstr "Initialisiere Video...\n"
+
+#: src/drivers/video.cpp:366
+msgid "Could not load OpenGL library, disabling OpenGL usage!"
+msgstr "Konnte OpenGL Bibliothek nicht laden, deaktiviere OpenGL-Verwendung!"
+
+#: src/drivers/video.cpp:397
+msgid "Eep!  Effective X scale setting is way too high.  Correcting."
+msgstr "Oi! Effektive X-Skalierung ist viel zu hoch! Korrigiere..."
+
+#: src/drivers/video.cpp:404
+msgid "Eep!  Effective Y scale setting is way too high.  Correcting."
+msgstr "Oi! Effektive Y-Skalierung ist viel zu hoch! Korrigiere..."
+
+#: src/drivers/video.cpp:452
+#, c-format
+msgid "Video Mode: %d x %d x %d bpp\n"
+msgstr "Video-Modus: %d x %d x %d bpp\n"
+
+#: src/drivers/video.cpp:455
+#, c-format
+msgid ""
+"Sorry, %dbpp modes are not supported by Mednafen.  Supported bit depths are "
+"16bpp, 24bpp, and 32bpp.\n"
+msgstr ""
+"Sorry, %dbpp Modi werden von Mednafen nicht unterstützt. Unterstützte "
+"Farbtiefen sind 16bpp, 24bpp und 32bpp.\n"
+
+#: src/drivers/video.cpp:460
+#, c-format
+msgid "OpenGL: %s\n"
+msgstr "OpenGL: %s\n"
+
+#: src/drivers/video.cpp:460 src/drivers/video.cpp:469
+msgid "Yes"
+msgstr "Ja"
+
+#: src/drivers/video.cpp:460 src/drivers/video.cpp:469
+msgid "No"
+msgstr "Nein"
+
+#: src/drivers/video.cpp:465
+#, c-format
+msgid "Pixel shader: %s\n"
+msgstr "Pixel-Shader: %s\n"
+
+#: src/drivers/video.cpp:469
+#, c-format
+msgid "Fullscreen: %s\n"
+msgstr "Vollbild: %s\n"
+
+#: src/drivers/video.cpp:470
+#, c-format
+msgid "Special Scaler: %s\n"
+msgstr "Spezial-Filter: %s\n"
+
+#: src/drivers/video.cpp:470
+msgid "None"
+msgstr "Keiner"
+
+#: src/drivers/video.cpp:472
+msgid "Scanlines: Off\n"
+msgstr "Scanlines: Aus\n"
+
+#: src/drivers/video.cpp:474
+#, c-format
+msgid "Scanlines: %f%% transparency\n"
+msgstr "Scanlines: %f%% Transparenz\n"
+
+#: src/drivers/video.cpp:476
+#, c-format
+msgid "Destination Rectangle: X=%d, Y=%d, W=%d, H=%d\n"
+msgstr "Ziel-Rechteck: X=%d, Y=%d, B=%d, H=%d\n"
+
+#: src/drivers/video.cpp:481
+msgid ""
+"Warning:  Destination rectangle exceeds screen dimensions.  This is ok if "
+"you really do want the clipping...\n"
+msgstr ""
+"Warnung:  Ziel-Rechteck überschreitet Bildschirmgröße. Das Bild wird "
+"beschnitten dargestellt.\n"
+
+#: src/drivers/video.cpp:483
+msgid ""
+"Warning:  Destination rectangle exceeds screen dimensions.  The rectangle "
+"will be adjusted to fit within the screen area.\n"
+msgstr ""
+"Warnung:  Ziel-Rechteck überschreitet Bildschirmgröße. Das Rechteck wird auf "
+"die Bildschirmgröße angepasst.\n"
+
+#: src/drivers/sound.cpp:97
+msgid ""
+"\n"
+"Initializing sound...\n"
+msgstr ""
+"\n"
+"Initialisiere Sound...\n"
+
+#: src/drivers/sound.cpp:99
+#, c-format
+msgid "Using \"%s\" audio driver with device \"%s\":"
+msgstr "Verwende \"%s\" Audio-Treiber mit Gerät \"%s\":"
+
+#: src/drivers/sound.cpp:104
+msgid "Error opening a sound device."
+msgstr "Fehler beim Öffnen des Sound-Geräts."
+
+#: src/drivers/sound.cpp:113
+msgid "Set rate is out of range [8192-48000]"
+msgstr "Eingestellte Rate ist außerhalb des zulässigen Bereichs [8192-48000]"
+
+#: src/drivers/sound.cpp:118
+#, c-format
+msgid ""
+"\n"
+"Bits: %u\n"
+"Rate: %u\n"
+"Channels: %u\n"
+"Byte order: CPU %s\n"
+"Buffer size: %u sample frames(%f ms)\n"
+msgstr ""
+"\n"
+"Bits: %u\n"
+"Rate: %u\n"
+"Kanäle: %u\n"
+"Byte-Reihenfolge: CPU %s\n"
+"Puffer-Größe: %u sample frames(%f ms)\n"
+
+#: src/drivers/opengl.cpp:243
+msgid "OpenGL dummy black texture data"
+msgstr "OpenGL schwarze Dummy-Textur-Daten"
+
+#: src/drivers/opengl.cpp:447
+#, c-format
+msgid "Error getting proc address for: %s\n"
+msgstr "Fehler beim Holen der proc-Adresse für: %s\n"
+
+#: src/drivers/opengl.cpp:487
+#, c-format
+msgid "OpenGL Implementation: %s %s %s\n"
+msgstr "OpenGL Implementation: %s %s %s\n"
+
+#: src/drivers/opengl.cpp:490
+msgid "Checking extensions:\n"
+msgstr "Prüfe Erweiterungen:\n"
+
+#: src/drivers/opengl.cpp:497
+msgid "GL_ARB_texture_non_power_of_two found.\n"
+msgstr "\"GL_ARB_texture_non_power_of_two\" gefunden.\n"
+
+#: src/drivers/opengl.cpp:531
+#, c-format
+msgid "Invalid pixel shader type: %s\n"
+msgstr "Ungültiger Pixel-Shader-Typ: %s\n"
+
+#: src/drivers/opengl.cpp:567
+msgid "Using non-power-of-2 sized textures.\n"
+msgstr "Verwende Texturen mit nicht-2er-Potenz-Abmessungen.\n"
+
+#: src/drivers/opengl.cpp:569
+msgid "Using power-of-2 sized textures.\n"
+msgstr "Verwende Texturen von 2er-Potenz-Abmessungen.\n"
+
+#: src/drivers/opengl.cpp:668
+msgid "Checking maximum texture size...\n"
+msgstr "Prüfe maximale Texturgröße...\n"
+
+#: src/drivers/opengl.cpp:686
+#, c-format
+msgid "Apparently it is at least: %d x %d\n"
+msgstr "Scheinbar ist sie mindestens: %d x %d\n"
+
+#: src/drivers/opengl.cpp:690
+msgid ""
+"Warning:  Maximum texture size is reported as being less than 256, but we "
+"can't handle that.\n"
+msgstr ""
+"Achtung:  Maximale Texturgröße wird als weniger als 256 angegeben, aber wir "
+"können damit nichts anfangen.\n"
+
+#: src/drivers/help.cpp:40
+msgid "Default key assignments:"
+msgstr "Standard Tastenbelegung:"
+
+#: src/drivers/help.cpp:41
+msgid " F1 - Toggle Help"
+msgstr " F1 - Hilfe anzeigen/ausblenden"
+
+#: src/drivers/help.cpp:42
+msgid " F2 - Configure Command Key"
+msgstr " F2 - Befehlstaste konfigurieren"
+
+#: src/drivers/help.cpp:43
+msgid " ALT + SHIFT + [n] - Configure buttons on port n(1-5)"
+msgstr " ALT + UMSCHALT + [n] - Tasten für Port n (1-5) konfigurieren"
+
+#: src/drivers/help.cpp:44
+msgid " CTRL + SHIFT + [n] - Select device on port n"
+msgstr " STRG + UMSCHALT + [n] - Gerät an Port n wählen"
+
+#: src/drivers/help.cpp:45
+msgid " ALT + S - Enable state rewinding"
+msgstr " ALT + S - Stand-Zurückspulen aktivieren"
+
+#: src/drivers/help.cpp:46
+msgid " BACKSPACE - Rewind"
+msgstr " RÜCKTASTE - Zurück spulen"
+
+#: src/drivers/help.cpp:47
+msgid " F5 - Save State"
+msgstr " F5 - Stand speichern"
+
+#: src/drivers/help.cpp:48
+msgid " F6 - Select Disk"
+msgstr " F6 - Diskette/CD wählen"
+
+#: src/drivers/help.cpp:49
+msgid " F7 - Load State"
+msgstr " F7 - Stand laden"
+
+#: src/drivers/help.cpp:50
+msgid " F8 - Insert coin; Insert/Eject disk"
+msgstr " F8 - Münze einwerfen; Diskette einsetzen/auswerfen"
+
+#: src/drivers/help.cpp:51
+msgid " F9 - Take Screen Snapshot"
+msgstr " F9 - Bildschirmfoto speichern"
+
+#: src/drivers/help.cpp:52
+msgid " F10 - (Soft) Reset, if available on emulated system."
+msgstr ""
+" F10 - (Soft) Reset, wenn verfügbar unter dem emulierten\n"
+"System."
+
+#: src/drivers/help.cpp:53
+msgid " F11 - Power Toggle/Hard Reset"
+msgstr " F11 - Aus-/Einschalten (Hard Reset)"
+
+#: src/drivers/help.cpp:54
+msgid " F12 - Exit"
+msgstr " F12 - Beenden"
+
+#: src/drivers/help.cpp:57
+msgid "Mednafen Quickie Help"
+msgstr "Mednafen Hilfe-Übersicht"
+
+#: src/drivers/help.cpp:58
+#, c-format
+msgid "(now with 30% more moaning)"
+msgstr "(jetzt mit 30% mehr Gejammer)"
+
+#: src/drivers/video-state.cpp:147
+#, c-format
+msgid "-recording movie %d-"
+msgstr "-nehme Film %d auf-"
+
+#: src/drivers/video-state.cpp:149
+#, c-format
+msgid "-playing movie %d-"
+msgstr "-Film %d wird abgespielt-"
+
+#: src/drivers/video-state.cpp:151
+#, c-format
+msgid "-select movie-"
+msgstr "-Film auswählen-"
+
+#: src/drivers/video-state.cpp:156
+msgid "-select state-"
+msgstr "-Stand wählen-"
+
+#: src/file.cpp:56
+#, c-format
+msgid "Applying IPS file \"%s\"...\n"
+msgstr "Wende IPS Datei \"%s\" an...\n"
+
+#: src/file.cpp:61
+#, c-format
+msgid "IPS file \"%s\" is not valid!"
+msgstr ""
+
+#: src/file.cpp:73 src/file.cpp:144
+#, c-format
+msgid ""
+"IPS EOF:  Did %d patches\n"
+"\n"
+msgstr ""
+"IPS EOF: %d Patches angewendet\n"
+"\n"
+
+#: src/file.cpp:96
+#, c-format
+msgid ""
+"ROM image will be too large after IPS patch; maximum size allowed is %llu "
+"bytes."
+msgstr ""
+
+#: src/file.cpp:101 src/file.cpp:127 src/file.cpp:157 src/file.cpp:194
+#: src/file.cpp:211 src/file.cpp:222 src/file.cpp:230 src/file.cpp:254
+msgid "file read buffer"
+msgstr "Datei-Lese-Puffer"
+
+#: src/file.cpp:143
+msgid "Warning:  IPS ended without an EOF chunk.\n"
+msgstr "Warnung:  IPS ohne einen EOF-Abschnitt beendet.\n"
+
+#: src/file.cpp:173 src/file.cpp:248
+#, c-format
+msgid "ROM image is too large; maximum size allowed is %llu bytes."
+msgstr ""
+
+#: src/file.cpp:320 src/file.cpp:368
+#, c-format
+msgid "Could not seek to first file in ZIP archive: %s"
+msgstr ""
+
+#: src/file.cpp:336
+#, c-format
+msgid "Could not get file information in ZIP archive: %s"
+msgstr ""
+
+#: src/file.cpp:361
+#, c-format
+msgid "Error seeking to next file in ZIP archive: %s"
+msgstr ""
+
+#: src/file.cpp:380
+#, c-format
+msgid "Could not open file in ZIP archive: %s"
+msgstr ""
+
+#: src/file.cpp:396 src/file.cpp:458
+#, c-format
+msgid "Error opening \"%s\": %s"
+msgstr "Fehler beim Laden von \"%s\": %s"
+
+#: src/file.cpp:639 src/file.cpp:669 src/pcfx/pcfx.cpp:692
+#, c-format
+msgid "Error opening \"%s\": %m"
+msgstr "Fehler beim Öffnen von \"%s\":%m"
+
+#: src/file.cpp:652 src/file.cpp:680
+#, c-format
+msgid "Error writing to \"%s\": %m"
+msgstr ""
+
+#: src/file.cpp:660
+#, c-format
+msgid "Error closing \"%s\""
+msgstr ""
+
+#: src/gb/gb.cpp:1845
+msgid "GB Color Map"
+msgstr "GB Farb-Tabelle"
+
+#: src/gb/gb.cpp:1861 src/gba/GBA.cpp:699 src/lynx/system.cpp:225
+#: src/ngp/neopop.cpp:134 src/pce/huc.cpp:303 src/sms/cart.cpp:131
+#: src/wswan/main.cpp:151
+#, c-format
+msgid "ROM:       %dKiB\n"
+msgstr "ROM:       %dKiB\n"
+
+#: src/gb/gb.cpp:1862 src/gba/GBA.cpp:700 src/lynx/system.cpp:226
+#: src/pce/huc.cpp:304 src/sms/cart.cpp:132
+#, c-format
+msgid "ROM CRC32: 0x%04x\n"
+msgstr "ROM CRC32: 0x%04x\n"
+
+#: src/gb/gb.cpp:1863 src/gba/GBA.cpp:701 src/lynx/system.cpp:227
+#: src/ngp/neopop.cpp:135 src/pce/huc.cpp:305 src/sms/cart.cpp:133
+#: src/wswan/main.cpp:156
+#, c-format
+msgid "ROM MD5:   0x%s\n"
+msgstr "ROM MD5:   0x%s\n"
+
+#: src/gb/gb.cpp:1893
+msgid "Invalid ROM size"
+msgstr "Ungültige ROM-Größe"
+
+#: src/gb/gb.cpp:1907
+msgid "Invalid RAM size"
+msgstr "Ungültige RAM-Größe"
+
+#: src/gb/gb.cpp:2425 src/gba/GBA.cpp:3233 src/ngp/neopop.cpp:256
+#: src/pce/pce.cpp:566 src/sms/system.cpp:404 src/wswan/main.cpp:307
+msgid "Force monophonic sound output."
+msgstr "Mono-Sound-Ausgabe erzwingen."
+
+#: src/gba/GBA.cpp:753
+msgid "GBA Color Map"
+msgstr "GBA Farb-Tabelle"
+
+#: src/gba/GBA.cpp:808
+#, c-format
+msgid "Loading custom color map from \"%s\"...\n"
+msgstr "Lade benutzerdefinierte Farb-Tabelle aus \"%s\"...\n"
+
+#: src/gba/GBA.cpp:812
+msgid "custom color map"
+msgstr "benutzerdefinierte Farb-Tabelle"
+
+#: src/gba/GBA.cpp:1317
+#, c-format
+msgid ""
+"Unsupported BIOS function %02x called from %08x. A BIOS file is needed in "
+"order to get correct behaviour."
+msgstr ""
+"Nicht unterstützte BIOS-Funktion %02x aufgerufen von %08x. Eine BIOS-Datei "
+"wird benötigt, um das korrekte Verhalten zu emulieren."
+
+#: src/gba/GBA.cpp:2492
+#, c-format
+msgid "Error opening \"%s\""
+msgstr ""
+
+#: src/gba/GBA.cpp:2498
+msgid "Invalid BIOS file size"
+msgstr "Ungültige BIOS-Dateigröße"
+
+#: src/gba/GBA.cpp:2505
+msgid "Error reading BIOS file"
+msgstr ""
+
+#: src/gba/GBA.cpp:3232
+msgid "Path to optional GBA BIOS ROM image."
+msgstr ""
+
+#: src/gba/GBA.cpp:3234
+msgid "Load custom color map from specified file."
+msgstr "Lade benutzerdefinierte Farb-Tabelle aus der angegebenen Datei."
+
+#: src/gba/flash.cpp:65
+msgid "flash memory"
+msgstr "Flash-Speicher"
+
+#: src/lynx/system.cpp:370
+msgid "Virtually rotate D-pad along with screen."
+msgstr "D-pad virtuell mit Bildschirm rotieren."
+
+#: src/lynx/system.cpp:371
+msgid "Enable sound output lowpass filter."
+msgstr "Sound-Ausgabe-Lowpass-Filter aktivieren."
+
+#: src/cdrom/cdromfile.cpp:239 src/cdrom/cdromfile.cpp:587
+#, c-format
+msgid "Could not open referenced file \"%s\": %m\n"
+msgstr "Kann referenzierte Datei \"%s\" nicht öffnen: %m\n"
+
+#: src/cdrom/cdromfile.cpp:297
+#, c-format
+msgid "Length specified in TOC file for track %d is too large by %d sectors!\n"
+msgstr "In TOC-Datei angegebene Länge für Track %d ist %d Sektoren zu lang!\n"
+
+#: src/cdrom/cdromfile.cpp:327
+msgid "Connected physical devices:\n"
+msgstr "Verbundenes physikalisches Gerät:\n"
+
+#: src/cdrom/cdromfile.cpp:338
+msgid "No CDROM drives detected(or no disc present)."
+msgstr "Kein CD-ROM Laufwerk gefunden (oder keine CD eingelegt)."
+
+#: src/cdrom/cdromfile.cpp:382
+#, c-format
+msgid "Error opening CUE sheet/TOC \"%s\": %m\n"
+msgstr "Fehler beim Öffnen der CUE/TOC-Datei \"%s\": %m\n"
+
+#: src/cdrom/cdromfile.cpp:456 src/cdrom/cdromfile.cpp:691
+#, c-format
+msgid "Invalid track number: %d\n"
+msgstr "Ungültige Track-Nummer: %d\n"
+
+#: src/cdrom/cdromfile.cpp:486
+msgid "\"RW\" format subchannel data not supported, only \"RW_RAW\" is!\n"
+msgstr "\"RW\" Format Subchannel Daten nicht unterstützt, nur \"RW_RAW\"!\n"
+
+#: src/cdrom/cdromfile.cpp:553 src/cdrom/cdromfile.cpp:565
+#, c-format
+msgid "Command %s is outside of a TRACK definition!\n"
+msgstr "Kommando %s it außerhalb von einer TRACK Definition!\n"
+
+#: src/cdrom/cdromfile.cpp:632
+#, c-format
+msgid "Unsupported audio track file format: %s\n"
+msgstr "Nicht unterstütztes Tonspur-Dateiformat: %s\n"
+
+#: src/cdrom/cdromfile.cpp:644
+#, c-format
+msgid "Error initializing MusePack decoder: %s!\n"
+msgstr "Fehler beim Initialisieren des MusePack-Decoders: %s!\n"
+
+#: src/cdrom/cdromfile.cpp:656
+#, c-format
+msgid "Unsupported track format: %s\n"
+msgstr "Nicht unterstütztes Track-Format: %s\n"
+
+#: src/cdrom/cdromfile.cpp:719
+#, c-format
+msgid "Error reading TOC file: %m\n"
+msgstr "Fehler beim Lesen der TOC-Datei: %m\n"
+
+#: src/cdrom/cdromfile.cpp:721
+#, c-format
+msgid "Error reading CUE sheet: %m\n"
+msgstr "Fehler beim Lesen der CUE-Datei: %m\n"
+
+#: src/cdrom/cdromfile.cpp:730
+msgid "No tracks found!\n"
+msgstr "Keine Tracks gefunden!\n"
+
+#: src/cdrom/cdromfile.cpp:795
+#, c-format
+msgid ""
+"Raw rip data correction using L-EC: %s\n"
+"\n"
+msgstr ""
+
+#: src/cdrom/cdromfile.cpp:795 src/pce/huc.cpp:507
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: src/cdrom/cdromfile.cpp:795 src/pce/huc.cpp:507
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: src/cdrom/cdromfile.cpp:1130 src/cdrom/cdromfile.cpp:1131
+#, c-format
+msgid "Uncorrectable data at sector %d"
+msgstr ""
+
+#: src/cdrom/cdromif.cpp:115 src/mednafen.cpp:364
+#, c-format
+msgid ""
+"Loading %s...\n"
+"\n"
+msgstr ""
+"Lade %s...\n"
+"\n"
+
+#: src/cdrom/cdromif.cpp:115
+msgid "PHYSICAL CDROM DISC"
+msgstr "PHYSIKALISCHE CD-ROM"
+
+#: src/cdrom/cdromif.cpp:137
+#, c-format
+msgid "Track %2d, LSN: %6d %s\n"
+msgstr "Track %2d, LSN: %6d %s\n"
+
+#: src/mednafen.cpp:45
+msgid "Blur each frame with the last frame."
+msgstr "Jeden Frame mit dem letzten Frame vermischen."
+
+#: src/mednafen.cpp:46
+msgid "Accumulate color data rather than discarding it."
+msgstr ""
+"Farbdaten akkumulieren, anstelle sie zu verwerfen (Bewegungsunschärfe)."
+
+#: src/mednafen.cpp:47
+msgid ""
+"Blur amount in accumulation mode, specified in percentage of accumulation "
+"buffer to mix with the current frame."
+msgstr ""
+"Unschärfe-Intensität im Akkumulierungs-Modus, angegeben in Prozent des "
+"Akkumulierungspuffers, die mit dem aktuellen Frame gemischt werden sollen."
+
+#: src/mednafen.cpp:63
+msgid ""
+"Compressor to use with state rewinding:  \"minilzo\", \"quicklz\", or \"blz\""
+msgstr ""
+"Kompressor, der für das Stand-Zurückspulen verwendet werden soll:  \"minilzo"
+"\", \"quicklz\", oder \"blz\""
+
+#: src/mednafen.cpp:64
+msgid "Number of frames to keep states for when state rewinding is enabled."
+msgstr ""
+"Anzahl der Frames, die Speicherstände behalten werden sollen, wenn Stand-"
+"Zurückspulen aktiviert ist."
+
+#: src/mednafen.cpp:65
+msgid ""
+"If value is true, use an alternate naming scheme(file base and numeric) for "
+"screen snapshots."
+msgstr ""
+"Wenn der Wert \"true\" ist, ein alternatives Benennungsschema (Dateinamen-"
+"Basis und Nummer) für Bildschirmfotos verwenden."
+
+#: src/mednafen.cpp:66
+msgid ""
+"Include the MD5 hash of the loaded game in the filenames of the data file"
+"(save states, SRAM backups) Mednafen creates."
+msgstr ""
+"Den MD5-Hash des geladenen Spiels an den Dateinamen von Spiel-Daten die "
+"Mednafen erstellt (Speicherständen, SRAM-Dateien, ...) anhängen."
+
+#: src/mednafen.cpp:69
+msgid ""
+"Enable simple error correction of raw data sector rips by evaluating L-EC "
+"and EDC data."
+msgstr ""
+
+#: src/mednafen.cpp:72
+msgid "Path override for screen snapshots."
+msgstr "Pfad für Bildschirmfotos."
+
+#: src/mednafen.cpp:73
+msgid "Path override for save games and nonvolatile memory."
+msgstr "Pfad für Spielstände und nicht-flüchtigen Speicher."
+
+#: src/mednafen.cpp:74
+msgid "Path override for save states."
+msgstr "Pfad für Speicherstände."
+
+#: src/mednafen.cpp:75
+msgid "Path override for movies."
+msgstr "Pfad für Filme."
+
+#: src/mednafen.cpp:76
+msgid "Path override for cheats."
+msgstr "Pfad für Cheats."
+
+#: src/mednafen.cpp:77
+msgid "Path override for custom palettes."
+msgstr "Pfad für eigene Paletten."
+
+#: src/mednafen.cpp:79
+msgid ""
+"Write screen snapshots to the same directory the ROM/disk/disc image is in."
+msgstr ""
+"Die Bildschirmfotos in das selbe Verzeichnis schreiben, wie das geladene ROM/"
+"Abbild."
+
+#: src/mednafen.cpp:82
+msgid ""
+"Write/Read save games and nonvolatile memory to/from the same directory the "
+"ROM/disk/disc image is in."
+msgstr ""
+"Speicherstände und Speicher-Abbilder im selben Verzeichnis lesen/schreiben, "
+"wie das geladene ROM/Abbild."
+
+#: src/mednafen.cpp:85
+msgid ""
+"Write/Read save states to/from the same directory the ROM/disk/disc image is "
+"in."
+msgstr ""
+"Spielstände im selben Verzeichnis lesen/schreiben, wie das geladene ROM/"
+"Abbild."
+
+#: src/mednafen.cpp:88
+msgid ""
+"Write/Read movies to/from the same directory the ROM/disk/disc image is in."
+msgstr ""
+"Filme im selben Verzeichnis lesen/schreiben, wie das geladene ROM/Abbild."
+
+#: src/mednafen.cpp:271
+msgid "Error opening CD."
+msgstr "Fehler beim Öffnen der CD."
+
+#: src/mednafen.cpp:305
+#, c-format
+msgid "Specified system \"%s\" doesn't support CDs!"
+msgstr "Das angegebene System \"%s\" unterstützt keine CDs!"
+
+#: src/mednafen.cpp:333
+#, c-format
+msgid "Unrecognized system \"%s\"!"
+msgstr "Unbekanntes System \"%s\"!"
+
+#: src/mednafen.cpp:401
+msgid "Unrecognized file format.  Sorry."
+msgstr "Unbekanntes Dateiformat. Sorry."
+
+#: src/mednafen.cpp:449
+#, c-format
+msgid "Starting Mednafen %s\n"
+msgstr "Starte Mednafen %s\n"
+
+#: src/mednafen.cpp:545
+msgid "Can't rewind during movie playback(yet!)."
+msgstr "Kann während Film-Wiedergabe (noch!) nicht zurückspulen."
+
+#: src/mednafen.cpp:550
+msgid "Silly-billy, can't rewind during netplay."
+msgstr "Dummerchen, kein Zurückspulen im Netplay!"
+
+#: src/mednafen.cpp:555
+msgid "Music player rewinding is unsupported."
+msgstr "Zurückspulen wird im Music Player nicht unterstützt."
+
+#: src/mednafen.cpp:828
+#, c-format
+msgid "%s enabled."
+msgstr "%s aktiviert."
+
+#: src/mednafen.cpp:830
+#, c-format
+msgid "%s disabled."
+msgstr "%s deaktiviert."
+
+#: src/memory.cpp:38
+#, c-format
+msgid "Error allocating(calloc) %u bytes for \"%s\" in %s(%d)!"
+msgstr "Fehler beim Reservieren(calloc) von %u Bytes für \"%s\" in %s(%d)!"
+
+#: src/memory.cpp:52
+#, c-format
+msgid "Error allocating(malloc) %u bytes for \"%s\" in %s(%d)!"
+msgstr "Fehler beim Reservieren(malloc) von %u Bytes für \"%s\" in %s(%d)!"
+
+#: src/memory.cpp:66
+#, c-format
+msgid "Error allocating(realloc) %u bytes for \"%s\" in %s(%d)!"
+msgstr ""
+
+#: src/mempatcher.cpp:166
+msgid "Error allocating memory for cheat data."
+msgstr "Fehler beim Reservieren des Speichers für Cheat-Daten."
+
+#: src/mempatcher.cpp:231
+#, c-format
+msgid "Loading cheats from %s...\n"
+msgstr "Lade Cheats aus %s...\n"
+
+#: src/mempatcher.cpp:238
+#, c-format
+msgid "Error opening file: %s\n"
+msgstr "Fehler beim Öffnen der Datei: %s\n"
+
+#: src/mempatcher.cpp:265
+#, c-format
+msgid "Invalid cheat type: %c\n"
+msgstr "Ungültiger Cheat-Typ: %c\n"
+
+#: src/mempatcher.cpp:310
+#, c-format
+msgid "%d cheats loaded.\n"
+msgstr "%d Cheats geladen.\n"
+
+#: src/movie.cpp:60
+msgid "Movie recording stopped."
+msgstr "Film-Aufnahme gestoppt."
+
+#: src/movie.cpp:103
+msgid "Movie recording started."
+msgstr "Film-Aufnahme gestartet."
+
+#: src/movie.cpp:115
+msgid "Movie playback stopped."
+msgstr "Film-Wiedergabe gestoppt."
+
+#: src/movie.cpp:134
+msgid "Can't play movies during netplay."
+msgstr "Kann Filme während Netplay nicht abspielen."
+
+#: src/movie.cpp:155
+msgid "Error loading state portion of the movie."
+msgstr "Fehler beim Laden des Stand-Abschnitts des Films."
+
+#: src/movie.cpp:163
+msgid "Movie playback started."
+msgstr "Film-Wiedergabe gestartet."
+
+#: src/nes/unif.cpp:147
+#, c-format
+msgid "Name/Attribute Table Mirroring: %s\n"
+msgstr "Name/Attribut-Tabellen-Spiegelung: %s\n"
+
+#: src/nes/unif.cpp:158
+msgid "Name: "
+msgstr "Name:"
+
+#: src/nes/unif.cpp:195
+#, c-format
+msgid "Dumped by: %s\n"
+msgstr "Ausgelesen von: %s\n"
+
+#: src/nes/unif.cpp:196
+#, c-format
+msgid "Dumped with: %s\n"
+msgstr "Ausgelesen mit: %s\n"
+
+#: src/nes/unif.cpp:198
+msgid "January"
+msgstr "Januar"
+
+#: src/nes/unif.cpp:198
+msgid "February"
+msgstr "Februar"
+
+#: src/nes/unif.cpp:198
+msgid "March"
+msgstr "März"
+
+#: src/nes/unif.cpp:198
+msgid "April"
+msgstr "April"
+
+#: src/nes/unif.cpp:198
+msgid "May"
+msgstr "Mai"
+
+#: src/nes/unif.cpp:198
+msgid "June"
+msgstr "Juni"
+
+#: src/nes/unif.cpp:198
+msgid "July"
+msgstr "Juli"
+
+#: src/nes/unif.cpp:199
+msgid "August"
+msgstr "August"
+
+#: src/nes/unif.cpp:199
+msgid "September"
+msgstr "September"
+
+#: src/nes/unif.cpp:199
+msgid "October"
+msgstr "Oktober"
+
+#: src/nes/unif.cpp:199
+msgid "November"
+msgstr "November"
+
+#: src/nes/unif.cpp:199
+msgid "December"
+msgstr "Dezember"
+
+#: src/nes/unif.cpp:200
+#, c-format
+msgid "Dumped on: %s %d, %d\n"
+msgstr "Ausgelesen am: %2$d. %1$s, %3$d\n"
+
+#: src/nes/unif.cpp:248
+#, c-format
+msgid "TV Standard Compatibility: %s\n"
+msgstr "TV-Standard Kompatibilität: %s\n"
+
+#: src/nes/unif.cpp:255 src/nes/ines.cpp:665
+msgid "Battery-backed.\n"
+msgstr "Batterie-gestützt.\n"
+
+#: src/nes/unif.cpp:278
+#, c-format
+msgid "PRG ROM %d size: %d"
+msgstr "PRG ROM %d Größe: %d"
+
+#: src/nes/unif.cpp:304
+#, c-format
+msgid "Board name: %s\n"
+msgstr "Board-Name: %s\n"
+
+#: src/nes/unif.cpp:317
+#, c-format
+msgid "CHR ROM %d size: %d"
+msgstr "CHR ROM %d Größe: %d"
+
+#: src/nes/unif.cpp:505
+msgid "Board type not supported."
+msgstr "Board-Typ nicht unterstützt."
+
+#: src/nes/unif.cpp:572 src/nes/ines.cpp:661
+#, c-format
+msgid "ROM MD5:  0x%s\n"
+msgstr "ROM MD5:  0x%s\n"
+
+#: src/nes/cart.cpp:464
+msgid "Game Genie ROM image"
+msgstr "Game Genie ROM-Abbild"
+
+#: src/nes/cart.cpp:471
+#, c-format
+msgid "Error opening Game Genie ROM image \"%s\": %m"
+msgstr "Fehler beim Öffnen des Game Genie ROM Abbildes \"%s\": %m"
+
+#: src/nes/cart.cpp:479
+msgid "Error reading from Game Genie ROM image!"
+msgstr "Fehler beim Lesen des Game Genie ROM Abbildes!"
+
+#: src/nes/cart.cpp:664
+#, c-format
+msgid "WRAM file \"%s\" cannot be written to.\n"
+msgstr "In WRAM-Datei \"%s\" konnte nicht geschrieben werden.\n"
+
+#: src/nes/fds.cpp:88
+#, c-format
+msgid "Disk %1$d Side %2$s Inserted"
+msgstr "Diskette %1$d Seite %2$s eingelegt"
+
+#: src/nes/fds.cpp:93
+#, c-format
+msgid "Disk %1$d Side %2$s Ejected"
+msgstr "Diskette %1$d Seite %2$s ausgeworfen"
+
+#: src/nes/fds.cpp:109
+msgid "Eject disk before selecting."
+msgstr "Diskette vor der Seiten-Auswahl auswerfen."
+
+#: src/nes/fds.cpp:113
+#, c-format
+msgid "Disk %1$d Side %2$s Selected"
+msgstr "Diskette %1$d Seite %2$s ausgewählt"
+
+#: src/nes/fds.cpp:549 src/nes/fds.cpp:872
+msgid "FDS Disk Data"
+msgstr "FDS Disketten-Daten"
+
+#: src/nes/fds.cpp:798
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: src/nes/fds.cpp:855
+msgid "FDS RAM"
+msgstr "FDS RAM"
+
+#: src/nes/fds.cpp:860
+msgid "CHR RAM"
+msgstr "CHR RAM"
+
+#: src/nes/fds.cpp:900
+#, c-format
+msgid "Sides: %d\n"
+msgstr "Seiten: %d\n"
+
+#: src/nes/fds.cpp:901
+#, c-format
+msgid "Manufacturer Code: %02x (%s)\n"
+msgstr "Hersteller-Code: %02x (%s)\n"
+
+#: src/nes/fds.cpp:902
+#, c-format
+msgid "MD5:   0x%s\n"
+msgstr "MD5:   0x%s\n"
+
+#: src/nes/nsf.cpp:155
+msgid "NSF data"
+msgstr "NSF Daten"
+
+#: src/nes/nsf.cpp:194
+msgid "NSF header"
+msgstr "NSF Header"
+
+#: src/nes/nsf.cpp:227
+msgid "Load address is invalid!"
+msgstr "Lade-Adresse ist ungültig!"
+
+#: src/nes/nsf.cpp:234
+msgid "Total number of songs is less than 1!"
+msgstr "Gesamtzahl der Lieder ist kleiner als 1!"
+
+#: src/nes/nsf.cpp:265
+msgid ""
+"NSF Loaded.  File information:\n"
+"\n"
+msgstr ""
+"NSF geladen. Datei-Informationen:\n"
+"\n"
+
+#: src/nes/nsf.cpp:268
+#, c-format
+msgid "Game/Album Name:\t%s\n"
+msgstr "Spiel-/Album-Name: \t%s\n"
+
+#: src/nes/nsf.cpp:270
+#, c-format
+msgid "Music Artist:\t%s\n"
+msgstr "Musik-Interpret:\t%s\n"
+
+#: src/nes/nsf.cpp:272
+#, c-format
+msgid "Copyright:\t\t%s\n"
+msgstr "Copyright:\t\t%s\n"
+
+#: src/nes/nsf.cpp:274
+#, c-format
+msgid "Ripper:\t\t%s\n"
+msgstr "Ripper:\t\t%s\n"
+
+#: src/nes/nsf.cpp:283
+#, c-format
+msgid "Expansion hardware:  %s\n"
+msgstr "Erweiterungs-Hardware:  %s\n"
+
+#: src/nes/nsf.cpp:289
+msgid "Bank-switched\n"
+msgstr "Bank-switched\n"
+
+#: src/nes/nsf.cpp:290
+#, c-format
+msgid ""
+"Load address:  $%04x\n"
+"Init address:  $%04x\n"
+"Play address:  $%04x\n"
+msgstr ""
+"Lade-Adresse:  $%04x\n"
+"Init-Adresse:  $%04x\n"
+"Abspiel-Adresse:  $%04x\n"
+
+#: src/nes/nsf.cpp:292
+#, c-format
+msgid ""
+"Starting song:  %d / %d\n"
+"\n"
+msgstr ""
+"Starte Lied:  %d / %d\n"
+"\n"
+
+#: src/nes/nsf.cpp:295 src/nes/nsf.cpp:297
+msgid "NSF expansion RAM"
+msgstr "NSF Erweiterungs-RAM"
+
+#: src/nes/boards/mmc3.cpp:1418
+msgid ""
+"Low-G-Man can not work normally in the iNES format.\n"
+"This game has been recognized by its CRC32 value, and the appropriate "
+"changes will be made so it will run.\n"
+"If you wish to hack this game, you should use the UNIF format for your "
+"hack.\n"
+"\n"
+msgstr ""
+"Low-G-Man läuft nicht ordnungsgemäß im iNES Format.\n"
+"Dieses Spiel wurde an seinem CRC32 Wert erkannt und die erforderlichen "
+"Änderungen, damit es laufen kann, werden vorgenommen.\n"
+"Wenn du dieses Spiel hacken willst, solltest du das UNIF-Format für den Hack "
+"verwenden.\n"
+"\n"
+
+#: src/nes/boards/maxicart.cpp:102
+msgid "expansion RAM"
+msgstr "Erweiterungs-RAM"
+
+#: src/nes/boards/mmc1.cpp:301 src/nes/boards/mmc5.cpp:122
+msgid ">8KB external WRAM present.  Use UNIF if you hack the ROM image.\n"
+msgstr ""
+" >8KB externer WRAM präsent.  Verwende UNIF, wenn du das ROM-Abbild hacken "
+"willst.\n"
+
+#: src/nes/nes.cpp:72
+msgid "Game Genie Read Handler Save"
+msgstr "Game Genie Lese-Handler speichern"
+
+#: src/nes/nes.cpp:74
+msgid "Game Genie Write Handler Save"
+msgstr "Game Genie Schreib-Handler speichern"
+
+#: src/nes/nes.cpp:522
+msgid "Cannot use states in GG Screen."
+msgstr "Speicherstände können im Game Genie-Bildschirm nicht verwendet werden."
+
+#: src/nes/nes.cpp:557 src/pce/pce.cpp:557 src/pcfx/pcfx.cpp:1187
+msgid "Select input device for input port 1."
+msgstr "Eingabegerät für Port 1 wählen."
+
+#: src/nes/nes.cpp:558 src/pce/pce.cpp:558 src/pcfx/pcfx.cpp:1188
+msgid "Select input device for input port 2."
+msgstr "Eingabegerät für Port 2 wählen."
+
+#: src/nes/nes.cpp:559 src/pce/pce.cpp:559
+msgid "Select input device for input port 3."
+msgstr "Eingabegerät für Port 3 wählen."
+
+#: src/nes/nes.cpp:560 src/pce/pce.cpp:560
+msgid "Select input device for input port 4."
+msgstr "Eingabegerät für Port 4 wählen."
+
+#: src/nes/nes.cpp:561
+msgid "Select Famicom expansion-port device."
+msgstr "Gerät für Famicom Erweiterungs-Port wählen."
+
+#: src/nes/nes.cpp:563
+msgid "Disabled four-score emulation."
+msgstr "Four-score-Emulation deaktiviert."
+
+#: src/nes/nes.cpp:564
+msgid "No 8-sprites-per-scanline limit option."
+msgstr "8-Sprites-pro-Scanline-Limit deaktivieren."
+
+#: src/nes/nes.cpp:565
+msgid ""
+"Enable less-accurate, but better sounding, Namco 106(mapper 19) sound "
+"emulation."
+msgstr ""
+"Ungenauere aber besser klingende Namco 106(mapper 19) Sound Emulation "
+"aktivieren."
+
+#: src/nes/nes.cpp:566
+msgid ""
+"Scan filename for (U),(J),(E),etc. strings to en/dis-able PAL emulation."
+msgstr ""
+"Dateiname nach (U), (J), (E), etc. Zeichenfolgen durchsuchen, um PAL-"
+"Emulation zu (de-)aktivieren."
+
+#: src/nes/nes.cpp:567
+msgid "Enable PAL(50Hz) NES emulation."
+msgstr "PAL (50Hz) NES Emulation aktivieren."
+
+#: src/nes/nes.cpp:568
+msgid "Enable Game Genie emulation."
+msgstr "Game Genie Emulation aktivieren."
+
+#: src/nes/nes.cpp:569
+msgid "Path to Game Genie ROM image."
+msgstr "Pfad zum Game Genie ROM-Abbild."
+
+#: src/nes/nes.cpp:570
+msgid "Clip left+right 8 pixel columns."
+msgstr "Links und rechts 8 Pixel Spalten abschneiden."
+
+#: src/nes/nes.cpp:571
+msgid "First rendered scanline in NTSC mode."
+msgstr "Erste angezeigte Scanline im NTSC-Modus."
+
+#: src/nes/nes.cpp:572
+msgid "Last rendered scanlines in NTSC mode."
+msgstr "Letzte angezeigte Scanline im NTSC-Modus."
+
+#: src/nes/nes.cpp:573
+msgid "First rendered scanline in PAL mode."
+msgstr "Erste angezeigte Scanline im PAL-Modus."
+
+#: src/nes/nes.cpp:574
+msgid "Last rendered scanlines in PAL mode."
+msgstr "Letzte angezeigte Scanline im PAL-Modus."
+
+#: src/nes/nes.cpp:575
+msgid "Filename of custom NES palette."
+msgstr "Dateiname von eigener NES-Palette."
+
+#: src/nes/nes.cpp:576
+msgid "Enable NTSC color generation and blitter."
+msgstr "NTSC-Farbgenerierung und -Blitter aktivieren."
+
+#: src/nes/nes.cpp:577
+msgid "Select video quality/type preset."
+msgstr "Video-Qualität/-Typ Voreinstellung wählen."
+
+#: src/nes/nes.cpp:578
+msgid "Merge fields to partially work around !=60.1Hz refresh rates."
+msgstr ""
+"Felder vermischen, um Abweichungen von 60.1Hz Bildwiederholrate teilweise "
+"auszugleichen."
+
+#: src/nes/nes.cpp:579
+msgid "NTSC composite blitter saturation."
+msgstr "NTSC Composite Blitter Sättigung."
+
+#: src/nes/nes.cpp:580
+msgid "NTSC composite blitter hue."
+msgstr "NTSC Composite Blitter Farbton."
+
+#: src/nes/nes.cpp:581
+msgid "NTSC composite blitter sharpness."
+msgstr "NTSC Composite Blitter Schärfe."
+
+#: src/nes/nes.cpp:582
+msgid "NTSC composite blitter brightness."
+msgstr "NTSC Composite Blitter Helligkeit."
+
+#: src/nes/nes.cpp:583
+msgid "NTSC composite blitter contrast."
+msgstr "NTSC Composite Blitter Kontrast."
+
+#: src/nes/nes.cpp:585
+msgid "Enable NTSC custom decoder matrix."
+msgstr "Eigene NTSC Decoder-Matrix aktivieren."
+
+#: src/nes/nes.cpp:588
+msgid "NTSC custom decoder matrix element 0(red, value * V)."
+msgstr "Eigene NTSC-Dekoder-Matrix: Element 0 (Rot, Wert * V)"
+
+#: src/nes/nes.cpp:589
+msgid "NTSC custom decoder matrix element 1(red, value * U)."
+msgstr "Eigene NTSC-Dekoder-Matrix: Element 1 (Rot, Wert * U)"
+
+#: src/nes/nes.cpp:590
+msgid "NTSC custom decoder matrix element 2(green, value * V)."
+msgstr "Eigene NTSC-Dekoder-Matrix: Element 2 (Grün, Wert * V)"
+
+#: src/nes/nes.cpp:591
+msgid "NTSC custom decoder matrix element 3(green, value * U)."
+msgstr "Eigene NTSC-Dekoder-Matrix: Element 3 (Grün, Wert * U)"
+
+#: src/nes/nes.cpp:592
+msgid "NTSC custom decoder matrix element 4(blue, value * V)."
+msgstr "Eigene NTSC-Dekoder-Matrix: Element 4 (Blau, Wert * V)"
+
+#: src/nes/nes.cpp:593
+msgid "NTSC custom decoder matrix element 5(blue, value * U."
+msgstr "Eigene NTSC-Dekoder-Matrix: Element 5 (Blau, Wert * U)"
+
+#: src/nes/ines.cpp:331
+#, c-format
+msgid ""
+"The copy of the game you have loaded, \"%s\", is bad, and will not work "
+"properly on Mednafen."
+msgstr ""
+"Die Kopie des geladenen Spiels, \"%s\", ist fehlerhaft und wird nicht "
+"fehlerfrei unter Mednafen laufen."
+
+#: src/nes/ines.cpp:494
+msgid ""
+"The iNES header contains incorrect information.  For now, the information "
+"will be corrected in RAM:\n"
+msgstr ""
+"Der iNES Header enthält fehlerhafte Informationen. Die Informationen werden "
+"vorerst im RAM korrigiert:\n"
+
+#: src/nes/ines.cpp:497
+#, c-format
+msgid "The mapper number should be set to %d.\n"
+msgstr "Die Mapper-Nummer sollte auf %d gestellt sein.\n"
+
+#: src/nes/ines.cpp:509
+msgid "The battery-backed bit should be set.\n"
+msgstr "Das Batterie-gestützt-Bit sollte gesetzt sein.\n"
+
+#: src/nes/ines.cpp:513
+msgid "This game should not have any CHR ROM.  "
+msgstr "Dieses Spiel sollte kein CHR ROM besitzen.  "
+
+#: src/nes/ines.cpp:573
+msgid "No PRG ROM present!"
+msgstr "Kein PRG ROM vorhanden!"
+
+#: src/nes/ines.cpp:590
+msgid "PRG ROM data"
+msgstr "PRG ROM Daten"
+
+#: src/nes/ines.cpp:617
+msgid "Error reading trainer."
+msgstr "Fehler beim Lesen des Trainers."
+
+#: src/nes/ines.cpp:628
+msgid "Error reading PRG ROM data"
+msgstr "Fehler beim Lesen der PRG ROM Daten."
+
+#: src/nes/ines.cpp:637
+msgid "Error reading CHR ROM data"
+msgstr "Fehler beim Lesen der CHR ROM Daten."
+
+#: src/nes/ines.cpp:657
+#, c-format
+msgid "PRG ROM:  %3d x 16KiB\n"
+msgstr "PRG ROM:  %3d x 16KiB\n"
+
+#: src/nes/ines.cpp:658
+#, c-format
+msgid "CHR ROM:  %3d x  8KiB\n"
+msgstr "CHR ROM:  %3d x  8KiB\n"
+
+#: src/nes/ines.cpp:659
+#, c-format
+msgid "ROM CRC32:  0x%08lx\n"
+msgstr "ROM CRC32:  0x%08lx\n"
+
+#: src/nes/ines.cpp:662
+#, c-format
+msgid "Mapper:  %d\n"
+msgstr "Mapper:  %d\n"
+
+#: src/nes/ines.cpp:663
+#, c-format
+msgid "Mirroring: %s\n"
+msgstr "Spiegelung: %s\n"
+
+#: src/nes/ines.cpp:663
+msgid "None(Four-screen)"
+msgstr "Keine (Four-screen)"
+
+#: src/nes/ines.cpp:663
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: src/nes/ines.cpp:663
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: src/nes/ines.cpp:666
+msgid "Trained.\n"
+msgstr "Enthält Trainer.\n"
+
+#: src/nes/ines.cpp:882
+#, c-format
+msgid "iNES mapper %d is not supported!"
+msgstr "iNES Mapper %d wird nicht unterstützt!"
+
+#: src/netplay.cpp:235
+msgid "Could not send the save state command to the netplay server."
+msgstr "Konnte Speicherstand-Befehl nicht an den Netplay-Server senden."
+
+#: src/netplay.cpp:241
+msgid "Could not send the save state data to the netplay server."
+msgstr "Konnte Speicherstand-Daten nicht an Netplay-Server senden."
+
+#: src/netplay.cpp:358
+msgid "Remote state loaded."
+msgstr "Remote-Speicherstand geladen."
+
+#: src/netplay.cpp:434
+#, c-format
+msgid "* You are now known as <%s>."
+msgstr "* Du heißt jetzt <%s>"
+
+#: src/netplay.cpp:439
+#, c-format
+msgid "* <%s> is now known as <%s>"
+msgstr "* <%s> heißt jetzt <%s>"
+
+#: src/netplay.cpp:485
+#, c-format
+msgid "* You, %s, have connected as player: %s%s%s%s%s%s"
+msgstr "* Du, %s, bist verbunden als Spieler: %s%s%s%s%s%s"
+
+#: src/netplay.cpp:500
+#, c-format
+msgid "* %s has left(player: %s%s%s%s%s%s)"
+msgstr "* %s ist gegangen (Spieler: %s%s%s%s%s%s)"
+
+#: src/netplay.cpp:506
+#, c-format
+msgid "* %s has connected as player: %s%s%s%s%s%s"
+msgstr "* %s ist verbunden als Spieler: %s%s%s%s%s%s"
+
+#: src/ngp/rom.cpp:104
+#, c-format
+msgid "Name:    %s\n"
+msgstr "Name:    %s\n"
+
+#: src/ngp/rom.cpp:105
+msgid "System:  "
+msgstr "System:  "
+
+#: src/ngp/rom.cpp:108
+msgid "Color"
+msgstr "Farbe"
+
+#: src/ngp/rom.cpp:110
+msgid "Greyscale"
+msgstr "Graustufen"
+
+#: src/ngp/rom.cpp:114
+#, c-format
+msgid "Catalog:  %d (sub %d)\n"
+msgstr "Katalog:  %d (sub %d)\n"
+
+#: src/ngp/rom.cpp:119
+#, c-format
+msgid "Starting PC:  0x%06X\n"
+msgstr "Ausgangs-PC:  0x%06X\n"
+
+#: src/ngp/neopop.cpp:255
+msgid "If =1, tell games to display in English, if =0, in Japanese."
+msgstr "Wenn =1, lasse Spiele englische Sprache verwenden, wenn =0 Japanisch."
+
+#: src/pce/huc.cpp:169 src/pce/huc.cpp:580
+msgid "Arcade Card RAM"
+msgstr "Arcade Card RAM"
+
+#: src/pce/huc.cpp:307
+msgid "HuCard ROM"
+msgstr "HuCard ROM"
+
+#: src/pce/huc.cpp:358
+msgid "Populous RAM"
+msgstr "Populous RAM"
+
+#: src/pce/huc.cpp:383
+msgid "Tsushin Booster RAM"
+msgstr "Tsushin Booster RAM"
+
+#: src/pce/huc.cpp:456
+#, c-format
+msgid "Could not open CD BIOS file \"%s\": %s\n"
+msgstr "Konnte CD BIOS Datei \"%s\" nicht öffnen: %s\n"
+
+#: src/pce/huc.cpp:459 src/pcfx/pcfx.cpp:728
+msgid "BIOS ROM"
+msgstr "BIOS ROM"
+
+#: src/pce/huc.cpp:506 src/pcfx/pcfx.cpp:935
+#, c-format
+msgid "CD MD5(first 256KiB):   0x%s\n"
+msgstr "CD MD5(erste 256KiB):   0x%s\n"
+
+#: src/pce/huc.cpp:507
+#, c-format
+msgid "Arcade Card Emulation:  %s\n"
+msgstr "Arcade Card Emulation:  %s\n"
+
+#: src/pce/huc.cpp:514
+msgid "CD RAM"
+msgstr "CD RAM"
+
+#: src/pce/pce.cpp:363
+#, c-format
+msgid "CPU overclock: %dx\n"
+msgstr "CPU Übertaktung: %dx\n"
+
+#: src/pce/pce.cpp:366
+#, c-format
+msgid "CD-ROM speed:  %dx\n"
+msgstr "CD-ROM Geschwindigkeit:  %dx\n"
+
+#: src/pce/pce.cpp:561
+msgid "Select input device for input port 5."
+msgstr "Eingabegerät für Port 5 wählen."
+
+#: src/pce/pce.cpp:562
+msgid "First rendered scanline."
+msgstr "Erste angezeigte Scanline."
+
+#: src/pce/pce.cpp:563
+msgid "Last rendered scanline."
+msgstr "Letzte angezeigte Scanline."
+
+#: src/pce/pce.cpp:564 src/pcfx/pcfx.cpp:1189
+msgid "Set mouse sensitivity."
+msgstr "Maus-Sensibilität einstellen."
+
+#: src/pce/pce.cpp:565 src/pcfx/pcfx.cpp:1190
+msgid ""
+"If set, when RUN+SEL are pressed simultaneously, disable both buttons "
+"temporarily."
+msgstr ""
+"Wenn aktiviert, nachdem RUN+SELECT gleichzeitig gedrückt wurden beide Knöpfe "
+"vorübergehend deaktivieren."
+
+#: src/pce/pce.cpp:567
+msgid "Force SuperGrafx emulation."
+msgstr "SuperGrafx Emulation erzwingen."
+
+#: src/pce/pce.cpp:568
+msgid "Enable Arcade Card emulation."
+msgstr "Arcade Card Emulation aktivieren."
+
+#: src/pce/pce.cpp:569
+msgid "CPU overclock multiplier."
+msgstr "CPU-Übertaktungs-Multiplikator"
+
+#: src/pce/pce.cpp:570
+msgid "CD-ROM data transfer speed multiplier."
+msgstr "CD-ROM Datentransfer-Geschwindigkeits-Multiplikator"
+
+#: src/pce/pce.cpp:571 src/pcfx/pcfx.cpp:1192
+msgid "No 16-sprites-per-scanline limit option."
+msgstr "16-Sprites-pro-Scanline-Einschränkung deaktivieren."
+
+#: src/pce/pce.cpp:572
+msgid "Path to the CD BIOS"
+msgstr "Pfad zum CD BIOS"
+
+#: src/pce/pce.cpp:573
+msgid "Enable lowpass filter dependent on playback-frequency."
+msgstr "Lowpass-Filter abhängig von der Wiedergabe-Frequenz aktivieren."
+
+#: src/pce/pce.cpp:574
+msgid "PSG volume when playing a CD game."
+msgstr "PSG-Lautstärke beim Abspielen eines CD-Spiels."
+
+#: src/pce/pce.cpp:575
+msgid "CD-DA volume."
+msgstr "CD-DA-Lautstärke."
+
+#: src/pce/pce.cpp:576
+msgid "ADPCM volume."
+msgstr "ADPCM Lautstärke."
+
+#: src/pce/psg.cpp:276
+#, c-format
+msgid "CD PSG Volume: %d%%\n"
+msgstr "CD PSG Lautstärke: %d%%\n"
+
+#: src/pce/hes.cpp:49 src/pce/hes.cpp:51 src/pce/hes.cpp:132
+#: src/pce/hes.cpp:137
+msgid "HES ROM"
+msgstr "HES ROM"
+
+#: src/pce/hes.cpp:80
+#, c-format
+msgid ""
+"Warning:  HES is writing to physical address %08x.  Future warnings of this "
+"nature are temporarily disabled for this HES file.\n"
+msgstr ""
+
+#: src/pce/hes.cpp:158
+#, c-format
+msgid ""
+"Warning:  HES is trying to load more data than is present in the file(%u "
+"attempted, %u left)!\n"
+msgstr ""
+
+#: src/pce/hes.cpp:166
+msgid "Warning:  HES is trying to load data past boundary.\n"
+msgstr ""
+
+#: src/pce/cdrom.cpp:256
+#, c-format
+msgid "CD-DA Volume: %d%%\n"
+msgstr "CD-DA Lautstärke: %d%%\n"
+
+#: src/pce/adpcm.cpp:262
+msgid "PCE ADPCM RAM"
+msgstr "PCE ADPCM RAM"
+
+#: src/pcfx/pcfx.cpp:671
+#, c-format
+msgid "Could not open BIOS file \"%s\": %s\n"
+msgstr "Konnte BIOS-Datei \"%s\" nicht öffnen: %s\n"
+
+#: src/pcfx/pcfx.cpp:680
+msgid "Using mmap() address space emulation...\n"
+msgstr "Verwende mmap() Adressraum-Emulation...\n"
+
+#: src/pcfx/pcfx.cpp:688
+msgid "Anonymous mmap() not supported?  Then /dev/zero it is!\n"
+msgstr "Anonymous mmap() nicht unterstützt?  Dann soll es /dev/zero sein!\n"
+
+#: src/pcfx/pcfx.cpp:699
+#, c-format
+msgid "Base mmap failed: %m"
+msgstr "Base mmap fehlgeschlagen: %m"
+
+#: src/pcfx/pcfx.cpp:707
+#, c-format
+msgid "RAM mmap failed: %m"
+msgstr "RAM mmap fehlgeschlagen: %m"
+
+#: src/pcfx/pcfx.cpp:732
+msgid "RAM"
+msgstr "RAM"
+
+#: src/pcfx/pcfx.cpp:742
+#, c-format
+msgid "Error reading BIOS file \"%s\": %s\n"
+msgstr "Fehler beim Lesen der BIOS-Datei \"%s\": %s\n"
+
+#: src/pcfx/pcfx.cpp:930
+#, c-format
+msgid "CD ID MD5(first 4KiB):  0x%s\n"
+msgstr "CD ID MD5 (erste 5KiB):  0x%s\n"
+
+#: src/pcfx/pcfx.cpp:933
+#, c-format
+msgid "GameSet MD5:\t          0x%s\n"
+msgstr "Spiel-Set MD5: \t          0x%s\n"
+
+#: src/pcfx/pcfx.cpp:946
+#, c-format
+msgid "Emulated CD-ROM drive speed: %dx\n"
+msgstr ""
+
+#: src/pcfx/pcfx.cpp:1046 src/pcfx/pcfx.cpp:1067
+msgid "Virtual CD Ejected"
+msgstr "Virtuelle CD ausgeworfen"
+
+#: src/pcfx/pcfx.cpp:1051
+msgid "Virtual CD Inserted"
+msgstr "Virtuelle CD eingelegt"
+
+#: src/pcfx/pcfx.cpp:1191
+msgid "Path to the ROM BIOS"
+msgstr "Pfad zum ROM BIOS"
+
+#: src/pcfx/pcfx.cpp:1193
+msgid "Emulated width for 7.16MHz dot-clock mode: 256, 341, or 1024."
+msgstr "Emulierte Breite für 7.16MHz dot-clock Modus: 256, 341, oder 1024."
+
+#: src/pcfx/pcfx.cpp:1194
+msgid "Emulated CD-ROM speed."
+msgstr ""
+
+#: src/pcfx/pcfx.cpp:1196
+msgid ""
+"Use mmap() to create a virtual 32-bit address space to speed up V810 "
+"emulation."
+msgstr ""
+"mmap() verwenden, um einen virtuellen 32-Bit Adressraum zu erzeugen, um die "
+"V810-Emulation zu beschleunigen."
+
+#: src/pcfx/king.cpp:1274
+msgid "KING Data"
+msgstr "KING Daten"
+
+#: src/pcfx/rainbow.cpp:570
+msgid "RAINBOW buffer RAM"
+msgstr "RAINBOW Puffer RAM"
+
+#: src/player.cpp:184
+msgid "Song:"
+msgstr "Lied:"
+
+#: src/settings.cpp:25 src/settings.cpp:135
+#, c-format
+msgid "Setting \"%s\" is not set to a valid unsigned integer: \"%s\""
+msgstr ""
+"Einstellung \"%s\" ist nicht auf einen gültigen vorzeichenlosen Ganzzahl-"
+"Wert gesetzt: \"%s\""
+
+#: src/settings.cpp:35 src/settings.cpp:70 src/settings.cpp:105
+#, c-format
+msgid ""
+"Setting \"%s\" is set too small(\"%s\"); the minimum acceptable value is \"%s"
+"\"."
+msgstr ""
+"Einstellung \"%s\" ist zu niedrig gesetzt (\"%s\"); der niedrigste "
+"akzeptable Wert ist \"%s\"."
+
+#: src/settings.cpp:46 src/settings.cpp:81 src/settings.cpp:116
+#, c-format
+msgid ""
+"Setting \"%s\" is set too large(\"%s\"); the maximum acceptable value is \"%s"
+"\"."
+msgstr ""
+"Einstellung \"%s\" ist zu hoch gesetzt (\"%s\"); der höchste akzeptable Wert "
+"ist \"%s\"."
+
+#: src/settings.cpp:60
+#, c-format
+msgid "Setting \"%s\" is not set to a valid signed integer: \"%s\""
+msgstr ""
+"Einstellung \"%s\" ist nicht auf einen gültigen Ganzzahl-Wert gesetzt: \"%s\""
+
+#: src/settings.cpp:95
+#, c-format
+msgid "Setting \"%s\" is not set to a floating-point(real) number: \"%s\""
+msgstr "Einstellung \"%s\" ist keine Fließkomma- (reelle) Zahl: \"%s\""
+
+#: src/settings.cpp:125
+#, c-format
+msgid "Setting \"%s\" is not a valid boolean value: \"%s\""
+msgstr "Einstellung \"%s\" ist kein gültiger boolescher Wert: \"%s\""
+
+#: src/settings.cpp:133
+#, c-format
+msgid "Setting \"%s\" is not set to a valid string: \"%s\""
+msgstr ""
+"Einstellung \"%s\" ist nicht auf einen gültigen String (Zeichenfolge) "
+"gesetzt: \"%s\""
+
+#: src/settings.cpp:151
+#, c-format
+msgid "Loading settings from \"%s\"..."
+msgstr "Lade Einstellungen aus \"%s\"..."
+
+#: src/settings.cpp:158
+#, c-format
+msgid "Failed: %m\n"
+msgstr "Fehlgeschlagen: %m\n"
+
+#: src/settings.cpp:282
+#, c-format
+msgid ";Edit this file at your own risk!\n"
+msgstr ";Bearbeitung dieser Datei erfolgt auf eigenes Risiko!\n"
+
+#: src/settings.cpp:283
+#, c-format
+msgid ""
+";File format: <key><single space><value><LF or CR+LF>\n"
+"\n"
+msgstr ""
+";Dateiformat: <Taste><Leerzeichen><Wert><LF oder CR+LF>\n"
+"\n"
+
+#: src/settings.cpp:404
+#, c-format
+msgid "Unknown setting \"%s\""
+msgstr "Unbekannte Einstellung \"%s\""
+
+#: src/sms/system.cpp:397
+msgid "Territory, \"domestic\"(Japan) or \"export\"."
+msgstr "Territorium, \"domestic\"(Japan) oder \"export\"."
+
+#: src/sms/system.cpp:398
+msgid "Enable FM sound emulation when playing domestic/Japan-region games."
+msgstr ""
+"Aktiviere FM-Klang-Emulation beim Spielen von \"domestic\"-/Japan-Region-"
+"Spielen."
+
+#: src/sms/cart.cpp:92
+msgid "Cart ROM"
+msgstr "Cart ROM"
+
+#: src/sms/cart.cpp:134
+#, c-format
+msgid "Mapper:    %s\n"
+msgstr "Mapper:    %s\n"
+
+#: src/sms/cart.cpp:135
+#, c-format
+msgid "Territory: %s\n"
+msgstr "Territorium: %s\n"
+
+#: src/sms/cart.cpp:135
+msgid "Domestic"
+msgstr "\"Domestic\""
+
+#: src/sms/cart.cpp:135
+msgid "Export"
+msgstr "\"Export\""
+
+#: src/state.cpp:592 src/state.cpp:601
+#, c-format
+msgid "State %d save error."
+msgstr "Fehler beim Speichern von Stand %d."
+
+#: src/state.cpp:609
+#, c-format
+msgid "State %d saved."
+msgstr "Stand %d gespeichert."
+
+#: src/state.cpp:733
+#, c-format
+msgid "State %d load error."
+msgstr "Fehler beim Laden von Stand %d."
+
+#: src/state.cpp:744
+#, c-format
+msgid "State %d loaded."
+msgstr "Stand %d geladen."
+
+#: src/state.cpp:753
+#, c-format
+msgid "State %d read error!"
+msgstr "Fehler beim Lesen von Stand %d!"
+
+#: src/video/video.cpp:57
+#, c-format
+msgid "Screen snapshot %d saved."
+msgstr "Bildschirmfoto %d gespeichert."
+
+#: src/video/video.cpp:61
+msgid "Error saving screen snapshot."
+msgstr "Fehler beim Speichern des Bildschirmfotos."
+
+#: src/video/png.cpp:63
+msgid "PNG compression buffer"
+msgstr "PNG Kompressions-Puffer"
+
+#: src/video/vblur.cpp:39
+#, c-format
+msgid "Video frame blur enabled with accumulation: %f.\n"
+msgstr "Video Frame Unschärfe aktiviert mit Akkumulierung: %f.\n"
+
+#: src/video/vblur.cpp:44
+msgid "Video frame blur enabled.\n"
+msgstr "Video Frame Unschärfe aktiviert.\n"
+
+#: src/wave.cpp:55 src/wave.cpp:68
+#, c-format
+msgid "Error opening %s: %s\n"
+msgstr "Fehler beim Öffnen von %s: %s\n"
+
+#: src/wswan/main.cpp:171
+#, c-format
+msgid "Developer: %s (0x%02x)\n"
+msgstr "Entwickler: %s (0x%02x)\n"
+
+#: src/wswan/main.cpp:192
+#, c-format
+msgid "EEPROM:  %d bytes\n"
+msgstr "EEPROM:  %d Bytes\n"
+
+#: src/wswan/main.cpp:195
+#, c-format
+msgid "Battery-backed RAM:  %d bytes\n"
+msgstr "Battery-unterstützter RAM:  %d Bytes\n"
+
+#: src/wswan/main.cpp:197
+#, c-format
+msgid "Recorded Checksum:  0x%04x\n"
+msgstr "Gespeicherte Prüfsumme:  0x%04x\n"
+
+#: src/wswan/main.cpp:202
+#, c-format
+msgid "Real Checksum:      0x%04x\n"
+msgstr "Tatsächliche Prüfsumme:      0x%04x\n"
+
+#: src/wswan/main.cpp:306
+msgid "Virtually rotate D-pads along with screen."
+msgstr "D-pad virtuell mit Bildschirm rotieren."
+
+#: src/wswan/main.cpp:308
+msgid "Name"
+msgstr "Name"
+
+#: src/wswan/main.cpp:309
+msgid "Birth Year"
+msgstr "Geburtsjahr"
+
+#: src/wswan/main.cpp:310
+msgid "Birth Month"
+msgstr "Geburtsmonat"
+
+#: src/wswan/main.cpp:311
+msgid "Birth Day"
+msgstr "Geburtstag"
+
+#: src/wswan/main.cpp:312
+msgid "Sex"
+msgstr "Geschlecht"
+
+#: src/wswan/main.cpp:313
+msgid "Blood Type"
+msgstr "Blutgruppe"
+
+#~ msgid "IPS file is not valid!"
+#~ msgstr "IPS-Datei ist ungültig!"
+
+#~ msgid "Error creating file %s"
+#~ msgstr "Fehler beim Erstellen der Datei %s"

@@ -1,0 +1,41 @@
+|-------------------------------|
+|                               |
+|            About              |
+|                               |
+|-------------------------------|
+
+This is a port of Mednafen ( http://mednafen.sourceforge.net ) to the SONY PSP. SNES and PSX emulation was not ported over.
+
+The source code is released as-is in complaince with the original licenses. New source code is licensed GPLv2 to Robert L Szkutak II.
+
+|-------------------------------|
+|                               |
+|         How to Use            |
+|                               |
+|-------------------------------|
+
+Install EBOOT in :
+
+ms0:/PSP/GAME/mednafenPSP/
+
+Place ROMs in :
+
+ms0:/PSP/GAME/mednafenPSP/roms
+
+Place mednafen-09x.cfg from this repository in ms0:/PSP/GAME/mednafenPSP/
+
+Note: Directories are case sensitive.
+
+The control scheme for the emulator should be fairly obvious. Feel free to let me know if you have better ideas for it.
+
+|-------------------------------|
+|                               |
+|       About The Author        |
+|                               |
+|-------------------------------|
+
+This port was written by Robert L Szkutak II.
+
+E-mail  : robert <at> robertszkutak <dot> com
+Twitter : @robertszkutak
+Website : http://robertszkutak.com

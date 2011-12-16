@@ -1,0 +1,2580 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mednafen\n"
+"Report-Msgid-Bugs-To: mednafen@fobby.net\n"
+"POT-Creation-Date: 2009-05-14 23:34-0500\n"
+"PO-Revision-Date: 2008-06-20 05:19+0800\n"
+"Last-Translator: Anton Shestakov <engored@ya.ru>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: src/drivers/main.cpp:56
+msgid "Full-screen horizontal resolution."
+msgstr "Полноэкранное разрешение по горизонтали."
+
+#: src/drivers/main.cpp:57
+msgid "Full-screen vertical resolution."
+msgstr "Полноэкранное разрешение по вертикали."
+
+#: src/drivers/main.cpp:58
+msgid "The scaling factor for the X axis."
+msgstr "Коэффициент масштабирования по оси X."
+
+#: src/drivers/main.cpp:59
+msgid "The scaling factor for the Y axis."
+msgstr "Коэффициент масштабирования по оси Y."
+
+#: src/drivers/main.cpp:60
+msgid "The scaling factor for the X axis in fullscreen mode."
+msgstr "Коэффициент масштабирования по оси X в полноэкранном режиме."
+
+#: src/drivers/main.cpp:61
+msgid "The scaling factor for the Y axis in fullscreen mode."
+msgstr "Коэффициент масштабирования по оси Y в полноэкранном режиме."
+
+#: src/drivers/main.cpp:62
+msgid "Enable scanlines with specified transparency."
+msgstr "Использовать черезстрочную развёртку с указанной прозрачностью."
+
+#: src/drivers/main.cpp:63
+msgid "Stretch to fill screen."
+msgstr "Растянуть на весь экран"
+
+#: src/drivers/main.cpp:64
+msgid "Enable bilinear interpolation."
+msgstr "Использовать билинейную интерполяцию."
+
+#: src/drivers/main.cpp:65
+msgid "Enable specified special video scaler."
+msgstr "Использовать указанный метод масштабирования видео."
+
+#: src/drivers/main.cpp:68
+msgid "Enable specified OpenGL pixel shader."
+msgstr "Использовать указанный OpenGL pixel shader."
+
+#: src/drivers/main.cpp:75
+msgid "Network play server hostname."
+msgstr "Имя сервера для сетевой игры."
+
+#: src/drivers/main.cpp:76
+msgid "Port to connect to on the server."
+msgstr "Порт для подключения к серверу."
+
+#: src/drivers/main.cpp:77
+msgid "Password to connect to the netplay server."
+msgstr "Пароль для подключения к серверу."
+
+#: src/drivers/main.cpp:78
+msgid "Number of local players for network play."
+msgstr "Количество локальных игроков для сетевой игры."
+
+#: src/drivers/main.cpp:79
+msgid "Nickname to use for network play chat."
+msgstr "Псевдоним для использования в сетевой игре и чате."
+
+#: src/drivers/main.cpp:80
+msgid "Key to hash with the MD5 hash of the game."
+msgstr "Ключ для хеширования MD5-суммы игры."
+
+#: src/drivers/main.cpp:81
+msgid "Merge input to this player # on the server."
+msgstr "Сопоставить ввод с игроком под этим номером на сервере."
+
+#: src/drivers/main.cpp:82
+msgid "Use small(tiny!) font for netplay chat console."
+msgstr "Использовать маленький (мелкий!) шрифт для окна чата."
+
+#: src/drivers/main.cpp:239
+msgid "Enable fullscreen mode."
+msgstr "Включить полноэкранный режим"
+
+#: src/drivers/main.cpp:240
+msgid "Select video driver, \"opengl\" or \"sdl\"."
+msgstr "Выбрать видео-драйвер, «opengl» или «sdl»."
+
+#: src/drivers/main.cpp:241
+msgid "Attempt to synchronize OpenGL page flips to vertical retrace period."
+msgstr ""
+"Пытаться синхронизировать смену видео-страниц OpenGL с частотой вертикальной "
+"развёртки."
+
+#: src/drivers/main.cpp:243
+msgid "Fast-forwarding speed multiplier."
+msgstr "Множитель скорости в режиме быстрой перемотки вперёд."
+
+#: src/drivers/main.cpp:244
+msgid "Treat the fast-forward button as a toggle."
+msgstr "Расценивать клавишу быстрой перемотки вперёд как переключатель."
+
+#: src/drivers/main.cpp:245
+msgid "Silence sound output when fast-forwarding."
+msgstr "Приглушать звук при быстрой перемотке вперёд."
+
+#: src/drivers/main.cpp:246
+msgid "Auto-fire frequency."
+msgstr "Частота автоматического огня."
+
+#: src/drivers/main.cpp:247
+msgid "Threshold for detecting a \"button\" press on analog axis, in percent."
+msgstr "Граница восприятия нажатия кнопки на аналоговой оси, в процентах."
+
+#: src/drivers/main.cpp:248
+msgid ""
+"The length of time, in milliseconds, that a button/key corresponding to a "
+"\"dangerous\" command like power, reset, exit, etc. must be pressed before "
+"the command is executed."
+msgstr ""
+"Время в мс, в течение которого должна быть нажата кнопка, отвечающая за "
+"небезопасную команду (сброс, выход и т.д.), чтобы команда была выполнена."
+
+#: src/drivers/main.cpp:249
+msgid "Disable speed throttling when sound is disabled."
+msgstr "Отключать контроль скорости когда звук отключён."
+
+#: src/drivers/main.cpp:250
+msgid ""
+"Automatically save and load save states when a game is closed or loaded, "
+"respectively."
+msgstr ""
+"Автоматически сохранять и загружать состояния при закрытии и запуске игры "
+"соответственно."
+
+#: src/drivers/main.cpp:251
+msgid "Select sound driver."
+msgstr "Выбрать аудио-драйвер."
+
+#: src/drivers/main.cpp:252
+msgid "Select sound output device."
+msgstr "Выбрать устройство вывода звука."
+
+#: src/drivers/main.cpp:253
+msgid "Sound volume level, in percent."
+msgstr "Громкость звука в процентах."
+
+#: src/drivers/main.cpp:254
+msgid "Enable sound emulation."
+msgstr "Включить эмуляцию звука."
+
+#: src/drivers/main.cpp:255
+msgid "Specifies the desired size of the sound buffer, in milliseconds."
+msgstr "Установить желаемый размер буфера звуковых данных, в мс."
+
+#: src/drivers/main.cpp:262
+msgid "Specifies the sound playback rate, in frames per second(\"Hz\")."
+msgstr "Указать частоту дискретизации звука, отсчётов в секунду (Гц)"
+
+#: src/drivers/main.cpp:263
+msgid "Enable the help screen."
+msgstr "Включить экран справки."
+
+#: src/drivers/main.cpp:266
+msgid "Automatically go into the debugger's step mode after a game is loaded."
+msgstr "Автоматически войти в пошаговый режим отладчика после загрузки игры."
+
+#: src/drivers/main.cpp:268 src/drivers/main.cpp:269 src/drivers/main.cpp:270
+#: src/drivers/main.cpp:271
+msgid "Character set for the debugger's memory editor."
+msgstr "Набор символов для редактора памяти в отладчике."
+
+#: src/drivers/main.cpp:273 src/drivers/main.cpp:274 src/drivers/main.cpp:275
+#: src/drivers/main.cpp:276
+msgid "Disassembly font size(xsmall, small, medium, large)."
+msgstr "Размер шрифта дизассемблера (xsmall, small, medium, large)."
+
+#: src/drivers/main.cpp:280
+msgid ""
+"The length of time, in milliseconds, to display the save state or the movie "
+"selector after selecting a state or movie."
+msgstr ""
+
+#: src/drivers/main.cpp:377
+msgid "How DARE you interrupt me!\n"
+msgstr "Ну-ка не смей меня прерывать!\n"
+
+#: src/drivers/main.cpp:381
+msgid "MUST TERMINATE ALL HUMANS\n"
+msgstr "УБИТЬ ВСЕХ ЧЕЛОВЕКОВ!\n"
+
+#: src/drivers/main.cpp:385
+msgid "Reach out and hang-up on someone.\n"
+msgstr "Может лучше сходишь прогуляешься?\n"
+
+#: src/drivers/main.cpp:389
+msgid ""
+"Iyeeeeeeeee!!!  A segmentation fault has occurred.  Have a fluffy day.\n"
+msgstr "Ошибка сегментации.  Наслаждайтесь жизнью.\n"
+
+#: src/drivers/main.cpp:393
+msgid "The pipe has broken!  Better watch out for floods...\n"
+msgstr "Канал повреждён!  Как бы не затопило...\n"
+
+#: src/drivers/main.cpp:398
+msgid "I told you to be nice to the driver.\n"
+msgstr "Я же предупреждал — не лезь к водителю.\n"
+
+#: src/drivers/main.cpp:402
+msgid "Those darn floating points.  Ne'er know when they'll bite!\n"
+msgstr ""
+"Ах эти чёртовы плавающие запятые. Никогда не угадаешь, куда они заплывут!\n"
+
+#: src/drivers/main.cpp:406
+msgid "Don't throw your clock at the meowing cats!\n"
+msgstr "Не стоит кидать свои часы в кошек!\n"
+
+#: src/drivers/main.cpp:410
+msgid "Abort, Retry, Ignore, Fail?\n"
+msgstr "Abort, Retry, Ignore, Fail?\n"
+
+#: src/drivers/main.cpp:414 src/drivers/main.cpp:418
+msgid "Killing your processes is not nice.\n"
+msgstr "Убийство процессов преследуется по закону.\n"
+
+#: src/drivers/main.cpp:430
+#, c-format
+msgid ""
+"\n"
+"Signal %d has been caught and dealt with...\n"
+msgstr ""
+"\n"
+"Был пойман и обработан сигнал %d...\n"
+
+#: src/drivers/main.cpp:514
+msgid "Show help!"
+msgstr "Показать справку"
+
+#: src/drivers/main.cpp:515
+msgid "Enable remote mode."
+msgstr "Использовать режим удалённой работы."
+
+#: src/drivers/main.cpp:517
+msgid "Load and boot a CD for the specified system."
+msgstr "Загрузиться с компакт-диска для выбранной системы."
+
+#: src/drivers/main.cpp:519
+msgid "Record sound output to the specified filename in the MS WAV format."
+msgstr "Записать звук в указанный файл в формате MS WAV"
+
+#: src/drivers/main.cpp:523
+msgid "Connect to the remote server and start network play."
+msgstr "Соединиться с удалённым сервером и начать сетевую игру."
+
+#: src/drivers/main.cpp:528
+#, c-format
+msgid "Usage: %s [OPTION]... [FILE]\n"
+msgstr "Использование: %s [КЛЮЧ]... [ФАЙЛ]\n"
+
+#: src/drivers/main.cpp:531
+#, c-format
+msgid ""
+"No command-line arguments specified.\n"
+"\n"
+msgstr ""
+"Аргументы командной строки не были заданы.\n"
+"\n"
+
+#: src/drivers/main.cpp:533
+#, c-format
+msgid ""
+"\tPlease refer to the documentation for option parameters and usage.\n"
+"\n"
+msgstr ""
+"\tСверьтесь с документацией по настройке и использованию эмулятора.\n"
+"\n"
+
+#: src/drivers/main.cpp:550
+msgid "No game filename specified!"
+msgstr "Имя файла не задано!"
+
+#: src/drivers/main.cpp:1070
+#, c-format
+msgid ""
+"Compiled against SDL %u.%u.%u, running with SDL %u.%u.%u\n"
+"\n"
+msgstr ""
+"Собран под SDL %u.%u.%u, запущен с SDL %u.%u.%u\n"
+"\n"
+
+#: src/drivers/netplay.cpp:179
+msgid "*** Error intializing SDL_net!"
+msgstr "*** Ошибка инициализации SDL_net!"
+
+#: src/drivers/netplay.cpp:190
+#, c-format
+msgid "*** Error resolving host \"%s\"!"
+msgstr "*** Ошибка при разрешении имени узла «%s»!"
+
+#: src/drivers/netplay.cpp:197
+#, c-format
+msgid "*** Error connecting to remote host \"%s\" on port %u!"
+msgstr "*** Ошибка соединения с удалённым узлом «%s» к порту %u!"
+
+#: src/drivers/netplay.cpp:201
+msgid "*** Sending initialization data to server."
+msgstr "*** Отправка начальных данных серверу."
+
+#: src/drivers/netplay.cpp:209
+msgid "*** Connection established."
+msgstr "*** Соединение установлено."
+
+#: src/drivers/joystick.cpp:141
+#, c-format
+msgid "Joystick %d - %s - Unique ID: %016llx\n"
+msgstr "Джойстик %d - %s - уникальный идентификатор: %016llx\n"
+
+#: src/drivers/joystick.cpp:144
+#, fuzzy, c-format
+msgid "Could not open joystick %d: %s.\n"
+msgstr "Не удалось открыть файл BIOS «%s»: %s\n"
+
+#: src/drivers/input.cpp:454
+msgid "Cannot change input device during netplay."
+msgstr "Невозможно изменить устройство ввода в ходе сетевой игры."
+
+#: src/drivers/input.cpp:458
+msgid "Cannot change input device while state rewinding is active."
+msgstr "Невозможно изменить устройство ввода в ходе перемотки назад."
+
+#: src/drivers/input.cpp:477
+#, c-format
+msgid "%s selected on port %d"
+msgstr "%s выбрано на порте %d"
+
+#: src/drivers/input.cpp:556
+msgid "Save state"
+msgstr "Сохранить состояние"
+
+#: src/drivers/input.cpp:557
+msgid "Load state"
+msgstr "Загрузить состояние"
+
+#: src/drivers/input.cpp:558
+msgid "Save movie"
+msgstr "Сохранить фильм"
+
+#: src/drivers/input.cpp:559
+msgid "Load movie"
+msgstr "Загрузить фильм"
+
+#: src/drivers/input.cpp:560
+msgid "Toggle state rewind functionality"
+msgstr "Переключить возможность перемотки назад"
+
+#: src/drivers/input.cpp:562
+msgid "Save state 0 select"
+msgstr "Выбор ячейки состояния 0"
+
+#: src/drivers/input.cpp:563
+msgid "Save state 1 select"
+msgstr "Выбор ячейки состояния 1"
+
+#: src/drivers/input.cpp:564
+msgid "Save state 2 select"
+msgstr "Выбор ячейки состояния 2"
+
+#: src/drivers/input.cpp:565
+msgid "Save state 3 select"
+msgstr "Выбор ячейки состояния 3"
+
+#: src/drivers/input.cpp:566
+msgid "Save state 4 select"
+msgstr "Выбор ячейки состояния 4"
+
+#: src/drivers/input.cpp:567
+msgid "Save state 5 select"
+msgstr "Выбор ячейки состояния 5"
+
+#: src/drivers/input.cpp:568
+msgid "Save state 6 select"
+msgstr "Выбор ячейки состояния 6"
+
+#: src/drivers/input.cpp:569
+msgid "Save state 7 select"
+msgstr "Выбор ячейки состояния 7"
+
+#: src/drivers/input.cpp:570
+msgid "Save state 8 select"
+msgstr "Выбор ячейки состояния 8"
+
+#: src/drivers/input.cpp:571
+msgid "Save state 9 select"
+msgstr "Выбор ячейки состояния 9"
+
+#: src/drivers/input.cpp:573
+msgid "Movie 0 select"
+msgstr "Выбор фильма 0"
+
+#: src/drivers/input.cpp:574
+msgid "Movie 1 select"
+msgstr "Выбор фильма 1"
+
+#: src/drivers/input.cpp:575
+msgid "Movie 2 select"
+msgstr "Выбор фильма 2"
+
+#: src/drivers/input.cpp:576
+msgid "Movie 3 select"
+msgstr "Выбор фильма 3"
+
+#: src/drivers/input.cpp:577
+msgid "Movie 4 select"
+msgstr "Выбор фильма 4"
+
+#: src/drivers/input.cpp:578
+msgid "Movie 5 select"
+msgstr "Выбор фильма 5"
+
+#: src/drivers/input.cpp:579
+msgid "Movie 6 select"
+msgstr "Выбор фильма 6"
+
+#: src/drivers/input.cpp:580
+msgid "Movie 7 select"
+msgstr "Выбор фильма 7"
+
+#: src/drivers/input.cpp:581
+msgid "Movie 8 select"
+msgstr "Выбор фильма 8"
+
+#: src/drivers/input.cpp:582
+msgid "Movie 9 select"
+msgstr "Выбор фильма 9"
+
+#: src/drivers/input.cpp:584
+msgid "Toggle graphics layer 1"
+msgstr "Показать/скрыть графический слой 1"
+
+#: src/drivers/input.cpp:585
+msgid "Toggle graphics layer 2"
+msgstr "Показать/скрыть графический слой 2"
+
+#: src/drivers/input.cpp:586
+msgid "Toggle graphics layer 3"
+msgstr "Показать/скрыть графический слой 3"
+
+#: src/drivers/input.cpp:587
+msgid "Toggle graphics layer 4"
+msgstr "Показать/скрыть графический слой 4"
+
+#: src/drivers/input.cpp:588
+msgid "Toggle graphics layer 5"
+msgstr "Показать/скрыть графический слой 5"
+
+#: src/drivers/input.cpp:589
+msgid "Toggle graphics layer 6"
+msgstr "Показать/скрыть графический слой 6"
+
+#: src/drivers/input.cpp:590
+msgid "Toggle graphics layer 7"
+msgstr "Показать/скрыть графический слой 7"
+
+#: src/drivers/input.cpp:591
+msgid "Toggle graphics layer 8"
+msgstr "Показать/скрыть графический слой 8"
+
+#: src/drivers/input.cpp:592
+msgid "Toggle graphics layer 9"
+msgstr "Показать/скрыть графический слой 9"
+
+#: src/drivers/input.cpp:594
+msgid "Take screen snapshot"
+msgstr "Сделать снимок экрана"
+
+#: src/drivers/input.cpp:595
+msgid "Toggle fullscreen mode"
+msgstr "Переключить полноэкранный режим"
+
+#: src/drivers/input.cpp:596
+msgid "Fast-forward"
+msgstr "Перемотка вперёд"
+
+#: src/drivers/input.cpp:597
+msgid "Insert coin"
+msgstr "Вставить монетку"
+
+#: src/drivers/input.cpp:598
+msgid "Toggle DIP switch view"
+msgstr "Показать/скрыть переключатели DIP"
+
+#: src/drivers/input.cpp:599
+msgid "Select disk/disc"
+msgstr "Выбрать диск/диск"
+
+#: src/drivers/input.cpp:600
+msgid "Insert/Eject disk/disc"
+msgstr "Вставить/извлечь диск/диск"
+
+#: src/drivers/input.cpp:601
+msgid "Activate barcode(for Famicom)"
+msgstr "Задействовать штрих-код (для Famicom)"
+
+#: src/drivers/input.cpp:602
+msgid "Grab input"
+msgstr "Захватить ввод"
+
+#: src/drivers/input.cpp:603
+msgid "Grab input and disable commands"
+msgstr "Захватить ввод и отключить команды"
+
+#: src/drivers/input.cpp:604
+msgid "Configure buttons on virtual port 1"
+msgstr "Настроить кнопки для виртуального порта 1"
+
+#: src/drivers/input.cpp:605
+msgid "Configure buttons on virtual port 2"
+msgstr "Настроить кнопки для виртуального порта 2"
+
+#: src/drivers/input.cpp:606
+msgid "Configure command key"
+msgstr "Настроить команды и клавиши"
+
+#: src/drivers/input.cpp:607
+msgid "Configure buttons on virtual port 3"
+msgstr "Настроить кнопки для виртуального порта 3"
+
+#: src/drivers/input.cpp:608
+msgid "Configure buttons on virtual port 4"
+msgstr "Настроить кнопки для виртуального порта 4"
+
+#: src/drivers/input.cpp:609
+msgid "Configure buttons on virtual port 5"
+msgstr "Настроить кнопки для виртуального порта 5"
+
+#: src/drivers/input.cpp:610
+msgid "Reset"
+msgstr "Сброс"
+
+#: src/drivers/input.cpp:611
+msgid "Power toggle"
+msgstr "Сброс питания"
+
+#: src/drivers/input.cpp:612
+msgid "Exit"
+msgstr "Выйти"
+
+#: src/drivers/input.cpp:613
+msgid "Rewind"
+msgstr "Перемотать назад"
+
+#: src/drivers/input.cpp:614
+msgid "Rotate screen"
+msgstr "Повернуть экран"
+
+#: src/drivers/input.cpp:616
+msgid "Toggle netplay console"
+msgstr "Показать/скрыть окно сетевой игры"
+
+#: src/drivers/input.cpp:617
+msgid "Advance frame"
+msgstr "Следующий кадр"
+
+#: src/drivers/input.cpp:618
+msgid "Return to normal mode after advancing frames"
+msgstr "Вернуться в обычный режим после продвижения кадра"
+
+#: src/drivers/input.cpp:619
+msgid "Toggle cheat console"
+msgstr "Показать/скрыть окно кодов"
+
+#: src/drivers/input.cpp:620
+msgid "Enable/Disable cheats"
+msgstr "Включить/выключить коды"
+
+#: src/drivers/input.cpp:621
+msgid "Toggle frames-per-second display"
+msgstr "Показать/скрыть счётчик кадров в секунду"
+
+#: src/drivers/input.cpp:622
+msgid "Toggle debugger"
+msgstr "Переключить отладчик"
+
+#: src/drivers/input.cpp:623
+msgid "Decrease selected save state slot by 1"
+msgstr "Уменьшить слот состояния на 1"
+
+#: src/drivers/input.cpp:624
+msgid "Increase selected save state slot by 1"
+msgstr "Увеличить слот состояния на 1"
+
+#: src/drivers/input.cpp:625
+msgid "Toggle help screen"
+msgstr "Отобразить/скрыть экран справки"
+
+#: src/drivers/input.cpp:626
+msgid "Select virtual device on virtual input port 1"
+msgstr "Выбрать виртуальное устройство для виртуального порта 1"
+
+#: src/drivers/input.cpp:627
+msgid "Select virtual device on virtual input port 2"
+msgstr "Выбрать виртуальное устройство для виртуального порта 2"
+
+#: src/drivers/input.cpp:628
+msgid "Select virtual device on virtual input port 3"
+msgstr "Выбрать виртуальное устройство для виртуального порта 3"
+
+#: src/drivers/input.cpp:629
+msgid "Select virtual device on virtual input port 4"
+msgstr "Выбрать виртуальное устройство для виртуального порта 4"
+
+#: src/drivers/input.cpp:630
+msgid "Select virtual device on virtual input port 5"
+msgstr "Выбрать виртуальное устройство для виртуального порта 5"
+
+#: src/drivers/input.cpp:785 src/drivers/input.cpp:799
+#: src/drivers/input.cpp:813 src/drivers/input.cpp:827
+#: src/drivers/input.cpp:841
+msgid "Configuration interrupted."
+msgstr "Настройка прервана."
+
+#: src/drivers/input.cpp:855 src/drivers/input.cpp:1615
+msgid "Configuration finished."
+msgstr "Настройка завершена."
+
+#: src/drivers/input.cpp:865
+msgid "Press a command key now."
+msgstr "Нажмите командную клавишу."
+
+#: src/drivers/input.cpp:881
+msgid "Input grabbing enabled."
+msgstr "Захват ввода включён."
+
+#: src/drivers/input.cpp:883
+msgid "Input grabbing disabled."
+msgstr "Захват ввода отключён."
+
+#: src/drivers/input.cpp:899
+msgid "Command processing disabled."
+msgstr "Обработка команд отключена."
+
+#: src/drivers/input.cpp:901
+msgid "Command processing enabled."
+msgstr "Обработка команд включена."
+
+#: src/drivers/input.cpp:926
+msgid "Application of cheats enabled."
+msgstr "Применение кодов включено."
+
+#: src/drivers/input.cpp:928
+msgid "Application of cheats disabled."
+msgstr "Применение кодов выключено."
+
+#: src/drivers/input.cpp:961 src/drivers/input.cpp:974
+#: src/drivers/input.cpp:987 src/drivers/input.cpp:1000
+#: src/drivers/input.cpp:1013
+#, c-format
+msgid "No buttons to configure for input port %d!"
+msgstr "Нет кнопок для настройки на порте ввода %d!"
+
+#: src/drivers/input.cpp:1061
+msgid "State rewinding functionality enabled."
+msgstr "Возможность перемотки назад включена."
+
+#: src/drivers/input.cpp:1061
+msgid "State rewinding functionality disabled."
+msgstr "Возможность перемотки назад отключена."
+
+#: src/drivers/input.cpp:1241
+msgid "Barcode Entered"
+msgstr "Штрих-код введён"
+
+#: src/drivers/input.cpp:1243
+msgid "Enter Barcode"
+msgstr "Введите штрих-код"
+
+#: src/drivers/input.cpp:1249
+#, c-format
+msgid "Barcode: %s"
+msgstr "Штрих-код: %s"
+
+#: src/drivers/video.cpp:299
+msgid "Initializing video...\n"
+msgstr "Инициализация видео...\n"
+
+#: src/drivers/video.cpp:366
+msgid "Could not load OpenGL library, disabling OpenGL usage!"
+msgstr ""
+"Не удалось загрузить библиотеку OpenGL, использование OpenGL отключено!"
+
+#: src/drivers/video.cpp:397
+msgid "Eep!  Effective X scale setting is way too high.  Correcting."
+msgstr "Коэффициент масштабирования по оси X слишком велик.  Исправлено."
+
+#: src/drivers/video.cpp:404
+msgid "Eep!  Effective Y scale setting is way too high.  Correcting."
+msgstr "Коэффициент масштабирования по оси Y слишком велик.  Исправлено."
+
+#: src/drivers/video.cpp:452
+#, c-format
+msgid "Video Mode: %d x %d x %d bpp\n"
+msgstr "Видео-режим: %d x %d x %d bpp\n"
+
+#: src/drivers/video.cpp:455
+#, c-format
+msgid ""
+"Sorry, %dbpp modes are not supported by Mednafen.  Supported bit depths are "
+"16bpp, 24bpp, and 32bpp.\n"
+msgstr ""
+"Извините, режимы с bpp %d не поддерживаются в Mednafen.  Поддерживаемая "
+"глубина цвета: 16 bpp, 24 bpp, и 32 bpp.\n"
+
+#: src/drivers/video.cpp:460
+#, c-format
+msgid "OpenGL: %s\n"
+msgstr "OpenGL: %s\n"
+
+#: src/drivers/video.cpp:460 src/drivers/video.cpp:469
+msgid "Yes"
+msgstr "Да"
+
+#: src/drivers/video.cpp:460 src/drivers/video.cpp:469
+msgid "No"
+msgstr "Нет"
+
+#: src/drivers/video.cpp:465
+#, c-format
+msgid "Pixel shader: %s\n"
+msgstr "Pixel shader: %s\n"
+
+#: src/drivers/video.cpp:469
+#, c-format
+msgid "Fullscreen: %s\n"
+msgstr "Полный экран: %s\n"
+
+#: src/drivers/video.cpp:470
+#, c-format
+msgid "Special Scaler: %s\n"
+msgstr "Метод масштабирования: %s\n"
+
+#: src/drivers/video.cpp:470
+msgid "None"
+msgstr "Нет"
+
+#: src/drivers/video.cpp:472
+msgid "Scanlines: Off\n"
+msgstr "Черезстрочность: Выкл.\n"
+
+#: src/drivers/video.cpp:474
+#, c-format
+msgid "Scanlines: %f%% transparency\n"
+msgstr "Черезстрочность: %f%% прозрачности\n"
+
+#: src/drivers/video.cpp:476
+#, c-format
+msgid "Destination Rectangle: X=%d, Y=%d, W=%d, H=%d\n"
+msgstr "Целевой прямоугольник: X=%d, Y=%d, Ш=%d, В=%d\n"
+
+#: src/drivers/video.cpp:481
+msgid ""
+"Warning:  Destination rectangle exceeds screen dimensions.  This is ok if "
+"you really do want the clipping...\n"
+msgstr ""
+"Предупреждение:  Целевой прямоугольник выходит за пределы экрана.  Это "
+"нормально, если вы рассчитывали обрезать видео.\n"
+
+#: src/drivers/video.cpp:483
+msgid ""
+"Warning:  Destination rectangle exceeds screen dimensions.  The rectangle "
+"will be adjusted to fit within the screen area.\n"
+msgstr ""
+"Предупреждение:  Целевой прямоугольник выходит за пределы экрана.  Он будет "
+"изменён таким образом, чтобы вместиться в область экрана.\n"
+
+#: src/drivers/sound.cpp:125 src/drivers/sound.cpp:245
+msgid "Error opening a sound device."
+msgstr "Ошибка открытия аудио-устройства."
+
+#: src/drivers/sound.cpp:217
+msgid ""
+"\n"
+"Initializing sound...\n"
+msgstr ""
+"\n"
+"Инициализация звука...\n"
+
+#: src/drivers/sound.cpp:222
+#, c-format
+msgid ""
+"\n"
+"Unknown sound driver \"%s\".  Supported sound drivers:\n"
+msgstr ""
+
+#: src/drivers/sound.cpp:237
+#, c-format
+msgid "Using \"%s\" audio driver with device \"%s\":"
+msgstr "Используется аудио-драйвер «%s», устройство «%s»:"
+
+#: src/drivers/sound.cpp:254
+msgid "Set rate is out of range [8192-48000]"
+msgstr "Установленная частота за пределами [8192-48000]"
+
+#: src/drivers/sound.cpp:259
+#, c-format
+msgid ""
+"\n"
+"Bits: %u\n"
+"Rate: %u\n"
+"Channels: %u\n"
+"Byte order: CPU %s\n"
+"Buffer size: %u sample frames(%f ms)\n"
+msgstr ""
+"\n"
+"Биты: %u\n"
+"Частота: %u\n"
+"Каналы: %u\n"
+"Порядок байт: CPU %s\n"
+"Размер буфера: %u отсчётов (%f мс)\n"
+
+#: src/drivers/opengl.cpp:243
+msgid "OpenGL dummy black texture data"
+msgstr "Заливка чёрным для текстур OpenGL"
+
+#: src/drivers/opengl.cpp:447
+#, c-format
+msgid "Error getting proc address for: %s\n"
+msgstr "Ошибка при получении адреса процедуры: %s\n"
+
+#: src/drivers/opengl.cpp:487
+#, c-format
+msgid "OpenGL Implementation: %s %s %s\n"
+msgstr "Реализация OpenGL: %s %s %s\n"
+
+#: src/drivers/opengl.cpp:490
+msgid "Checking extensions:\n"
+msgstr "Проверка расширений:\n"
+
+#: src/drivers/opengl.cpp:497
+msgid "GL_ARB_texture_non_power_of_two found.\n"
+msgstr "Обнаружено GL_ARB_texture_non_power_of_two.\n"
+
+#: src/drivers/opengl.cpp:531
+#, c-format
+msgid "Invalid pixel shader type: %s\n"
+msgstr "Некорректный тип pixel shader: %s\n"
+
+#: src/drivers/opengl.cpp:567
+msgid "Using non-power-of-2 sized textures.\n"
+msgstr "Используются текстуры с размерами «non-power-of-2».\n"
+
+#: src/drivers/opengl.cpp:569
+msgid "Using power-of-2 sized textures.\n"
+msgstr "Используются текстуры с размерами «power-of-2».\n"
+
+#: src/drivers/opengl.cpp:668
+msgid "Checking maximum texture size...\n"
+msgstr "Проверка максимального размера текстур...\n"
+
+#: src/drivers/opengl.cpp:686
+#, c-format
+msgid "Apparently it is at least: %d x %d\n"
+msgstr "Как минимум: %d x %d\n"
+
+#: src/drivers/opengl.cpp:690
+msgid ""
+"Warning:  Maximum texture size is reported as being less than 256, but we "
+"can't handle that.\n"
+msgstr ""
+"Предупреждение:  Максимальный размер текстуры — менее 256, mednafen не "
+"рассчитан на работу с ними.\n"
+
+#: src/drivers/help.cpp:40
+msgid "Default key assignments:"
+msgstr "Привязка клавиш по умолчанию:"
+
+#: src/drivers/help.cpp:41
+msgid " F1 - Toggle Help"
+msgstr " F1 - Показать/скрыть справку"
+
+#: src/drivers/help.cpp:42
+msgid " F2 - Configure Command Key"
+msgstr " F2 - Настроить команды и клавиши"
+
+#: src/drivers/help.cpp:43
+msgid " ALT + SHIFT + [n] - Configure buttons on port n(1-5)"
+msgstr " ALT + SHIFT + [n] - Настроить кнопки для порта n(1-5)"
+
+#: src/drivers/help.cpp:44
+msgid " CTRL + SHIFT + [n] - Select device on port n"
+msgstr " CTRL + SHIFT + [n] - Выбрать устройство для порта n"
+
+#: src/drivers/help.cpp:45
+msgid " ALT + S - Enable state rewinding"
+msgstr " ALT + S - Включить перемотку назад"
+
+#: src/drivers/help.cpp:46
+msgid " BACKSPACE - Rewind"
+msgstr " BACKSPACE - Перемотать назад"
+
+#: src/drivers/help.cpp:47
+msgid " F5 - Save State"
+msgstr " F5 - Сохранить состояние"
+
+#: src/drivers/help.cpp:48
+msgid " F6 - Select Disk"
+msgstr " F6 - Выбрать диск"
+
+#: src/drivers/help.cpp:49
+msgid " F7 - Load State"
+msgstr " F7 - Загрузить состояние"
+
+#: src/drivers/help.cpp:50
+msgid " F8 - Insert coin; Insert/Eject disk"
+msgstr " F8 - Вставить монетку или вставить/извлечь диск"
+
+#: src/drivers/help.cpp:51
+msgid " F9 - Take Screen Snapshot"
+msgstr " F9 - Сделать снимок экрана"
+
+#: src/drivers/help.cpp:52
+msgid " F10 - (Soft) Reset, if available on emulated system."
+msgstr " F10 - (Мягкий) сброс, если возможен."
+
+#: src/drivers/help.cpp:53
+msgid " F11 - Power Toggle/Hard Reset"
+msgstr " F11 - Сброс питания/жёсткий сброс"
+
+#: src/drivers/help.cpp:54
+msgid " F12 - Exit"
+msgstr " F12 - Выйти"
+
+#: src/drivers/help.cpp:57
+msgid "Mednafen Quickie Help"
+msgstr "Быстрая справка Mednafen"
+
+#: src/drivers/help.cpp:58
+#, c-format
+msgid "(now with 30% more moaning)"
+msgstr "(теперь стонов на 30 процентов больше)"
+
+#: src/drivers/video-state.cpp:158
+#, c-format
+msgid "-recording movie %d-"
+msgstr "-запись фильма %d-"
+
+#: src/drivers/video-state.cpp:160
+#, c-format
+msgid "-playing movie %d-"
+msgstr "-воспроизведение фильма %d-"
+
+#: src/drivers/video-state.cpp:162
+msgid "-select movie-"
+msgstr "-выбор фильма-"
+
+#: src/drivers/video-state.cpp:167
+msgid "-select state-"
+msgstr "-выбор состояния-"
+
+#: src/file.cpp:56
+#, c-format
+msgid "Applying IPS file \"%s\"...\n"
+msgstr "Применение файла IPS «%s»...\n"
+
+#: src/file.cpp:61
+#, c-format
+msgid "IPS file \"%s\" is not valid!"
+msgstr "Некорректный файл IPS «%s»!"
+
+#: src/file.cpp:73 src/file.cpp:151
+#, c-format
+msgid ""
+"IPS EOF:  Did %d patches\n"
+"\n"
+msgstr ""
+"Конец файла IPS:  Применено %d патчей\n"
+"\n"
+
+#: src/file.cpp:100
+#, c-format
+msgid ""
+"ROM image will be too large after IPS patch; maximum size allowed is %llu "
+"bytes."
+msgstr ""
+"Образ ROM будет слишком велик после наложения патча IPS; максимально "
+"дозволенный размер — %llu Б."
+
+#: src/file.cpp:105 src/file.cpp:134 src/file.cpp:164 src/file.cpp:202
+#: src/file.cpp:225 src/file.cpp:236 src/file.cpp:244 src/file.cpp:268
+#: src/file.cpp:485
+msgid "file read buffer"
+msgstr "буфер чтения файла"
+
+#: src/file.cpp:150
+msgid "Warning:  IPS ended without an EOF chunk.\n"
+msgstr "Предупреждение:  IPS закончился без блока EOF.\n"
+
+#: src/file.cpp:181 src/file.cpp:262
+#, c-format
+msgid "ROM image is too large; maximum size allowed is %llu bytes."
+msgstr "Образ ROM слишком велик; максимальный разрешённый размер — %llu Б."
+
+#: src/file.cpp:336 src/file.cpp:384
+#, c-format
+msgid "Could not seek to first file in ZIP archive: %s"
+msgstr "Не удалось перейти к первому файлу в архиве ZIP: %s"
+
+#: src/file.cpp:352
+#, c-format
+msgid "Could not get file information in ZIP archive: %s"
+msgstr "Не удалось получить информацию о файле в архиве ZIP: %s"
+
+#: src/file.cpp:377
+#, c-format
+msgid "Error seeking to next file in ZIP archive: %s"
+msgstr "Ошибка перехода к следующему файлу в архиве ZIP: %s"
+
+#: src/file.cpp:396
+#, c-format
+msgid "Could not open file in ZIP archive: %s"
+msgstr "Не удалось открыть файл в архиве ZIP: %s"
+
+#: src/file.cpp:412 src/file.cpp:474
+#, c-format
+msgid "Error opening \"%s\": %s"
+msgstr "Ошибка открытия «%s»: %s"
+
+#: src/file.cpp:660 src/file.cpp:690 src/pcfx/pcfx.cpp:733
+#, c-format
+msgid "Error opening \"%s\": %m"
+msgstr "Ошибка открытия «%s»: %m"
+
+#: src/file.cpp:673 src/file.cpp:701
+#, c-format
+msgid "Error writing to \"%s\": %m"
+msgstr "Ошибка записи в «%s»: %m"
+
+#: src/file.cpp:681
+#, c-format
+msgid "Error closing \"%s\""
+msgstr "Ошибка закрытия «%s»"
+
+#: src/gb/gb.cpp:1845
+msgid "GB Color Map"
+msgstr "Цветовая карта GB"
+
+#: src/gb/gb.cpp:1861 src/gba/GBA.cpp:710 src/lynx/system.cpp:225
+#: src/ngp/neopop.cpp:134 src/pce/huc.cpp:380 src/sms/cart.cpp:131
+#: src/wswan/main.cpp:151
+#, c-format
+msgid "ROM:       %dKiB\n"
+msgstr "ROM:       %d КиБ\n"
+
+#: src/gb/gb.cpp:1862 src/gba/GBA.cpp:711 src/lynx/system.cpp:226
+#: src/pce/huc.cpp:381 src/sms/cart.cpp:132
+#, fuzzy, c-format
+msgid "ROM CRC32: 0x%08x\n"
+msgstr "ROM CRC32: 0x%08lx\n"
+
+#: src/gb/gb.cpp:1863 src/gba/GBA.cpp:712 src/lynx/system.cpp:227
+#: src/ngp/neopop.cpp:135 src/pce/huc.cpp:382 src/sms/cart.cpp:133
+#: src/wswan/main.cpp:156
+#, c-format
+msgid "ROM MD5:   0x%s\n"
+msgstr "ROM MD5:   0x%s\n"
+
+#: src/gb/gb.cpp:1893
+msgid "Invalid ROM size"
+msgstr "Некорректный размер ROM"
+
+#: src/gb/gb.cpp:1907
+msgid "Invalid RAM size"
+msgstr "Некорректный размер RAM"
+
+#: src/gb/gb.cpp:2425 src/gba/GBA.cpp:3243 src/ngp/neopop.cpp:256
+#: src/pce/pce.cpp:567 src/sms/system.cpp:404 src/wswan/main.cpp:307
+msgid "Force monophonic sound output."
+msgstr "Принудительно использовать монофонический вывод звука."
+
+#: src/gba/GBA.cpp:660
+msgid "ROM"
+msgstr "ROM"
+
+#: src/gba/GBA.cpp:665
+msgid "Work RAM"
+msgstr "Work RAM"
+
+#: src/gba/GBA.cpp:724 src/pce/huc.cpp:537 src/pcfx/pcfx.cpp:769
+msgid "BIOS ROM"
+msgstr "BIOS ROM"
+
+#: src/gba/GBA.cpp:730
+msgid "Internal RAM"
+msgstr "Internal RAM"
+
+#: src/gba/GBA.cpp:736
+msgid "Palette RAM"
+msgstr "Palette RAM"
+
+#: src/gba/GBA.cpp:742
+msgid "VRAM"
+msgstr "VRAM"
+
+#: src/gba/GBA.cpp:748
+msgid "OAM"
+msgstr "OAM"
+
+#: src/gba/GBA.cpp:754
+msgid "IO"
+msgstr "IO"
+
+#: src/gba/GBA.cpp:760
+msgid "GBA Color Map"
+msgstr "Цветовая карта GBA"
+
+#: src/gba/GBA.cpp:815 src/pce/vdc.cpp:1684
+#, c-format
+msgid "Loading custom color map from \"%s\"...\n"
+msgstr "Загрузка карты цветов из «%s»...\n"
+
+#: src/gba/GBA.cpp:820 src/pce/vdc.cpp:1689
+#, c-format
+msgid "Error opening file: %m\n"
+msgstr "Ошибка открытия файла: %m\n"
+
+#: src/gba/GBA.cpp:825 src/pce/vdc.cpp:1693
+msgid "custom color map"
+msgstr "особая карта цветов"
+
+#: src/gba/GBA.cpp:829 src/pce/vdc.cpp:1704
+msgid "Error reading file\n"
+msgstr ""
+
+#: src/gba/GBA.cpp:1333
+#, c-format
+msgid ""
+"Unsupported BIOS function %02x called from %08x. A BIOS file is needed in "
+"order to get correct behaviour."
+msgstr ""
+"Функция BIOS %02x, вызванная из %08x, не поддерживается. Для корректной "
+"работы необходим файл BIOS."
+
+#: src/gba/GBA.cpp:2508
+#, c-format
+msgid "Error opening \"%s\""
+msgstr "Ошибка открытия «%s»"
+
+#: src/gba/GBA.cpp:2514
+msgid "Invalid BIOS file size"
+msgstr "Некорректный размер файла BIOS"
+
+#: src/gba/GBA.cpp:2521
+msgid "Error reading BIOS file"
+msgstr "Ошибка чтения файла BIOS"
+
+#: src/gba/GBA.cpp:3242
+msgid "Path to optional GBA BIOS ROM image."
+msgstr "Путь к необязательному файлу GBA BIOS ROM."
+
+#: src/gba/GBA.cpp:3244 src/pce/pce.cpp:573
+msgid "Load custom color map from specified file."
+msgstr "Загрузить особую карту цветов из указанного файла."
+
+#: src/gba/flash.cpp:65
+msgid "flash memory"
+msgstr "flash memory"
+
+#: src/lynx/system.cpp:370
+msgid "Virtually rotate D-pad along with screen."
+msgstr "Виртуально повернуть кнопки направлений вместе с экраном."
+
+#: src/lynx/system.cpp:371
+msgid "Enable sound output lowpass filter."
+msgstr "Использовать фильтр низких частот."
+
+#: src/cdrom/cdromfile.cpp:242 src/cdrom/cdromfile.cpp:606
+#, c-format
+msgid "Could not open referenced file \"%s\": %m\n"
+msgstr "Не удалось открыть указанный файл «%s»: %m\n"
+
+#: src/cdrom/cdromfile.cpp:300
+#, c-format
+msgid "Length specified in TOC file for track %d is too large by %d sectors!\n"
+msgstr ""
+"Длительность дорожки %d, указанная в файле TOC, слишком велика (%d секторов "
+"свыше нормы)!\n"
+
+#: src/cdrom/cdromfile.cpp:330
+msgid "Connected physical devices:\n"
+msgstr "Присоединённые физические устройства:\n"
+
+#: src/cdrom/cdromfile.cpp:341
+msgid "No CDROM drives detected(or no disc present)."
+msgstr "Приводы CRDOM не обнаружены (или компакт-диск отсутствует)."
+
+#: src/cdrom/cdromfile.cpp:366
+#, fuzzy, c-format
+msgid "Invalid first track: %d\n"
+msgstr "Неверный номер дорожки: %d\n"
+
+#: src/cdrom/cdromfile.cpp:374
+#, fuzzy, c-format
+msgid "Invalid track count: %d\n"
+msgstr "Неверный номер дорожки: %d\n"
+
+#: src/cdrom/cdromfile.cpp:401
+#, c-format
+msgid "Error opening CUE sheet/TOC \"%s\": %m\n"
+msgstr "Ошибка открытия файла CUE/TOC «%s»: %m\n"
+
+#: src/cdrom/cdromfile.cpp:475 src/cdrom/cdromfile.cpp:710
+#, c-format
+msgid "Invalid track number: %d\n"
+msgstr "Неверный номер дорожки: %d\n"
+
+#: src/cdrom/cdromfile.cpp:505
+msgid "\"RW\" format subchannel data not supported, only \"RW_RAW\" is!\n"
+msgstr ""
+"Формат данных субканала «RW» не поддерживается, поддерживается только "
+"«RW_RAW»!\n"
+
+#: src/cdrom/cdromfile.cpp:572 src/cdrom/cdromfile.cpp:584
+#, c-format
+msgid "Command %s is outside of a TRACK definition!\n"
+msgstr "Команда %s вне определения TRACK!\n"
+
+#: src/cdrom/cdromfile.cpp:651
+#, c-format
+msgid "Unsupported audio track file format: %s\n"
+msgstr "Формат файлов аудио-дорожек не поддерживается: %s\n"
+
+#: src/cdrom/cdromfile.cpp:663
+#, c-format
+msgid "Error initializing MusePack decoder: %s!\n"
+msgstr "Ошибка инициализации декодера MusePack: %s!\n"
+
+#: src/cdrom/cdromfile.cpp:675
+#, c-format
+msgid "Unsupported track format: %s\n"
+msgstr "Неподдерживаемый формат дорожек: %s\n"
+
+#: src/cdrom/cdromfile.cpp:738
+#, c-format
+msgid "Error reading TOC file: %m\n"
+msgstr "Ошибка чтения файла TOC: %m\n"
+
+#: src/cdrom/cdromfile.cpp:740
+#, c-format
+msgid "Error reading CUE sheet: %m\n"
+msgstr "Ошибка чтения файла CUE: %m\n"
+
+#: src/cdrom/cdromfile.cpp:749
+msgid "No tracks found!\n"
+msgstr "Дорожки не найдены!\n"
+
+#: src/cdrom/cdromfile.cpp:817
+#, c-format
+msgid ""
+"Raw rip data correction using L-EC: %s\n"
+"\n"
+msgstr ""
+"Коррекция необработанных данных с помощью L-EC: %s\n"
+"\n"
+
+#: src/cdrom/cdromfile.cpp:817 src/pce/huc.cpp:585
+msgid "Enabled"
+msgstr "Включено"
+
+#: src/cdrom/cdromfile.cpp:817 src/pce/huc.cpp:585
+msgid "Disabled"
+msgstr "Выключено"
+
+#: src/cdrom/cdromfile.cpp:1152 src/cdrom/cdromfile.cpp:1153
+#, c-format
+msgid "Uncorrectable data at sector %d"
+msgstr "Неисправимые данные в секторе %d"
+
+#: src/cdrom/cdromif.cpp:115 src/mednafen.cpp:366
+#, c-format
+msgid ""
+"Loading %s...\n"
+"\n"
+msgstr ""
+"Загрузка %s...\n"
+"\n"
+
+#: src/cdrom/cdromif.cpp:115
+msgid "PHYSICAL CDROM DISC"
+msgstr "ФИЗИЧЕСКИЙ ДИСК CDROM"
+
+#: src/cdrom/cdromif.cpp:137
+#, c-format
+msgid "Track %2d, LSN: %6d %s\n"
+msgstr "Дорожка %2d, LSN: %6d %s\n"
+
+#: src/mednafen.cpp:45
+msgid "Blur each frame with the last frame."
+msgstr "Размывать каждый кадр с применением предыдущего."
+
+#: src/mednafen.cpp:46
+msgid "Accumulate color data rather than discarding it."
+msgstr "Накоплять цветовые данные, а не отбрасывать."
+
+#: src/mednafen.cpp:47
+msgid ""
+"Blur amount in accumulation mode, specified in percentage of accumulation "
+"buffer to mix with the current frame."
+msgstr ""
+"Степень размытия в режиме накопления, указывается в процентах от буфера "
+"накопленных данных при обработке текущего кадра."
+
+#: src/mednafen.cpp:63
+msgid ""
+"Compressor to use with state rewinding:  \"minilzo\", \"quicklz\", or \"blz\""
+msgstr "Метод сжатия для функции перемотки назад: «minilzo», «quicklz» или «blz»"
+
+#: src/mednafen.cpp:64
+msgid "Number of frames to keep states for when state rewinding is enabled."
+msgstr "Количество кадров для хранения, если функция перемотки назад включена."
+
+#: src/mednafen.cpp:65
+msgid ""
+"If value is true, use an alternate naming scheme(file base and numeric) for "
+"screen snapshots."
+msgstr ""
+"Если установлено в true, использовать альтернативную схему именования "
+"снимков экрана (имя файла и число)."
+
+#: src/mednafen.cpp:66
+msgid ""
+"Include the MD5 hash of the loaded game in the filenames of the data file"
+"(save states, SRAM backups) Mednafen creates."
+msgstr ""
+"Добавлять MD5 загруженной игры в имена файлов с данными (сохранённые "
+"состояния, SRAM) при их создании."
+
+#: src/mednafen.cpp:69
+msgid ""
+"Enable simple error correction of raw data sector rips by evaluating L-EC "
+"and EDC data."
+msgstr ""
+"Использовать простую коррекцию ошибок чтения необработанных данных "
+"вычислением L-EC и EDC."
+
+#: src/mednafen.cpp:72
+msgid "Path override for screen snapshots."
+msgstr "Переопределение пути для снимков экрана."
+
+#: src/mednafen.cpp:73
+msgid "Path override for save games and nonvolatile memory."
+msgstr "Переопределение пути для сохранённых игр и карт памяти."
+
+#: src/mednafen.cpp:74
+msgid "Path override for save states."
+msgstr "Переопределение пути для сохранённых состояний."
+
+#: src/mednafen.cpp:75
+msgid "Path override for movies."
+msgstr "Переопределение пути для фильмов."
+
+#: src/mednafen.cpp:76
+msgid "Path override for cheats."
+msgstr "Переопределение пути для кодов."
+
+#: src/mednafen.cpp:77
+msgid "Path override for custom palettes."
+msgstr "Переопределение пути для карт цветов."
+
+#: src/mednafen.cpp:79
+msgid ""
+"Write screen snapshots to the same directory the ROM/disk/disc image is in."
+msgstr ""
+"Создавать снимки экрана в той же директории, в которой находится файл ROM/"
+"образ игры."
+
+#: src/mednafen.cpp:82
+msgid ""
+"Write/Read save games and nonvolatile memory to/from the same directory the "
+"ROM/disk/disc image is in."
+msgstr ""
+"Создавать и искать сохранённые игры и карты памяти в той же директории, в "
+"которой находится файл ROM/образ игры."
+
+#: src/mednafen.cpp:85
+msgid ""
+"Write/Read save states to/from the same directory the ROM/disk/disc image is "
+"in."
+msgstr ""
+"Создавать и искать сохранённые состояния в той же директории, в которой "
+"находится файл ROM/образ игры."
+
+#: src/mednafen.cpp:88
+msgid ""
+"Write/Read movies to/from the same directory the ROM/disk/disc image is in."
+msgstr ""
+"Создавать и искать фильмы в той же директории, в которой находится файл ROM/"
+"образ игры."
+
+#: src/mednafen.cpp:91
+msgid "Disable gzip compression when saving save states and backup memory."
+msgstr "Не использовать сжатие gzip для сохранения состояний и карт памяти."
+
+#: src/mednafen.cpp:273
+msgid "Error opening CD."
+msgstr "Ошибка открытия CD."
+
+#: src/mednafen.cpp:307
+#, c-format
+msgid "Specified system \"%s\" doesn't support CDs!"
+msgstr "Указанная система «%s» не поддерживает CD!"
+
+#: src/mednafen.cpp:335
+#, c-format
+msgid "Unrecognized system \"%s\"!"
+msgstr "Система «%s» не распознана!"
+
+#: src/mednafen.cpp:403
+msgid "Unrecognized file format.  Sorry."
+msgstr "Формат файла не распознан.  Извините."
+
+#: src/mednafen.cpp:451
+#, c-format
+msgid "Starting Mednafen %s\n"
+msgstr "Запускается Mednafen %s\n"
+
+#: src/mednafen.cpp:538
+msgid "Can't rewind during movie playback(yet!)."
+msgstr "Невозможно перемотать назад в ходе воспроизведения фильма (пока)!"
+
+#: src/mednafen.cpp:543
+msgid "Silly-billy, can't rewind during netplay."
+msgstr "Нельзя перемотать назад в процессе сетевой игры."
+
+#: src/mednafen.cpp:548
+msgid "Music player rewinding is unsupported."
+msgstr "Перемотка назад для музыкального проигрывателя не поддерживается."
+
+#: src/mednafen.cpp:821
+#, c-format
+msgid "%s enabled."
+msgstr "%s включено."
+
+#: src/mednafen.cpp:823
+#, c-format
+msgid "%s disabled."
+msgstr "%s выключено."
+
+#: src/memory.cpp:38
+#, c-format
+msgid "Error allocating(calloc) %u bytes for \"%s\" in %s(%d)!"
+msgstr "Ошибка выделения памяти (calloc) в размере %u байт для «%s» в %s (%d)!"
+
+#: src/memory.cpp:52
+#, c-format
+msgid "Error allocating(malloc) %u bytes for \"%s\" in %s(%d)!"
+msgstr "Ошибка выделения памяти (malloc) в размере %u байт для «%s» в %s (%d)!"
+
+#: src/memory.cpp:66
+#, c-format
+msgid "Error allocating(realloc) %u bytes for \"%s\" in %s(%d)!"
+msgstr "Ошибка выделения памяти (realloc) в размере %u байт для «%s» в %s (%d)!"
+
+#: src/mempatcher.cpp:166
+msgid "Error allocating memory for cheat data."
+msgstr "Ошибка выделения памяти под данные кодов."
+
+#: src/mempatcher.cpp:231
+#, c-format
+msgid "Loading cheats from %s...\n"
+msgstr "Загрузка кодов из %s...\n"
+
+#: src/mempatcher.cpp:238
+#, c-format
+msgid "Error opening file: %s\n"
+msgstr "Ошибка открытия файла: %s\n"
+
+#: src/mempatcher.cpp:265
+#, c-format
+msgid "Invalid cheat type: %c\n"
+msgstr "Неверный тип кода: %c\n"
+
+#: src/mempatcher.cpp:310
+#, fuzzy, c-format
+msgid "%lu cheats loaded.\n"
+msgstr "%d кодов загружено.\n"
+
+#: src/movie.cpp:65
+msgid "Movie recording stopped."
+msgstr "Запись фильма прекращена."
+
+#: src/movie.cpp:108
+msgid "Movie recording started."
+msgstr "Запись фильма начата."
+
+#: src/movie.cpp:120
+msgid "Movie playback stopped."
+msgstr "Воспроизведение фильма прекращено."
+
+#: src/movie.cpp:139
+msgid "Can't play movies during netplay."
+msgstr "Невозможно воспроизвести фильм в ходе сетевой игры."
+
+#: src/movie.cpp:160
+msgid "Error loading state portion of the movie."
+msgstr "Ошибка загрузки состояния из фильма."
+
+#: src/movie.cpp:168
+msgid "Movie playback started."
+msgstr "Воспроизведение фильма начато."
+
+#: src/nes/unif.cpp:147
+#, c-format
+msgid "Name/Attribute Table Mirroring: %s\n"
+msgstr "Отражение таблицы имя/атрибут: %s\n"
+
+#: src/nes/unif.cpp:158
+msgid "Name: "
+msgstr "Название: "
+
+#: src/nes/unif.cpp:195
+#, c-format
+msgid "Dumped by: %s\n"
+msgstr "Дамп создал: %s\n"
+
+#: src/nes/unif.cpp:196
+#, c-format
+msgid "Dumped with: %s\n"
+msgstr "Дамп создан с помощью: %s\n"
+
+#: src/nes/unif.cpp:198
+msgid "January"
+msgstr "Январь"
+
+#: src/nes/unif.cpp:198
+msgid "February"
+msgstr "Февраль"
+
+#: src/nes/unif.cpp:198
+msgid "March"
+msgstr "Март"
+
+#: src/nes/unif.cpp:198
+msgid "April"
+msgstr "Апрель"
+
+#: src/nes/unif.cpp:198
+msgid "May"
+msgstr "Май"
+
+#: src/nes/unif.cpp:198
+msgid "June"
+msgstr "Июнь"
+
+#: src/nes/unif.cpp:198
+msgid "July"
+msgstr "Июль"
+
+#: src/nes/unif.cpp:199
+msgid "August"
+msgstr "Август"
+
+#: src/nes/unif.cpp:199
+msgid "September"
+msgstr "Сентябрь"
+
+#: src/nes/unif.cpp:199
+msgid "October"
+msgstr "Октябрь"
+
+#: src/nes/unif.cpp:199
+msgid "November"
+msgstr "Ноябрь"
+
+#: src/nes/unif.cpp:199
+msgid "December"
+msgstr "Декабрь"
+
+#: src/nes/unif.cpp:200
+#, c-format
+msgid "Dumped on: %s %d, %d\n"
+msgstr "Дамп создан: %s %d, %d\n"
+
+#: src/nes/unif.cpp:248
+#, c-format
+msgid "TV Standard Compatibility: %s\n"
+msgstr "Совместимость с телевизионным стандартом: %s\n"
+
+#: src/nes/unif.cpp:255 src/nes/ines.cpp:696
+msgid "Battery-backed.\n"
+msgstr "С батарейной поддержкой.\n"
+
+#: src/nes/unif.cpp:278
+#, c-format
+msgid "PRG ROM %d size: %d"
+msgstr "PRG ROM %d размер: %d"
+
+#: src/nes/unif.cpp:304
+#, c-format
+msgid "Board name: %s\n"
+msgstr "Board name: %s\n"
+
+#: src/nes/unif.cpp:317
+#, c-format
+msgid "CHR ROM %d size: %d"
+msgstr "CHR ROM %d размер: %d"
+
+#: src/nes/unif.cpp:505
+msgid "Board type not supported."
+msgstr "Board type not supported."
+
+#: src/nes/unif.cpp:572 src/nes/ines.cpp:692
+#, c-format
+msgid "ROM MD5:  0x%s\n"
+msgstr "ROM MD5:   0x%s\n"
+
+#: src/nes/cart.cpp:464
+msgid "Game Genie ROM image"
+msgstr "Образ Game Genie ROM"
+
+#: src/nes/cart.cpp:471
+#, c-format
+msgid "Error opening Game Genie ROM image \"%s\": %m"
+msgstr "Ошибка открытия Game Genie ROM «%s»: %m"
+
+#: src/nes/cart.cpp:479
+msgid "Error reading from Game Genie ROM image!"
+msgstr "Ошибка чтения из образа Game Genie ROM!"
+
+#: src/nes/cart.cpp:664
+#, c-format
+msgid "WRAM file \"%s\" cannot be written to.\n"
+msgstr "Не удалось записать в файл WRAM «%s».\n"
+
+#: src/nes/fds.cpp:88
+#, c-format
+msgid "Disk %1$d Side %2$s Inserted"
+msgstr "Диск %1$d сторона %2$s вставлен"
+
+#: src/nes/fds.cpp:93
+#, c-format
+msgid "Disk %1$d Side %2$s Ejected"
+msgstr "Диск %1$d сторона %2$s извлечён"
+
+#: src/nes/fds.cpp:109
+msgid "Eject disk before selecting."
+msgstr "Извлеките диск перед выбором."
+
+#: src/nes/fds.cpp:113
+#, c-format
+msgid "Disk %1$d Side %2$s Selected"
+msgstr "Выбран диск %1$d, сторона %2$s"
+
+#: src/nes/fds.cpp:549 src/nes/fds.cpp:872
+msgid "FDS Disk Data"
+msgstr "Данные диска FDS"
+
+#: src/nes/fds.cpp:798
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: src/nes/fds.cpp:855
+msgid "FDS RAM"
+msgstr "FDS RAM"
+
+#: src/nes/fds.cpp:860 src/nes/ines.cpp:905
+msgid "CHR RAM"
+msgstr "CHR RAM"
+
+#: src/nes/fds.cpp:900
+#, c-format
+msgid "Sides: %d\n"
+msgstr "Стороны: %d\n"
+
+#: src/nes/fds.cpp:901
+#, c-format
+msgid "Manufacturer Code: %02x (%s)\n"
+msgstr "Код производителя: %02x (%s)\n"
+
+#: src/nes/fds.cpp:902
+#, c-format
+msgid "MD5:   0x%s\n"
+msgstr "MD5:   0x%s\n"
+
+#: src/nes/nsf.cpp:155
+msgid "NSF data"
+msgstr "Данные NSF"
+
+#: src/nes/nsf.cpp:194
+msgid "NSF header"
+msgstr "Заголовок NSF"
+
+#: src/nes/nsf.cpp:227
+msgid "Load address is invalid!"
+msgstr "Некорректный адрес загрузки!"
+
+#: src/nes/nsf.cpp:234
+msgid "Total number of songs is less than 1!"
+msgstr "Общее число композиций меньше, чем 1!"
+
+#: src/nes/nsf.cpp:265
+msgid ""
+"NSF Loaded.  File information:\n"
+"\n"
+msgstr ""
+"NSF загружен.  Сведения о файле:\n"
+"\n"
+
+#: src/nes/nsf.cpp:268
+#, c-format
+msgid "Game/Album Name:\t%s\n"
+msgstr "Название игры/альбома:\t%s\n"
+
+#: src/nes/nsf.cpp:270
+#, c-format
+msgid "Music Artist:\t%s\n"
+msgstr "Исполнитель музыки:\t%s\n"
+
+#: src/nes/nsf.cpp:272
+#, c-format
+msgid "Copyright:\t\t%s\n"
+msgstr "Авторское право:\t\t%s\n"
+
+#: src/nes/nsf.cpp:274
+#, c-format
+msgid "Ripper:\t\t%s\n"
+msgstr "Ripper:\t\t%s\n"
+
+#: src/nes/nsf.cpp:283
+#, c-format
+msgid "Expansion hardware:  %s\n"
+msgstr "Устройства расширения:  %s\n"
+
+#: src/nes/nsf.cpp:289
+msgid "Bank-switched\n"
+msgstr "С переключением банков памяти\n"
+
+#: src/nes/nsf.cpp:290
+#, c-format
+msgid ""
+"Load address:  $%04x\n"
+"Init address:  $%04x\n"
+"Play address:  $%04x\n"
+msgstr ""
+"Адрес загрузки:  $%04x\n"
+"Адрес инициализации:  $%04x\n"
+"Адрес воспроизведения:  $%04x\n"
+
+#: src/nes/nsf.cpp:292
+#, c-format
+msgid ""
+"Starting song:  %d / %d\n"
+"\n"
+msgstr ""
+"Воспроизведение композиции:  %d / %d\n"
+"\n"
+
+#: src/nes/nsf.cpp:295 src/nes/nsf.cpp:297
+msgid "NSF expansion RAM"
+msgstr "RAM расширения NFS"
+
+#: src/nes/boards/mmc3.cpp:1418
+msgid ""
+"Low-G-Man can not work normally in the iNES format.\n"
+"This game has been recognized by its CRC32 value, and the appropriate "
+"changes will be made so it will run.\n"
+"If you wish to hack this game, you should use the UNIF format for your "
+"hack.\n"
+"\n"
+msgstr ""
+"Low-G-Man не может корректно работать в формате iNES.\n"
+"Эта игра была опознана по значению CRC32, и над ней будут произведены "
+"необходимые операции, чтобы её запустить.\n"
+"Если вы хотите изменить эту игру, воспользуйтесь файлом в формате UNIF.\n"
+"\n"
+
+#: src/nes/boards/maxicart.cpp:102
+msgid "expansion RAM"
+msgstr "RAM расширения"
+
+#: src/nes/boards/mmc1.cpp:301 src/nes/boards/mmc5.cpp:122
+msgid ">8KB external WRAM present.  Use UNIF if you hack the ROM image.\n"
+msgstr ""
+">Присутствует внешняя память WRAM (8 КБ).  Используйте UNIF, если хотите "
+"изменить игру.\n"
+
+#: src/nes/nes.cpp:72
+msgid "Game Genie Read Handler Save"
+msgstr "Game Genie Read Handler Save"
+
+#: src/nes/nes.cpp:74
+msgid "Game Genie Write Handler Save"
+msgstr "Game Genie Write Handler Save"
+
+#: src/nes/nes.cpp:522
+msgid "Cannot use states in GG Screen."
+msgstr "Невозможно использовать состояния на экране GG."
+
+#: src/nes/nes.cpp:557 src/pce/pce.cpp:558 src/pcfx/pcfx.cpp:1230
+msgid "Select input device for input port 1."
+msgstr "Выбрать устройство ввода для порта 1."
+
+#: src/nes/nes.cpp:558 src/pce/pce.cpp:559 src/pcfx/pcfx.cpp:1231
+msgid "Select input device for input port 2."
+msgstr "Выбрать устройство ввода для порта 2."
+
+#: src/nes/nes.cpp:559 src/pce/pce.cpp:560
+msgid "Select input device for input port 3."
+msgstr "Выбрать устройство ввода для порта 3."
+
+#: src/nes/nes.cpp:560 src/pce/pce.cpp:561
+msgid "Select input device for input port 4."
+msgstr "Выбрать устройство ввода для порта 4."
+
+#: src/nes/nes.cpp:561
+msgid "Select Famicom expansion-port device."
+msgstr "Выбрать устройство для порта расширения Famicom."
+
+#: src/nes/nes.cpp:563
+msgid "Disabled four-score emulation."
+msgstr "Отключить эмуляцию four-score."
+
+#: src/nes/nes.cpp:564
+msgid "No 8-sprites-per-scanline limit option."
+msgstr "Отключить предел «8 спрайтов на одну линию развёртки»."
+
+#: src/nes/nes.cpp:565
+msgid ""
+"Enable less-accurate, but better sounding, Namco 106(mapper 19) sound "
+"emulation."
+msgstr ""
+"Использовать менее аккуратную, но более приятную на слух эмуляцию звука для "
+"Namco 106."
+
+#: src/nes/nes.cpp:566
+msgid ""
+"Scan filename for (U),(J),(E),etc. strings to en/dis-able PAL emulation."
+msgstr ""
+"Сканировать имя файла на наличие меток (U), (J), (E) и т.д. для определения "
+"режима эмуляции (PAL/NTSC)."
+
+#: src/nes/nes.cpp:567
+msgid "Enable PAL(50Hz) NES emulation."
+msgstr "Использовать эмуляцию NES в режиме PAL (50 Гц)."
+
+#: src/nes/nes.cpp:568
+msgid "Enable Game Genie emulation."
+msgstr "Включить эмуляцию Game Genie."
+
+#: src/nes/nes.cpp:569
+msgid "Path to Game Genie ROM image."
+msgstr "Путь к файлу Game Genie ROM."
+
+#: src/nes/nes.cpp:570
+msgid "Clip left+right 8 pixel columns."
+msgstr "Обрезать левый и правый столбец из 8 пикселов."
+
+#: src/nes/nes.cpp:571
+msgid "First rendered scanline in NTSC mode."
+msgstr "Первая выводимая строка в режиме NTSC."
+
+#: src/nes/nes.cpp:572
+msgid "Last rendered scanlines in NTSC mode."
+msgstr "Последняя выводимая строка в режиме NTSC."
+
+#: src/nes/nes.cpp:573
+msgid "First rendered scanline in PAL mode."
+msgstr "Первая выводимая строка в режиме PAL."
+
+#: src/nes/nes.cpp:574
+msgid "Last rendered scanlines in PAL mode."
+msgstr "Последняя выводимая строка в режиме PAL."
+
+#: src/nes/nes.cpp:575
+msgid "Filename of custom NES palette."
+msgstr "Имя файла особой карты цветов NES."
+
+#: src/nes/nes.cpp:576
+msgid "Enable NTSC color generation and blitter."
+msgstr "Использовать генерацию цветов NTSC и блиттер."
+
+#: src/nes/nes.cpp:577
+msgid "Select video quality/type preset."
+msgstr "Выбрать предустановленную настройку качества видео."
+
+#: src/nes/nes.cpp:578
+msgid "Merge fields to partially work around !=60.1Hz refresh rates."
+msgstr ""
+"Совмещать поля, чтобы частично обойти проблемы с частотами обновления !=60.1 "
+"Гц."
+
+#: src/nes/nes.cpp:579
+msgid "NTSC composite blitter saturation."
+msgstr "Насыщенность композитного блиттера NTSC."
+
+#: src/nes/nes.cpp:580
+msgid "NTSC composite blitter hue."
+msgstr "Тон композитного блиттера NTSC."
+
+#: src/nes/nes.cpp:581
+msgid "NTSC composite blitter sharpness."
+msgstr "Резкость композитного блиттера NTSC."
+
+#: src/nes/nes.cpp:582
+msgid "NTSC composite blitter brightness."
+msgstr "Яркость композитного блиттера NTSC."
+
+#: src/nes/nes.cpp:583
+msgid "NTSC composite blitter contrast."
+msgstr "Контраст композитного блиттера NTSC."
+
+#: src/nes/nes.cpp:585
+msgid "Enable NTSC custom decoder matrix."
+msgstr "Использовать особую матрицу декодирования NTSC."
+
+#: src/nes/nes.cpp:588
+msgid "NTSC custom decoder matrix element 0(red, value * V)."
+msgstr "Особая матрица декодирования NTSC: элемент 0 (красный, значение * V)"
+
+#: src/nes/nes.cpp:589
+msgid "NTSC custom decoder matrix element 1(red, value * U)."
+msgstr "Особая матрица декодирования NTSC: элемент 1 (красный, значение * U)"
+
+#: src/nes/nes.cpp:590
+msgid "NTSC custom decoder matrix element 2(green, value * V)."
+msgstr "Особая матрица декодирования NTSC: элемент 2 (зелёный, значение * V)"
+
+#: src/nes/nes.cpp:591
+msgid "NTSC custom decoder matrix element 3(green, value * U)."
+msgstr "Особая матрица декодирования NTSC: элемент 3 (зелёный, значение * U)"
+
+#: src/nes/nes.cpp:592
+msgid "NTSC custom decoder matrix element 4(blue, value * V)."
+msgstr "Особая матрица декодирования NTSC: элемент 4 (синий, значение * V)"
+
+#: src/nes/nes.cpp:593
+msgid "NTSC custom decoder matrix element 5(blue, value * U."
+msgstr "Особая матрица декодирования NTSC: элемент 5 (синий, значение * U)"
+
+#: src/nes/ines.cpp:368
+#, c-format
+msgid ""
+"The copy of the game you have loaded, \"%s\", is bad, and will not work "
+"properly on Mednafen."
+msgstr ""
+"Копия игры «%s», которую вы выбрали, повреждена и будет работать некорректно "
+"в Mednafen."
+
+#: src/nes/ines.cpp:531
+msgid ""
+"The iNES header contains incorrect information.  For now, the information "
+"will be corrected in RAM:\n"
+msgstr ""
+"Заголовок iNES содержит некорректную информацию.  Он будет исправлен в "
+"памяти:\n"
+
+#: src/nes/ines.cpp:534
+#, c-format
+msgid "The mapper number should be set to %d.\n"
+msgstr "Номер маппера должен быть %d.\n"
+
+#: src/nes/ines.cpp:539 src/nes/ines.cpp:694
+msgid "Horizontal"
+msgstr "Горизонтальное"
+
+#: src/nes/ines.cpp:539 src/nes/ines.cpp:694
+msgid "Vertical"
+msgstr "Вертикальное"
+
+#: src/nes/ines.cpp:539
+#, fuzzy
+msgid "Four-screen"
+msgstr "Нет (четыре экрана)"
+
+#: src/nes/ines.cpp:541
+#, fuzzy, c-format
+msgid "Mirroring should be set to \"%s\".\n"
+msgstr "Номер маппера должен быть %d.\n"
+
+#: src/nes/ines.cpp:545
+msgid "The battery-backed bit should be set.\n"
+msgstr "Должен быть установлен бит «с батарейной поддержкой».\n"
+
+#: src/nes/ines.cpp:549
+msgid "This game should not have any CHR ROM.  "
+msgstr "У этой игры не должно быть CHR ROM.  "
+
+#: src/nes/ines.cpp:604
+msgid "No PRG ROM present!"
+msgstr "PRG ROM отсутствует!"
+
+#: src/nes/ines.cpp:621
+msgid "PRG ROM data"
+msgstr "Данные PRG ROM"
+
+#: src/nes/ines.cpp:633
+#, fuzzy
+msgid "CHR ROM data"
+msgstr "Данные PRG ROM"
+
+#: src/nes/ines.cpp:648
+msgid "Error reading trainer."
+msgstr "Ошибка чтения тренера."
+
+#: src/nes/ines.cpp:659
+msgid "Error reading PRG ROM data"
+msgstr "Ошибка чтения данных PRG ROM"
+
+#: src/nes/ines.cpp:668
+msgid "Error reading CHR ROM data"
+msgstr "Ошибка чтения CHR ROM"
+
+#: src/nes/ines.cpp:688
+#, c-format
+msgid "PRG ROM:  %3d x 16KiB\n"
+msgstr "PRG ROM:  %3d x 16 КиБ\n"
+
+#: src/nes/ines.cpp:689
+#, c-format
+msgid "CHR ROM:  %3d x  8KiB\n"
+msgstr "CHR ROM:  %3d x  8 КиБ\n"
+
+#: src/nes/ines.cpp:690
+#, fuzzy, c-format
+msgid "ROM CRC32:  0x%08x\n"
+msgstr "ROM CRC32: 0x%08lx\n"
+
+#: src/nes/ines.cpp:693
+#, c-format
+msgid "Mapper:  %d\n"
+msgstr "Маппер:    %d\n"
+
+#: src/nes/ines.cpp:694
+#, c-format
+msgid "Mirroring: %s\n"
+msgstr "Отражение: %s\n"
+
+#: src/nes/ines.cpp:694
+msgid "None(Four-screen)"
+msgstr "Нет (четыре экрана)"
+
+#: src/nes/ines.cpp:697
+msgid "Trained.\n"
+msgstr "С тренером.\n"
+
+#: src/nes/ines.cpp:917
+#, fuzzy
+msgid "WRAM"
+msgstr "RAM"
+
+#: src/nes/ines.cpp:940
+#, c-format
+msgid "iNES mapper %d is not supported!"
+msgstr "Маппер iNES %d не поддерживается!"
+
+#: src/netplay.cpp:235
+msgid "Could not send the save state command to the netplay server."
+msgstr "Не удалось послать команду сохранить состояние серверу сетевой игры."
+
+#: src/netplay.cpp:241
+msgid "Could not send the save state data to the netplay server."
+msgstr "Не удалось послать данные сохранённого состояния серверу сетевой игры."
+
+#: src/netplay.cpp:358
+msgid "Remote state loaded."
+msgstr "Удалённое состояние загружено."
+
+#: src/netplay.cpp:434
+#, c-format
+msgid "* You are now known as <%s>."
+msgstr "* Теперь вы известны как <%s>."
+
+#: src/netplay.cpp:439
+#, c-format
+msgid "* <%s> is now known as <%s>"
+msgstr "* <%s> теперь известен как <%s>"
+
+#: src/netplay.cpp:485
+#, c-format
+msgid "* You, %s, have connected as player: %s%s%s%s%s%s"
+msgstr "* Вы, %s, вошли в качестве игрока: %s%s%s%s%s%s"
+
+#: src/netplay.cpp:500
+#, c-format
+msgid "* %s has left(player: %s%s%s%s%s%s)"
+msgstr "* %s вышел(игрок: %s%s%s%s%s%s)"
+
+#: src/netplay.cpp:506
+#, c-format
+msgid "* %s has connected as player: %s%s%s%s%s%s"
+msgstr "* %s вошёл как игрок: %s%s%s%s%s%s"
+
+#: src/ngp/rom.cpp:104
+#, c-format
+msgid "Name:    %s\n"
+msgstr "Имя:    %s\n"
+
+#: src/ngp/rom.cpp:105
+msgid "System:  "
+msgstr "Система:  "
+
+#: src/ngp/rom.cpp:108
+msgid "Color"
+msgstr "Цвет"
+
+#: src/ngp/rom.cpp:110
+msgid "Greyscale"
+msgstr "Шкала серого"
+
+#: src/ngp/rom.cpp:114
+#, c-format
+msgid "Catalog:  %d (sub %d)\n"
+msgstr "Каталог:  %d (sub %d)\n"
+
+#: src/ngp/rom.cpp:119
+#, c-format
+msgid "Starting PC:  0x%06X\n"
+msgstr "Начальный PC:  0x%06X\n"
+
+#: src/ngp/neopop.cpp:255
+msgid "If =1, tell games to display in English, if =0, in Japanese."
+msgstr "Если 1, игры должны писать на английском, если 0, то на японском."
+
+#: src/pce/huc.cpp:178 src/pce/huc.cpp:289 src/pce/huc.cpp:665
+msgid "Arcade Card RAM"
+msgstr "Arcade Card RAM"
+
+#: src/pce/huc.cpp:384
+msgid "HuCard ROM"
+msgstr "HuCard ROM"
+
+#: src/pce/huc.cpp:435
+msgid "Populous RAM"
+msgstr "Populous RAM"
+
+#: src/pce/huc.cpp:460
+msgid "Tsushin Booster RAM"
+msgstr "Tsushin Booster RAM"
+
+#: src/pce/huc.cpp:534
+#, c-format
+msgid "Could not open CD BIOS file \"%s\": %s\n"
+msgstr "Не удалось открыть файл CD BIOS «%s»: %s\n"
+
+#: src/pce/huc.cpp:584 src/pcfx/pcfx.cpp:978
+#, c-format
+msgid "CD MD5(first 256KiB):   0x%s\n"
+msgstr "CD MD5 (первые 256 КиБ):   0x%s\n"
+
+#: src/pce/huc.cpp:585
+#, c-format
+msgid "Arcade Card Emulation:  %s\n"
+msgstr "Эмуляция Arcade Card:  %s\n"
+
+#: src/pce/huc.cpp:592
+msgid "CD RAM"
+msgstr "CD RAM"
+
+#: src/pce/pce.cpp:363
+#, c-format
+msgid "CPU overclock: %dx\n"
+msgstr "Разгон ЦП: %dx\n"
+
+#: src/pce/pce.cpp:366
+#, fuzzy, c-format
+msgid "CD-ROM speed:  %ux\n"
+msgstr "Скорость CD-ROM:  %dx\n"
+
+#: src/pce/pce.cpp:562
+msgid "Select input device for input port 5."
+msgstr "Выбрать устройство ввода для порта 5."
+
+#: src/pce/pce.cpp:563
+msgid "First rendered scanline."
+msgstr "Первая выводимая строка видео."
+
+#: src/pce/pce.cpp:564
+msgid "Last rendered scanline."
+msgstr "Последняя выводимая строка видео."
+
+#: src/pce/pce.cpp:565 src/pcfx/pcfx.cpp:1232
+msgid "Set mouse sensitivity."
+msgstr "Установить чувствительность мыши."
+
+#: src/pce/pce.cpp:566 src/pcfx/pcfx.cpp:1233
+msgid ""
+"If set, when RUN+SEL are pressed simultaneously, disable both buttons "
+"temporarily."
+msgstr ""
+"Если установлено, RUN+SEL, нажатые одновременно, временно отключают обе эти "
+"кнопки."
+
+#: src/pce/pce.cpp:568
+msgid "Force SuperGrafx emulation."
+msgstr "Принудительно эмулировать SuperGrafx."
+
+#: src/pce/pce.cpp:569
+msgid "Enable Arcade Card emulation."
+msgstr "Включить эмуляцию Arcade Card."
+
+#: src/pce/pce.cpp:570
+msgid "CPU overclock multiplier."
+msgstr "Множитель скорости ЦП."
+
+#: src/pce/pce.cpp:571
+msgid "CD-ROM data transfer speed multiplier."
+msgstr "Множитель скорости передачи данных с CD-ROM."
+
+#: src/pce/pce.cpp:572 src/pcfx/pcfx.cpp:1235
+msgid "No 16-sprites-per-scanline limit option."
+msgstr "Отключить предел «16 спрайтов на одну линию развёртки»."
+
+#: src/pce/pce.cpp:575
+msgid "Path to the CD BIOS"
+msgstr "Путь к CD BIOS"
+
+#: src/pce/pce.cpp:576
+msgid "Enable lowpass filter dependent on playback-frequency."
+msgstr "Использовать фильтр низких частот, зависящий от частоты дискретизации."
+
+#: src/pce/pce.cpp:577
+msgid "PSG volume when playing a CD game."
+msgstr "Громкость PSG при воспроизведении игры с CD."
+
+#: src/pce/pce.cpp:578
+msgid "CD-DA volume."
+msgstr "Громкость CD-DA."
+
+#: src/pce/pce.cpp:579
+msgid "ADPCM volume."
+msgstr "Громкость ADPCM."
+
+#: src/pce/psg.cpp:276
+#, c-format
+msgid "CD PSG Volume: %d%%\n"
+msgstr "Громкость CD PSG: %d%%\n"
+
+#: src/pce/hes.cpp:49 src/pce/hes.cpp:51 src/pce/hes.cpp:132
+#: src/pce/hes.cpp:137
+msgid "HES ROM"
+msgstr "HES ROM"
+
+#: src/pce/hes.cpp:80
+#, c-format
+msgid ""
+"Warning:  HES is writing to physical address %08x.  Future warnings of this "
+"nature are temporarily disabled for this HES file.\n"
+msgstr ""
+"Предупреждение:  HES записывает по физическому адресу %08x.  Последующие "
+"подобные предупреждения временно отключены для этого файла HES.\n"
+
+#: src/pce/hes.cpp:158
+#, c-format
+msgid ""
+"Warning:  HES is trying to load more data than is present in the file(%u "
+"attempted, %u left)!\n"
+msgstr ""
+"Предупреждение:  HES пытается загрузить больше данных, чем содержится в "
+"файле (запрошено %u, осталось %u)!\n"
+
+#: src/pce/hes.cpp:166
+msgid "Warning:  HES is trying to load data past boundary.\n"
+msgstr "Предупреждение:  HES пытается загрузить данные за пределами.\n"
+
+#: src/pce/cdrom.cpp:256
+#, c-format
+msgid "CD-DA Volume: %d%%\n"
+msgstr "Громкость CD-DA: %d%%\n"
+
+#: src/pce/adpcm.cpp:262
+msgid "PCE ADPCM RAM"
+msgstr "PCE ADPCM RAM"
+
+#: src/pcfx/pcfx.cpp:712
+#, c-format
+msgid "Could not open BIOS file \"%s\": %s\n"
+msgstr "Не удалось открыть файл BIOS «%s»: %s\n"
+
+#: src/pcfx/pcfx.cpp:721
+msgid "Using mmap() address space emulation...\n"
+msgstr "Используется эмуляция адресного пространства mmap()...\n"
+
+#: src/pcfx/pcfx.cpp:729
+msgid "Anonymous mmap() not supported?  Then /dev/zero it is!\n"
+msgstr "Неименованный mmap() не поддерживается?  Ну его в /dev/null!\n"
+
+#: src/pcfx/pcfx.cpp:740
+#, c-format
+msgid "Base mmap failed: %m"
+msgstr "Вызов Base mmap не удался: %m"
+
+#: src/pcfx/pcfx.cpp:748
+#, c-format
+msgid "RAM mmap failed: %m"
+msgstr "Вызов RAM mmap не удался: %m"
+
+#: src/pcfx/pcfx.cpp:773
+msgid "RAM"
+msgstr "RAM"
+
+#: src/pcfx/pcfx.cpp:783
+#, c-format
+msgid "Error reading BIOS file \"%s\": %s\n"
+msgstr "Ошибка чтения файла BIOS «%s»: %s\n"
+
+#: src/pcfx/pcfx.cpp:973
+#, c-format
+msgid "CD ID MD5(first 4KiB):  0x%s\n"
+msgstr "CD ID MD5 (первые 4 КиБ):  0x%s\n"
+
+#: src/pcfx/pcfx.cpp:976
+#, c-format
+msgid "GameSet MD5:\t          0x%s\n"
+msgstr "GameSet MD5:\t          0x%s\n"
+
+#: src/pcfx/pcfx.cpp:989
+#, fuzzy, c-format
+msgid "Emulated CD-ROM drive speed: %ux\n"
+msgstr "Скорость эмулируемого привода CD-ROM: %dx\n"
+
+#: src/pcfx/pcfx.cpp:1089 src/pcfx/pcfx.cpp:1110
+msgid "Virtual CD Ejected"
+msgstr "Виртуальный CD извлечён"
+
+#: src/pcfx/pcfx.cpp:1094
+msgid "Virtual CD Inserted"
+msgstr "Виртуальный CD вставлен"
+
+#: src/pcfx/pcfx.cpp:1234
+msgid "Path to the ROM BIOS"
+msgstr "Путь к файлу ROM BIOS"
+
+#: src/pcfx/pcfx.cpp:1236
+msgid "Emulated width for 7.16MHz dot-clock mode: 256, 341, or 1024."
+msgstr ""
+"Эмулируемая ширина для 7.16-мегагерцовых точечных часов : 256, 341, или 1024."
+
+#: src/pcfx/pcfx.cpp:1237
+msgid "Emulated CD-ROM speed."
+msgstr "Скорость эмулируемого CD-ROM."
+
+#: src/pcfx/pcfx.cpp:1239
+msgid ""
+"Use mmap() to create a virtual 32-bit address space to speed up V810 "
+"emulation."
+msgstr ""
+"Использовать mmap() для создания виртуального 32-битного адресного "
+"пространства для ускорения эмуляции V810."
+
+#: src/pcfx/king.cpp:1274
+msgid "KING Data"
+msgstr "Данные KING"
+
+#: src/pcfx/rainbow.cpp:570
+msgid "RAINBOW buffer RAM"
+msgstr "RAINBOW buffer RAM"
+
+#: src/player.cpp:184
+msgid "Song:"
+msgstr "Композиция:"
+
+#: src/settings.cpp:25 src/settings.cpp:135
+#, c-format
+msgid "Setting \"%s\" is not set to a valid unsigned integer: \"%s\""
+msgstr "Параметр «%s» не является корректным беззнаковым целым числом: «%s»"
+
+#: src/settings.cpp:35 src/settings.cpp:70 src/settings.cpp:105
+#, c-format
+msgid ""
+"Setting \"%s\" is set too small(\"%s\"); the minimum acceptable value is \"%s"
+"\"."
+msgstr "Параметр «%s» слишком мал («%s»); минимальное допустимое значение — «%s»."
+
+#: src/settings.cpp:46 src/settings.cpp:81 src/settings.cpp:116
+#, c-format
+msgid ""
+"Setting \"%s\" is set too large(\"%s\"); the maximum acceptable value is \"%s"
+"\"."
+msgstr ""
+"Параметр «%s» слишком велик («%s»); максимальное допустимое значение — «%s»."
+
+#: src/settings.cpp:60
+#, c-format
+msgid "Setting \"%s\" is not set to a valid signed integer: \"%s\""
+msgstr "Параметр «%s» не является корректным целым числом: «%s»"
+
+#: src/settings.cpp:95
+#, c-format
+msgid "Setting \"%s\" is not set to a floating-point(real) number: \"%s\""
+msgstr "Параметр «%s» не является корректным вещественным числом: «%s»"
+
+#: src/settings.cpp:125
+#, c-format
+msgid "Setting \"%s\" is not a valid boolean value: \"%s\""
+msgstr "Параметр «%s» не является допустимым логическим значением: «%s»"
+
+#: src/settings.cpp:133
+#, c-format
+msgid "Setting \"%s\" is not set to a valid string: \"%s\""
+msgstr "Параметр «%s» не является корректной строкой: «%s»"
+
+#: src/settings.cpp:151
+#, c-format
+msgid "Loading settings from \"%s\"..."
+msgstr "Загрузка настроек из «%s»..."
+
+#: src/settings.cpp:158
+#, c-format
+msgid "Failed: %m\n"
+msgstr "Сбой: %m\n"
+
+#: src/settings.cpp:282
+#, c-format
+msgid ";Edit this file at your own risk!\n"
+msgstr ";Изменение этого файла производите на свой страх и риск!\n"
+
+#: src/settings.cpp:283
+#, c-format
+msgid ""
+";File format: <key><single space><value><LF or CR+LF>\n"
+"\n"
+msgstr ""
+";Формат файла: <ключ><одиночный пробел><значение><LF или CR+LF>\n"
+"\n"
+
+#: src/settings.cpp:404
+#, c-format
+msgid "Unknown setting \"%s\""
+msgstr "Неизвестный параметр «%s»"
+
+#: src/sms/system.cpp:397
+msgid "Territory, \"domestic\"(Japan) or \"export\"."
+msgstr "Территория, «Внутренний рынок» (Япония) или «Экспорт»."
+
+#: src/sms/system.cpp:398
+msgid "Enable FM sound emulation when playing domestic/Japan-region games."
+msgstr ""
+"Включить эмуляцию FM-звука при воспроизведении игр из Японии (регион или "
+"внутренний рынок)."
+
+#: src/sms/cart.cpp:92
+msgid "Cart ROM"
+msgstr "Cart ROM"
+
+#: src/sms/cart.cpp:134
+#, c-format
+msgid "Mapper:    %s\n"
+msgstr "Маппер:    %s\n"
+
+#: src/sms/cart.cpp:135
+#, c-format
+msgid "Territory: %s\n"
+msgstr "Территория: %s\n"
+
+#: src/sms/cart.cpp:135
+msgid "Domestic"
+msgstr "Внутренний рынок"
+
+#: src/sms/cart.cpp:135
+msgid "Export"
+msgstr "Экспорт"
+
+#: src/state.cpp:590 src/state.cpp:600
+#, c-format
+msgid "State %d save error."
+msgstr "Ошибка сохранения состояния %d."
+
+#: src/state.cpp:611
+#, c-format
+msgid "State %d saved."
+msgstr "Состояние %d сохранено."
+
+#: src/state.cpp:737
+#, c-format
+msgid "State %d load error."
+msgstr "Ошибка загрузки состояния %d."
+
+#: src/state.cpp:748
+#, c-format
+msgid "State %d loaded."
+msgstr "Состояние %d загружено."
+
+#: src/state.cpp:757
+#, c-format
+msgid "State %d read error!"
+msgstr "Ошибка чтения состояния %d!"
+
+#: src/video/video.cpp:57
+#, c-format
+msgid "Screen snapshot %d saved."
+msgstr "Снимок экрана %d сохранён."
+
+#: src/video/video.cpp:61
+msgid "Error saving screen snapshot."
+msgstr "При сохранении снимка экрана произошла ошибка."
+
+#: src/video/png.cpp:63
+msgid "PNG compression buffer"
+msgstr "Буфер сжатия PNG"
+
+#: src/video/vblur.cpp:39
+#, c-format
+msgid "Video frame blur enabled with accumulation: %f.\n"
+msgstr "Размытие кадров с накоплением: %f.\n"
+
+#: src/video/vblur.cpp:44
+msgid "Video frame blur enabled.\n"
+msgstr "Размытие кадров включено.\n"
+
+#: src/wave.cpp:55 src/wave.cpp:68
+#, c-format
+msgid "Error opening %s: %s\n"
+msgstr "Ошибка открытия %s: %s\n"
+
+#: src/wswan/main.cpp:171
+#, c-format
+msgid "Developer: %s (0x%02x)\n"
+msgstr "Разработчик: %s (0x%02x)\n"
+
+#: src/wswan/main.cpp:192
+#, c-format
+msgid "EEPROM:  %d bytes\n"
+msgstr "EEPROM:  %d Б\n"
+
+#: src/wswan/main.cpp:195
+#, c-format
+msgid "Battery-backed RAM:  %d bytes\n"
+msgstr "RAM с батарейной поддержкой:  %d Б\n"
+
+#: src/wswan/main.cpp:197
+#, c-format
+msgid "Recorded Checksum:  0x%04x\n"
+msgstr "Записанная контрольная сумма:  0x%04x\n"
+
+#: src/wswan/main.cpp:202
+#, c-format
+msgid "Real Checksum:      0x%04x\n"
+msgstr "Актуальная контрольная сумма:      0x%04x\n"
+
+#: src/wswan/main.cpp:306
+msgid "Virtually rotate D-pads along with screen."
+msgstr "Виртуально повернуть кнопки направлений вместе с экраном."
+
+#: src/wswan/main.cpp:308
+msgid "Name"
+msgstr "Имя"
+
+#: src/wswan/main.cpp:309
+msgid "Birth Year"
+msgstr "Год рождения"
+
+#: src/wswan/main.cpp:310
+msgid "Birth Month"
+msgstr "Месяц рождения"
+
+#: src/wswan/main.cpp:311
+msgid "Birth Day"
+msgstr "День рождения"
+
+#: src/wswan/main.cpp:312
+msgid "Sex"
+msgstr "Пол"
+
+#: src/wswan/main.cpp:313
+msgid "Blood Type"
+msgstr "Группа крови"
+
+#~ msgid "ROM CRC32: 0x%04x\n"
+#~ msgstr "ROM CRC32: 0x%04x\n"
