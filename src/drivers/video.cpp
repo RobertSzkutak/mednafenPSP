@@ -569,6 +569,7 @@ int InitVideo(MDFNGI *gi)
  }
  source_surface = SDL_CreateRGBSurfaceFrom(NULL, gi->fb_width, gi->fb_height, 32, gi->fb_width * sizeof(uint32), 0xFF << rs, 0xFF << gs, 0xFF << bs, 0);
 
+ /*The PSP Port will never use this :
  NetSurface = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA, screen->w, 18 * 5, 32, 0xFF << real_rs, 0xFF << real_gs, 0xFF << real_bs, 0xFF << real_as);
  SDL_SetColorKey(NetSurface, SDL_SRCCOLORKEY, 0);
  SDL_SetAlpha(NetSurface, SDL_SRCALPHA, 0);
@@ -577,6 +578,7 @@ int InitVideo(MDFNGI *gi)
  NetRect.h = 18 * 5;
  NetRect.x = 0;
  NetRect.y = 0;
+ */
 
 
  {
