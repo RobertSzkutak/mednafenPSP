@@ -61,6 +61,14 @@ distribution.
 #define SMS_FIRE2     0x0020
 #define SMS_PAUSE     0x0040
 
+#define NGP_UP      0x0001
+#define NGP_DOWN    0x0002
+#define NGP_LEFT    0x0004
+#define NGP_RIGHT   0x0008
+#define NGP_A       0x0010
+#define NGP_B       0x0020
+#define NGP_OPTION  0x0040
+
 static unsigned short int MODE = MODE_NONE;
 
 void psp_set_input_mode(const char *name)
@@ -120,6 +128,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_PAUSE;
 					break;
+				case MODE_NGP:
+				    result |= NGP_OPTION;
+					break;
 				default:
 					break;
 			}
@@ -145,6 +156,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_UP;
 					break;
+				case MODE_NGP:
+				    result |= NGP_UP;
+					break;
 				default:
 					break;
 			}
@@ -158,6 +172,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_DOWN;
+					break;
+			    case MODE_NGP:
+				    result |= NGP_DOWN;
 					break;
 				default:
 					break;
@@ -173,6 +190,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_LEFT;
 					break;
+				case MODE_NGP:
+				    result |= NGP_LEFT;
+					break;
 				default:
 					break;
 			}
@@ -186,6 +206,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_RIGHT;
+					break;
+				case MODE_NGP:
+				    result |= NGP_RIGHT;
 					break;
 				default:
 					break;
@@ -201,6 +224,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_FIRE1;
 					break;
+				case MODE_NGP:
+				    result |= NGP_B;
+					break;
 				default:
 					break;
 			}
@@ -214,6 +240,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_FIRE2;
+					break;
+				case MODE_NGP:
+				    result |= NGP_A;
 					break;
 				default:
 					break;
@@ -229,6 +258,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_FIRE1;
 					break;
+				case MODE_NGP:
+				    result |= NGP_B;
+					break;
 				default:
 					break;
 			}
@@ -242,6 +274,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_FIRE2;
+					break;
+				case MODE_NGP:
+				    result |= NGP_A;
 					break;
 				default:
 					break;
