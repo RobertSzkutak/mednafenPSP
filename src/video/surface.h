@@ -3,6 +3,8 @@
 
 #include <SDL/SDL.h>
 
+extern SDL_PixelFormat* getScreenFormat();
+
 typedef struct
 {
  int32 x, y, w, h;
@@ -56,6 +58,8 @@ class MDFN_PixelFormat
  // Creates a color value for the surface corresponding to the 8-bit R/G/B/A color passed.
  INLINE uint32 MakeColor(uint8 r, uint8 g, uint8 b, uint8 a = 0) const
  {
+  if(bpp == 8)
+      return SDL_MapRGB(getScreenFormat(), r, g, b);
   if(colorspace == MDFN_COLORSPACE_YCbCr)
   {
    uint32 y, u, v;
@@ -163,6 +167,7 @@ class MDFN_Surface //typedef struct
 
  ~MDFN_Surface();
 
+ uint8  *pixels8;
  uint16 *pixels16;
  uint32 *pixels;
 

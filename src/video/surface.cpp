@@ -18,9 +18,18 @@
 #include "../../mednafen.h"
 #include "surface.h"
 
+#ifndef BPPMODE
+  #define BPPMODE 32
+#endif
+
 MDFN_PixelFormat::MDFN_PixelFormat()
 {
- bpp = 0;
+ #if BPPMODE == 8
+ bpp = 8;
+ #endif
+ #if BPPMODE == 32
+ bpp = 32;
+ #endif
  colorspace = 0;
 
  Rshift = 0;
@@ -36,7 +45,12 @@ MDFN_PixelFormat::MDFN_PixelFormat()
 
 MDFN_PixelFormat::MDFN_PixelFormat(const unsigned int p_colorspace, const uint8 p_rs, const uint8 p_gs, const uint8 p_bs, const uint8 p_as)
 {
+ #if BPPMODE == 8
+ bpp = 8;
+ #endif
+ #if BPPMODE == 32
  bpp = 32;
+ #endif
  colorspace = p_colorspace;
 
  Rshift = p_rs;
@@ -58,7 +72,7 @@ MDFN_Surface::MDFN_Surface(void *const p_pixels, const uint32 p_width, const uin
 void MDFN_Surface::Init(void *const p_pixels, const uint32 p_width, const uint32 p_height, const uint32 p_pitchinpix, const MDFN_PixelFormat &nf)
 {
  void *rpix = NULL;
- assert(nf.bpp == 16 || nf.bpp == 32);
+ assert(nf.bpp == 8 | nf.bpp == 16 || nf.bpp == 32);
 
  memcpy(&format, &nf, sizeof(MDFN_PixelFormat));
 
@@ -77,6 +91,7 @@ void MDFN_Surface::Init(void *const p_pixels, const uint32 p_width, const uint32
   format.Aprec = 8;
  }
 
+ pixels8 = NULL;
  pixels16 = NULL;
  pixels = NULL;
 
@@ -93,7 +108,9 @@ void MDFN_Surface::Init(void *const p_pixels, const uint32 p_width, const uint32
    throw(1);
  }
 
- if(nf.bpp == 16)
+ if(nf.bpp == 8)
+  pixels8 = (uint8 *)rpix;
+ else if(nf.bpp == 16)
   pixels16 = (uint16 *)rpix;
  else
   pixels = (uint32 *)rpix;
@@ -109,6 +126,9 @@ void MDFN_Surface::Init(void *const p_pixels, const uint32 p_width, const uint32
 // to boot.
 void MDFN_Surface::SetFormat(const MDFN_PixelFormat &nf, bool convert)
 {
+ if(nf.bpp == 8)
+  return;
+
  assert(format.bpp == 16 || format.bpp == 32);
  assert(nf.bpp == 16 || nf.bpp == 32);
 
@@ -243,8 +263,15 @@ void MDFN_Surface::SetFormat(const MDFN_PixelFormat &nf, bool convert)
 void MDFN_Surface::Fill(uint8 r, uint8 g, uint8 b, uint8 a)
 {
  uint32 color = MakeColor(r, g, b, a);
+ 
+ if(format.bpp == 8)
+ {
+    assert(pixels8);
 
- if(format.bpp == 16)
+    for(int32 i = 0; i < pitchinpix * h; i++)
+      pixels8[i] = color;
+ }
+ else if(format.bpp == 16)
  {
   assert(pixels16);
 
@@ -264,6 +291,8 @@ MDFN_Surface::~MDFN_Surface()
 {
  if(!pixels_is_external)
  {
+  if(pixels8)
+   free(pixels8);
   if(pixels)
    free(pixels);
   if(pixels16)

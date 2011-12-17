@@ -39,6 +39,10 @@
 
 #include "2xSaI.h"
 
+#ifndef BPPMODE
+  #define BPPMODE 32
+#endif
+
 typedef struct
 {
         int xres;
@@ -98,6 +102,11 @@ static ScalerDefinition *CurrentScaler = NULL;
 
 static SDL_Surface *source_surface;
 static SDL_Surface *screen = NULL;
+SDL_PixelFormat* getScreenFormat()
+{
+    return screen->format;
+}
+
 static SDL_Surface *IconSurface=NULL;
 
 static SDL_Rect screen_dest_rect;
@@ -408,7 +417,12 @@ int InitVideo(MDFNGI *gi)
  eys = _fullscreen ? _video.yscalefs : _video.yscale;
  evideoip = _video.videoip;
 
+ #if BPPMODE == 8
+ desbpp = 8;
+ #endif
+ #if BPPMODE == 32
  desbpp = 32;
+ #endif
 
  if(!_video.stretch || !_fullscreen)
  {
@@ -463,9 +477,9 @@ int InitVideo(MDFNGI *gi)
  MDFN_printf(_("Video Driver: %s\n"), (cur_flags & SDL_OPENGL) ? _("OpenGL") : (vdriver == VDRIVER_OVERLAY ? _("Overlay") :_("Software SDL") ) );
 
  MDFN_printf(_("Video Mode: %d x %d x %d bpp\n"),screen->w,screen->h,screen->format->BitsPerPixel);
- if(curbpp!=16 && curbpp!=24 && curbpp!=32)
+ if(curbpp != 8 && curbpp!=16 && curbpp!=24 && curbpp!=32)
  {
-  MDFN_printf(_("Sorry, %dbpp modes are not supported by Mednafen.  Supported bit depths are 16bpp, 24bpp, and 32bpp.\n"),curbpp);
+  MDFN_printf(_("Sorry, %dbpp modes are not supported by Mednafen.  Supported bit depths are 8bpp, 16bpp, 24bpp, and 32bpp.\n"),curbpp);
   KillVideo();
   MDFN_indent(-1);
   return(0);
@@ -614,7 +628,12 @@ int InitVideo(MDFNGI *gi)
  memset(&pf_normal, 0, sizeof(pf_normal));
  memset(&pf_overlay, 0, sizeof(pf_overlay));
 
+ #if BPPMODE == 8
+ pf_normal.bpp = 8;
+ #endif
+ #if BPPMODE == 32
  pf_normal.bpp = 32;
+ #endif
  pf_normal.colorspace = MDFN_COLORSPACE_RGB;
  pf_normal.Rshift = rs;
  pf_normal.Gshift = gs;
@@ -623,7 +642,12 @@ int InitVideo(MDFNGI *gi)
 
  if(vdriver == VDRIVER_OVERLAY)
  {
+  #if BPPMODE == 8
+  pf_overlay.bpp = 8;
+  #endif
+  #if BPPMODE == 32
   pf_overlay.bpp = 32;
+  #endif
   pf_overlay.colorspace = MDFN_COLORSPACE_YCbCr;
   pf_overlay.Yshift = 0;
   pf_overlay.Ushift = 8;
