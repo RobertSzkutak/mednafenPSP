@@ -939,7 +939,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
 
  if(vdriver == VDRIVER_OVERLAY)
  {
-  bool osd_active = Help_IsActive() || SaveStatesActive() || IsConsoleCheatConfigActive() || Netplay_GetTextView() ||
+  bool osd_active = Help_IsActive() || SaveStatesActive() || IsConsoleCheatConfigActive() /*|| Netplay_GetTextView()*/ ||
 		   IsInternalMessageActive() || Debugger_IsActive(NULL, NULL);
 
   OverlayOK = (vdriver == VDRIVER_OVERLAY) && !osd_active && (!CurrentScaler || (CurrentScaler->id != NTVB_HQ2X && CurrentScaler->id != NTVB_HQ3X &&
@@ -1172,6 +1172,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
   CheatSurface = NULL;
  }
 
+ #if 0
  if(Netplay_GetTextView())
  {
   if(SDL_MUSTLOCK(NetSurface))
@@ -1192,6 +1193,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
   if(SDL_MUSTLOCK(NetSurface))
    SDL_UnlockSurface(NetSurface);
  }
+ #endif
 
  BlitInternalMessage();
 

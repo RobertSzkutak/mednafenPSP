@@ -1,6 +1,8 @@
 #ifndef _MDFN_NETPLAY_H
 #define _MDFN_NETPLAY_H
 
+#if 0
+
 int InitNetplay(void);
 
 void NetplayUpdate(const char **, void *PortData[], uint32 PortLen[], int NumPorts);
@@ -50,4 +52,7 @@ extern int MDFNnetplay;
 
 int MDFNNET_SendCommand(uint8, uint32);
 int MDFNNET_SendState(void);
+
+#endif
+
 #endif

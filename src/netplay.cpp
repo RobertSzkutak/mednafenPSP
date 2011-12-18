@@ -19,6 +19,8 @@
 //  1 - I forgot!
 //  2 - Added support for more versatile input configurations...somewhat
 
+#if 0
+
 #include "mednafen.h"
 
 #include <stdarg.h>
@@ -669,3 +671,4 @@ void NetplayUpdate(const char **PortDNames, void *PortData[], uint32 PortLen[], 
  }
 
 }
+#endif

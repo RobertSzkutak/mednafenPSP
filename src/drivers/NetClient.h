@@ -1,6 +1,8 @@
 #ifndef __MDFN_DRIVERS_NETCLIENT_H
 #define __MDFN_DRIVERS_NETCLIENT_H
 
+#if 0
+
 class NetClient
 {
  public:
@@ -18,5 +20,7 @@ class NetClient
 
  virtual uint32 Receive(void *data, uint32 len, uint32 timeout = 0);
 }
+
+#endif
 
 #endif

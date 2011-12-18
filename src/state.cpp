@@ -977,8 +977,8 @@ void MDFNI_LoadState(const char *fname, const char *suffix)
  */
  if(MDFNSS_Load(fname, suffix))
  {
-  if(MDFNnetplay)
-   MDFNNET_SendState();
+  //if(MDFNnetplay)
+   //MDFNNET_SendState();
 
   if(MDFNMOV_IsRecording())
    MDFNMOV_RecordState();

@@ -51,6 +51,8 @@
 
 #include "../psp/input.h"
 
+int MDFNnetplay = 0;
+
 void PSPOutput(char *text);
 
 void PSPOutput(char *text)
@@ -265,8 +267,8 @@ void MDFNI_CloseGame(void)
 {
  if(MDFNGameInfo)
  {
-  if(MDFNnetplay)
-   MDFNI_NetplayStop();
+  //if(MDFNnetplay)
+   //MDFNI_NetplayStop();
 
   MDFNMOV_Stop();
 
@@ -299,7 +301,8 @@ void MDFNI_CloseGame(void)
 
 int MDFNI_NetplayStart(uint32 local_players, uint32 netmerge, const std::string &nickname, const std::string &game_key, const std::string &connect_password)
 {
- return(NetplayStart((const char**)PortDeviceCache, PortDataLenCache, local_players, netmerge, nickname, game_key, connect_password));
+ //return(NetplayStart((const char**)PortDeviceCache, PortDataLenCache, local_players, netmerge, nickname, game_key, connect_password));
+ return 0;
 }
 
 
@@ -1269,10 +1272,12 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
   espec->SoundVolume = 1;
  }
 
+ #if 0
  if(MDFNnetplay)
  {
   NetplayUpdate((const char**)PortDeviceCache, PortDataCache, PortDataLenCache, MDFNGameInfo->InputInfo->InputPorts);
  }
+ #endif
 
  for(int x = 0; x < 16; x++)
   if(PortDataCache[x])
@@ -1485,16 +1490,16 @@ void MDFN_DoSimpleCommand(int cmd)
 
 void MDFN_QSimpleCommand(int cmd)
 {
- if(MDFNnetplay)
-  MDFNNET_SendCommand(cmd, 0);
- else
- {
+ //if(MDFNnetplay)
+  //MDFNNET_SendCommand(cmd, 0);
+ //else
+ //{
   if(!MDFNMOV_IsPlaying())
   {
    MDFN_DoSimpleCommand(cmd);
    MDFNMOV_AddCommand(cmd);
   }
- }
+ //}
 }
 
 void MDFNI_Power(void)

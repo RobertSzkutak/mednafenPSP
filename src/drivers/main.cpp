@@ -1015,7 +1015,7 @@ int GameLoop(void *arg)
 	  }
 	 } while(InFrameAdvance && !NeedFrameAdvance);
 
-	 if(MDFNDnetplay && !(NoWaiting & 0x2))	// TODO: Hacky, clean up.
+	 if(/*MDFNDnetplay &&*/ !(NoWaiting & 0x2))	// TODO: Hacky, clean up.
 	  ers.SetETtoRT();
 
 	 fskip = ers.NeedFrameSkip();
@@ -1878,6 +1878,7 @@ static void UpdateSoundSync(int16 *Buffer, int Count)
 
   WriteSound(Buffer, Count);
 
+#if 0
   if(MDFNDnetplay && GetWriteSound() >= Count * 1.00) // Cheap code to fix sound buffer underruns due to accumulation of timer error during netplay.
   {
    int16 zbuf[128 * 2];
@@ -1891,12 +1892,13 @@ static void UpdateSoundSync(int16 *Buffer, int Count)
    }
    ers.SetETtoRT();
   }
+  #endif
  }
  else
  {
   bool nothrottle = MDFN_GetSettingB("nothrottle");
 
-  if(!NoWaiting && !nothrottle && GameThreadRun && !MDFNDnetplay)
+  if(!NoWaiting && !nothrottle && GameThreadRun /*&& !MDFNDnetplay*/)
    ers.Sync();
  }
 }

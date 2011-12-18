@@ -37,6 +37,8 @@
 
 #include <math.h>
 
+int MDFNDnetplay = 0;
+
 static int RewindState = 0;
 static uint32 MouseData[3];
 static double MouseDataRel[2];
