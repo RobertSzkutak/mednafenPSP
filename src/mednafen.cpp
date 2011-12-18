@@ -15,9 +15,9 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include        "mednafen.h"
+#include    "mednafen.h"
 
-#include        <string.h>
+#include    <string.h>
 #include	<stdarg.h>
 #include	<errno.h>
 #include	<sys/types.h>
@@ -33,7 +33,7 @@
 
 #include	"state.h"
 #include	"movie.h"
-#include        "video.h"
+#include    "video.h"
 #include	"video/Deinterlacer.h"
 #include	"file.h"
 #include	"sound/WAVRecord.h"
@@ -566,7 +566,7 @@ static bool LoadIPS(MDFNFILE &GameFile, const char *path)
 
 MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 {
-        MDFNFILE GameFile;
+    MDFNFILE GameFile;
 	struct stat stat_buf;
 	std::vector<FileExtensionSpecStruct> valid_iae;
 
@@ -590,7 +590,7 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 
 	MDFN_indent(1);
 
-        GetFileBase(name);
+    GetFileBase(name);
 
 	// Construct a NULL-delimited list of known file extensions for MDFN_fopen()
 	for(unsigned int i = 0; i < MDFNSystems.size(); i++)
@@ -614,7 +614,7 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 	}
 
 	if(!GameFile.Open(name, &valid_iae[0], _("game")))
-        {
+    {
 	 MDFNGameInfo = NULL;
 	 return 0;
 	}
@@ -626,7 +626,7 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
          return(0);
 	}
 
-        PSPOutput("Returned from !LoadIPS\n");
+    PSPOutput("Returned from !LoadIPS\n");
 
 	MDFNGameInfo = NULL;
 
@@ -637,23 +637,23 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 
 	 if(force_module)
 	 {
-          if(!strcmp(force_module, (*it)->shortname))
-          {
-	   if(!(*it)->Load)
-	   {
+       if(!strcmp(force_module, (*it)->shortname))
+       {
+	     if(!(*it)->Load)
+	     {
             GameFile.Close();
 
-	    if((*it)->LoadCD)
+	      if((*it)->LoadCD)
              MDFN_PrintError(_("Specified system only supports CD(physical, or image files, such as *.cue and *.toc) loading."));
-	    else
-             MDFN_PrintError(_("Specified system does not support normal file loading."));
+	      else
+            MDFN_PrintError(_("Specified system does not support normal file loading."));
             MDFN_indent(-1);
             MDFNGameInfo = NULL;
             return 0;
-	   }
+	     }
            MDFNGameInfo = *it;
            break;
-          }
+        }
 	 }
 	 else
 	 {
@@ -672,41 +672,41 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 	 }
 	}
 
-        if(!MDFNGameInfo)
-        {
-         PSPOutput("Mednafen Game Info Not Found\n");
-	 GameFile.Close();
+    if(!MDFNGameInfo)
+    {
+      PSPOutput("Mednafen Game Info Not Found\n");
+	  GameFile.Close();
 
-	 if(force_module)
+	  if(force_module)
           MDFN_PrintError(_("Unrecognized system \"%s\"!"), force_module);
-	 else
+	  else
           MDFN_PrintError(_("Unrecognized file format.  Sorry."));
 
-         MDFN_indent(-1);
-         MDFNGameInfo = NULL;
-         return 0;
-        }
+      MDFN_indent(-1);
+      MDFNGameInfo = NULL;
+      return 0;
+    }
 
-        PSPOutput("Mednafen Game Info Found\n");
+    PSPOutput("Mednafen Game Info Found\n");
 	MDFN_printf(_("Using module: %s(%s)\n\n"), MDFNGameInfo->shortname, MDFNGameInfo->fullname);
 	psp_set_input_mode(MDFNGameInfo->shortname);
 	MDFN_indent(1);
 
 	assert(MDFNGameInfo->soundchan != 0);
 
-        MDFNGameInfo->soundrate = 0;
-        MDFNGameInfo->name = NULL;
-        MDFNGameInfo->rotated = 0;
+    MDFNGameInfo->soundrate = 0;
+    MDFNGameInfo->name = NULL;
+    MDFNGameInfo->rotated = 0;
 
-        if(MDFNGameInfo->Load(name, &GameFile) <= 0)
+    if(MDFNGameInfo->Load(name, &GameFile) <= 0)
 	{
          GameFile.Close();
          MDFN_indent(-2);
          MDFNGameInfo = NULL;
          return(0);
-        }
+    }
 
-        if(MDFNGameInfo->GameType != GMT_PLAYER)
+    if(MDFNGameInfo->GameType != GMT_PLAYER)
 	{
 	 MDFN_LoadGameCheats(NULL);
 	 MDFNMP_InstallReadPatches();
@@ -744,13 +744,13 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 
 	TBlur_Init();
 
-        MDFN_StateEvilBegin();
+    MDFN_StateEvilBegin();
 
 
-        last_sound_rate = -1;
-        memset(&last_pixel_format, 0, sizeof(MDFN_PixelFormat));
+    last_sound_rate = -1;
+    memset(&last_pixel_format, 0, sizeof(MDFN_PixelFormat));
 
-        return(MDFNGameInfo);
+    return(MDFNGameInfo);
 }
 
 static void BuildDynamicSetting(MDFNSetting *setting, const char *system_name, const char *name, uint32 flags, const char *description, MDFNSettingType type,

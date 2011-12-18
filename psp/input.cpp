@@ -61,6 +61,15 @@ distribution.
 #define SMS_FIRE2     0x0020
 #define SMS_PAUSE     0x0040
 
+#define GB_A      0x0001
+#define GB_B      0x0002
+#define GB_START  0x0008
+#define GB_SELECT 0x0004
+#define GB_LEFT   0x0020
+#define GB_RIGHT  0x0010
+#define GB_UP     0x0040
+#define GB_DOWN   0x0080
+
 #define NGP_UP      0x0001
 #define NGP_DOWN    0x0002
 #define NGP_LEFT    0x0004
@@ -128,6 +137,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_PAUSE;
 					break;
+				case MODE_GB:
+				    result |= GB_START;
+					break;
 				case MODE_NGP:
 				    result |= NGP_OPTION;
 					break;
@@ -142,6 +154,9 @@ u16 psp_mednafen_input()
 				case MODE_NES:
 					result |= NES_SELECT;
 					break;
+				case MODE_GB:
+				    result |= GB_SELECT;
+					break;
 				default:
 					break;
 			}
@@ -155,6 +170,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_UP;
+					break;
+				case MODE_GB:
+				    result |= GB_UP;
 					break;
 				case MODE_NGP:
 				    result |= NGP_UP;
@@ -173,6 +191,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_DOWN;
 					break;
+				case MODE_GB:
+				    result |= GB_DOWN;
+					break;
 			    case MODE_NGP:
 				    result |= NGP_DOWN;
 					break;
@@ -189,6 +210,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_LEFT;
+					break;
+				case MODE_GB:
+				    result |= GB_LEFT;
 					break;
 				case MODE_NGP:
 				    result |= NGP_LEFT;
@@ -207,6 +231,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_RIGHT;
 					break;
+				case MODE_GB:
+				    result |= GB_RIGHT;
+					break;
 				case MODE_NGP:
 				    result |= NGP_RIGHT;
 					break;
@@ -223,6 +250,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_FIRE1;
+					break;
+				case MODE_GB:
+				    result |= GB_B;
 					break;
 				case MODE_NGP:
 				    result |= NGP_B;
@@ -241,6 +271,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_FIRE2;
 					break;
+				case MODE_GB:
+				    result |= GB_A;
+					break;
 				case MODE_NGP:
 				    result |= NGP_A;
 					break;
@@ -258,6 +291,9 @@ u16 psp_mednafen_input()
 				case MODE_SMS:
 					result |= SMS_FIRE1;
 					break;
+				case MODE_GB:
+				    result |= GB_B;
+					break;
 				case MODE_NGP:
 				    result |= NGP_B;
 					break;
@@ -274,6 +310,9 @@ u16 psp_mednafen_input()
 					break;
 				case MODE_SMS:
 					result |= SMS_FIRE2;
+					break;
+				case MODE_GB:
+				    result |= GB_A;
 					break;
 				case MODE_NGP:
 				    result |= NGP_A;
