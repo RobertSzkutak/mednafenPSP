@@ -153,6 +153,34 @@ int main(int argc, char *argv[])
 				    placeholder++;
 				printFlag = buttonFlag = true;
 			}
+			
+			if(pad.Buttons & PSP_CTRL_RIGHT)
+			{
+				if(buttonFlag == false)
+				    placeholder += 4;
+				printFlag = buttonFlag = true;
+			}
+			
+			if(pad.Buttons & PSP_CTRL_LEFT)
+			{
+				if(buttonFlag == false)
+				    placeholder -= 4;
+				printFlag = buttonFlag = true;
+			}
+			
+			if(pad.Buttons & PSP_CTRL_RTRIGGER)
+			{
+				if(buttonFlag == false)
+				    placeholder = files.size()-1;
+				printFlag = buttonFlag = true;
+			}
+			
+			if(pad.Buttons & PSP_CTRL_LTRIGGER)
+			{
+				if(buttonFlag == false)
+				    placeholder = 2;
+				printFlag = buttonFlag = true;
+			}
 
 			if(placeholder >= files.size())
 				placeholder = 0;
