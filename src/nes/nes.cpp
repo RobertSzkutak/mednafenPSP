@@ -347,7 +347,7 @@ static void Emulate(EmulateSpecStruct *espec)
 
 void ResetNES(void)
 {
-        MDFNMOV_AddCommand(MDFN_MSC_RESET);
+    //MDFNMOV_AddCommand(MDFN_MSC_RESET);
 	if(GameInterface->Reset)
          GameInterface->Reset();
         MDFNSND_Reset();
@@ -357,10 +357,10 @@ void ResetNES(void)
 
 void PowerNES(void) 
 {
-        MDFNMOV_AddCommand(MDFN_MSC_POWER);
+    //MDFNMOV_AddCommand(MDFN_MSC_POWER);
 
-        if(!MDFNGameInfo)
-	 return;
+    if(!MDFNGameInfo)
+	    return;
 
 	if(!Genie_BIOSInstalled())
  	 MDFNMP_RemoveReadPatches();

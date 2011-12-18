@@ -1929,8 +1929,8 @@ void MDFND_Update(MDFN_Surface *surface, int16 *Buffer, int Count)
 
   if(pending_save_state)
    MDFNI_SaveState(NULL, NULL, surface, (MDFN_Rect *)&VTDisplayRects[VTBackBuffer], (MDFN_Rect *)VTLineWidths[VTBackBuffer]);
-  if(pending_save_movie)
-   MDFNI_SaveMovie(NULL, surface, (MDFN_Rect *)&VTDisplayRects[VTBackBuffer], (MDFN_Rect *)VTLineWidths[VTBackBuffer]);
+//  if(pending_save_movie)
+  // MDFNI_SaveMovie(NULL, surface, (MDFN_Rect *)&VTDisplayRects[VTBackBuffer], (MDFN_Rect *)VTLineWidths[VTBackBuffer]);
 
   if(pending_save_state || pending_save_movie)
    LockGameMutex(0);

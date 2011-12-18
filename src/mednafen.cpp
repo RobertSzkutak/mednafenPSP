@@ -82,6 +82,7 @@ static MDFNSetting_EnumList CompressorList[] =
 
 static MDFNSetting_EnumList VCodec_List[] =
 {
+ #if 0
  { "raw", (int)QTRecord::VCODEC_RAW, "Raw",
 	gettext_noop("A fast codec, computationally, but will cause enormous file size and may exceed your storage medium's sustained write rate.") },
 
@@ -90,7 +91,7 @@ static MDFNSetting_EnumList VCodec_List[] =
 
  { "png", (int)QTRecord::VCODEC_PNG, "PNG",
 	gettext_noop("Has a better compression ratio than \"cscd\", but is much more CPU intensive.  Use for compatibility with official QuickTime in cases where you have insufficient disk space for \"raw\".") },
-
+ #endif
  { NULL, 0 },
 };
 
@@ -172,7 +173,7 @@ static uint32 PortDataLenCache[16];
 MDFNGI *MDFNGameInfo = NULL;
 static bool CDInUse = 0;
 
-static QTRecord *qtrecorder = NULL;
+//static QTRecord *qtrecorder = NULL;
 static WAVRecord *wavrecorder = NULL;
 static Fir_Resampler<16> ff_resampler;
 static float LastSoundMultiplier;
@@ -202,6 +203,8 @@ bool MDFNI_StartWAVRecord(const char *path, double SoundRate)
 
 bool MDFNI_StartAVRecord(const char *path, double SoundRate)
 {
+return false;
+#if 0
  try
  {
   QTRecord::VideoSpec spec;
@@ -243,15 +246,18 @@ bool MDFNI_StartAVRecord(const char *path, double SoundRate)
   return(false);
  }
  return(true);
+ #endif
 }
 
 void MDFNI_StopAVRecord(void)
 {
+ #if 0
  if(qtrecorder)
  {
   delete qtrecorder;
   qtrecorder = NULL;
  }
+ #endif
 }
 
 void MDFNI_StopWAVRecord(void)
@@ -270,7 +276,7 @@ void MDFNI_CloseGame(void)
   //if(MDFNnetplay)
    //MDFNI_NetplayStop();
 
-  MDFNMOV_Stop();
+  //MDFNMOV_Stop();
 
   if(MDFNGameInfo->GameType != GMT_PLAYER)
    MDFN_FlushGameCheats(0);
@@ -512,7 +518,7 @@ MDFNGI *MDFNI_LoadCD(const char *force_module, const char *devicename)
  #endif
 
  MDFNSS_CheckStates();
- MDFNMOV_CheckMovies();
+ //MDFNMOV_CheckMovies();
 
  MDFN_ResetMessages();   // Save state, status messages, etc.
 
@@ -720,7 +726,7 @@ MDFNGI *MDFNI_LoadGame(const char *force_module, const char *name)
 	#endif
 
 	MDFNSS_CheckStates();
-	MDFNMOV_CheckMovies();
+	//MDFNMOV_CheckMovies();
 
 	MDFN_ResetMessages();	// Save state, status messages, etc.
 
@@ -1078,6 +1084,7 @@ static void ProcessAudio(EmulateSpecStruct *espec)
   const int32 SoundBufMaxSize = espec->SoundBufMaxSize - espec->SoundBufSizeALMS;
 
 
+  #if 0
   if(qtrecorder && (volume_save != 1 || multiplier_save != 1))
   {
    int32 orig_size = SoundBufPristine.size();
@@ -1086,6 +1093,7 @@ static void ProcessAudio(EmulateSpecStruct *espec)
    for(int i = 0; i < SoundBufSize * MDFNGameInfo->soundchan; i++)
     SoundBufPristine[orig_size + i] = SoundBuf[i];
   }
+  #endif
 
   if(espec->NeedSoundReverse)
   {
@@ -1226,9 +1234,9 @@ void MDFN_MidSync(EmulateSpecStruct *espec)
 
  MDFND_MidSync(espec);
 
- for(int x = 0; x < 16; x++)
-  if(PortDataCache[x])
-   MDFNMOV_AddJoy(PortDataCache[x], PortDataLenCache[x]);
+ //for(int x = 0; x < 16; x++)
+  //if(PortDataCache[x])
+   //MDFNMOV_AddJoy(PortDataCache[x], PortDataLenCache[x]);
 
  espec->SoundBufSizeALMS = espec->SoundBufSize;
  espec->MasterCyclesALMS = espec->MasterCycles;
@@ -1263,6 +1271,7 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
 
  // We want to record movies without any dropped video frames and without fast-forwarding sound distortion and without custom volume.
  // The same goes for WAV recording(sans the dropped video frames bit :b).
+ #if 0
  if(qtrecorder || wavrecorder)
  {
   multiplier_save = espec->soundmultiplier;
@@ -1271,6 +1280,7 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
   volume_save = espec->SoundVolume;
   espec->SoundVolume = 1;
  }
+ #endif
 
  #if 0
  if(MDFNnetplay)
@@ -1279,18 +1289,19 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
  }
  #endif
 
- for(int x = 0; x < 16; x++)
-  if(PortDataCache[x])
-   MDFNMOV_AddJoy(PortDataCache[x], PortDataLenCache[x]);
+ //for(int x = 0; x < 16; x++)
+  //if(PortDataCache[x])
+   //MDFNMOV_AddJoy(PortDataCache[x], PortDataLenCache[x]);
 
- if(qtrecorder)
-  espec->skip = 0;
+ //if(qtrecorder)
+  //espec->skip = 0;
 
  if(TBlur_IsOn())
   espec->skip = 0;
 
  if(espec->NeedRewind)
  {
+  #if 0
   if(MDFNMOV_IsPlaying())
   {
    espec->NeedRewind = 0;
@@ -1301,7 +1312,9 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
    espec->NeedRewind = 0;
    MDFN_DispMessage(_("Silly-billy, can't rewind during netplay."));
   }
-  else if(MDFNGameInfo->GameType == GMT_PLAYER)
+  else 
+  #endif
+  if(MDFNGameInfo->GameType == GMT_PLAYER)
   {
    espec->NeedRewind = 0;
    MDFN_DispMessage(_("Music player rewinding is unsupported."));
@@ -1326,7 +1339,8 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
  }
 
  ProcessAudio(espec);
-
+ 
+ #if 0
  if(qtrecorder)
  {
   int16 *sb_backup = espec->SoundBuf;
@@ -1354,7 +1368,7 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
   espec->SoundBuf = sb_backup;
   espec->SoundBufSize = sbs_backup;
  }
-
+ #endif
  TBlur_Run(espec);
 }
 
@@ -1494,11 +1508,11 @@ void MDFN_QSimpleCommand(int cmd)
   //MDFNNET_SendCommand(cmd, 0);
  //else
  //{
-  if(!MDFNMOV_IsPlaying())
-  {
+  //if(!MDFNMOV_IsPlaying())
+  //{
    MDFN_DoSimpleCommand(cmd);
-   MDFNMOV_AddCommand(cmd);
-  }
+  // MDFNMOV_AddCommand(cmd);
+  //}
  //}
 }
 

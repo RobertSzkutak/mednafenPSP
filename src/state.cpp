@@ -927,7 +927,7 @@ void MDFNI_SelectState(int w)
   MDFND_SetStateStatus(NULL);
   return; 
  }
- MDFNI_SelectMovie(-1);
+ //MDFNI_SelectMovie(-1);
 
  if(w == 666 + 1)
   CurrentState = (CurrentState + 1) % 10;
@@ -980,8 +980,8 @@ void MDFNI_LoadState(const char *fname, const char *suffix)
   //if(MDFNnetplay)
    //MDFNNET_SendState();
 
-  if(MDFNMOV_IsRecording())
-   MDFNMOV_RecordState();
+  //if(MDFNMOV_IsRecording())
+   //MDFNMOV_RecordState();
  }
 }
 
@@ -1064,8 +1064,8 @@ void MDFN_StateEvilEnd(void)
 
  if(bcs)
  {
-  if(MDFNMOV_IsRecording())
-   MDFN_StateEvilFlushMovieLove();
+  //if(MDFNMOV_IsRecording())
+   //MDFN_StateEvilFlushMovieLove();
 
   for(x = 0;x < SRW_NUM; x++)
   {
@@ -1086,8 +1086,8 @@ void MDFN_StateEvilFlushMovieLove(void)
  {
   if(bcs[bahpos].MovieLove.data)
   {
-   if(bcs[x].data)
-    MDFNMOV_ForceRecord(&bcs[bahpos].MovieLove);
+   //if(bcs[x].data)
+    //MDFNMOV_ForceRecord(&bcs[bahpos].MovieLove);
    free(bcs[bahpos].MovieLove.data);
    bcs[bahpos].MovieLove.data = NULL;
   }
@@ -1160,7 +1160,7 @@ int MDFN_StateEvil(int rewind)
 
    MDFNSS_LoadSM(&sm, 0, 1);
 
-   free(MDFNMOV_GrabRewindJoy().data);
+   //free(MDFNMOV_GrabRewindJoy().data);
    return(1);
   }
  }
@@ -1171,6 +1171,7 @@ int MDFN_StateEvil(int rewind)
 
   bcspos = (bcspos + 1) % SRW_NUM;
 
+  #if 0
   if(MDFNMOV_IsRecording())
   {
    if(bcs[bcspos].data && bcs[bcspos].MovieLove.data)
@@ -1181,6 +1182,7 @@ int MDFN_StateEvil(int rewind)
     bcs[bcspos].MovieLove.data = NULL;
    }
   }
+  #endif
   if(bcs[bcspos].data)
   {
    free(bcs[bcspos].data);
@@ -1244,8 +1246,8 @@ int MDFN_StateEvil(int rewind)
    }
   }
 
-  if(MDFNMOV_IsRecording())
-   bcs[bcspos].MovieLove = MDFNMOV_GrabRewindJoy();
+  //if(MDFNMOV_IsRecording())
+   //bcs[bcspos].MovieLove = MDFNMOV_GrabRewindJoy();
  }
  return(0);
 }

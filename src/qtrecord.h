@@ -1,6 +1,8 @@
 #ifndef __MDFN_QTRECORD_H
 #define __MDFN_QTRECORD_H
 
+#if 0
+
 #include "mednafen.h"
 #include "FileWrapper.h"
 
@@ -112,5 +114,7 @@ class QTRecord
 
  bool Finished;
 };
+
+#endif
 
 #endif
