@@ -839,8 +839,8 @@ static int LoadGame(const char *force_module, const char *path)
         if(MDFN_GetSettingB("autosave"))
 	 MDFNI_LoadState(NULL, "mcq");
 
-	if(netconnect)
-	 MDFND_NetworkConnect();
+	//if(netconnect)
+	 //MDFND_NetworkConnect();
 
 	ers.SetEmuClock(CurGame->MasterClock >> 32);
 

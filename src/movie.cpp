@@ -133,11 +133,11 @@ void MDFNI_LoadMovie(char *fname)
  if(current > 0)        /* Can't interrupt recording.*/
   return;
 
- if(MDFNnetplay)	/* Playback is UNPOSSIBLE during netplay. */
- {
-  MDFN_DispMessage(_("Can't play movies during netplay."));
-  return;
- }
+ //if(MDFNnetplay)	/* Playback is UNPOSSIBLE during netplay. */
+ //{
+ // MDFN_DispMessage(_("Can't play movies during netplay."));
+ // return;
+ //}
 
  if(current < 0)        /* Stop playback. */
  {
@@ -182,6 +182,7 @@ void MDFNMOV_AddJoy(void *donutdata, uint32 donutlen)
 
   while((t = gzgetc(fp)) >= 0 && t)
   {
+   #if 0
    if(t == MDFNNPCMD_LOADSTATE)
    {
     uint32 len;
@@ -210,6 +211,7 @@ void MDFNMOV_AddJoy(void *donutdata, uint32 donutlen)
     }
    }
    else
+   #endif
     MDFN_DoSimpleCommand(t);
   }
   if(t < 0)
@@ -260,7 +262,7 @@ void MDFNMOV_RecordState(void)
 
  if(MDFN_StateEvilIsRunning())
  {
-  smem_putc(&RewindBuffer, MDFNNPCMD_LOADSTATE);
+  //smem_putc(&RewindBuffer, MDFNNPCMD_LOADSTATE);
   smem_putc(&RewindBuffer, sm.len & 0xFF);
   smem_putc(&RewindBuffer, (sm.len >> 8) & 0xFF);
   smem_putc(&RewindBuffer, (sm.len >> 16) & 0xFF);
@@ -269,7 +271,7 @@ void MDFNMOV_RecordState(void)
  }
  else
  {
-  gzputc(fp, MDFNNPCMD_LOADSTATE);
+  //gzputc(fp, MDFNNPCMD_LOADSTATE);
   gzputc(fp, sm.len & 0xFF);
   gzputc(fp, (sm.len >> 8) & 0xFF);
   gzputc(fp, (sm.len >> 16) & 0xFF);
