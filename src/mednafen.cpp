@@ -27,8 +27,6 @@
 #include	<list>
 #include	<algorithm>
 
-#include	"netplay.h"
-#include	"netplay-driver.h"
 #include	"general.h"
 
 #include	"state.h"
@@ -82,16 +80,6 @@ static MDFNSetting_EnumList CompressorList[] =
 
 static MDFNSetting_EnumList VCodec_List[] =
 {
- #if 0
- { "raw", (int)QTRecord::VCODEC_RAW, "Raw",
-	gettext_noop("A fast codec, computationally, but will cause enormous file size and may exceed your storage medium's sustained write rate.") },
-
- { "cscd", (int)QTRecord::VCODEC_CSCD, "CamStudio Screen Codec",
-	gettext_noop("A good balance between performance and compression ratio.") },
-
- { "png", (int)QTRecord::VCODEC_PNG, "PNG",
-	gettext_noop("Has a better compression ratio than \"cscd\", but is much more CPU intensive.  Use for compatibility with official QuickTime in cases where you have insufficient disk space for \"raw\".") },
- #endif
  { NULL, 0 },
 };
 
@@ -203,62 +191,10 @@ bool MDFNI_StartWAVRecord(const char *path, double SoundRate)
 
 bool MDFNI_StartAVRecord(const char *path, double SoundRate)
 {
-return false;
-#if 0
- try
- {
-  QTRecord::VideoSpec spec;
-
-  memset(&spec, 0, sizeof(spec));
-
-  spec.SoundRate = SoundRate;
-  spec.SoundChan = MDFNGameInfo->soundchan;
-  spec.VideoWidth = MDFNGameInfo->lcm_width;
-  spec.VideoHeight = MDFNGameInfo->lcm_height;
-  spec.VideoCodec = MDFN_GetSettingI("qtrecord.vcodec");
-
-  if(spec.VideoWidth < MDFN_GetSettingUI("qtrecord.w_double_threshold"))
-   spec.VideoWidth *= 2;
-
-  if(spec.VideoHeight < MDFN_GetSettingUI("qtrecord.h_double_threshold"))
-   spec.VideoHeight *= 2;
-
-
-  spec.AspectXAdjust = ((double)MDFNGameInfo->nominal_width * 2) / spec.VideoWidth;
-  spec.AspectYAdjust = ((double)MDFNGameInfo->nominal_height * 2) / spec.VideoHeight;
-
-  MDFN_printf("\n");
-  MDFN_printf(_("Starting QuickTime recording to file \"%s\":\n"), path);
-  MDFN_indent(1);
-  MDFN_printf(_("Video width: %u\n"), spec.VideoWidth);
-  MDFN_printf(_("Video height: %u\n"), spec.VideoHeight);
-  MDFN_printf(_("Video codec: %s\n"), MDFN_GetSettingS("qtrecord.vcodec").c_str());
-  MDFN_printf(_("Sound rate: %u\n"), spec.SoundRate);
-  MDFN_printf(_("Sound channels: %u\n"), spec.SoundChan);
-  MDFN_indent(-1);
-  MDFN_printf("\n");
-
-  qtrecorder = new QTRecord(path, spec);
- }
- catch(std::exception &e)
- {
-  MDFND_PrintError(e.what());
-  return(false);
- }
- return(true);
- #endif
+    return false;
 }
 
-void MDFNI_StopAVRecord(void)
-{
- #if 0
- if(qtrecorder)
- {
-  delete qtrecorder;
-  qtrecorder = NULL;
- }
- #endif
-}
+void MDFNI_StopAVRecord(void){}
 
 void MDFNI_StopWAVRecord(void)
 {
@@ -273,11 +209,6 @@ void MDFNI_CloseGame(void)
 {
  if(MDFNGameInfo)
  {
-  //if(MDFNnetplay)
-   //MDFNI_NetplayStop();
-
-  //MDFNMOV_Stop();
-
   if(MDFNGameInfo->GameType != GMT_PLAYER)
    MDFN_FlushGameCheats(0);
 
@@ -307,7 +238,6 @@ void MDFNI_CloseGame(void)
 
 int MDFNI_NetplayStart(uint32 local_players, uint32 netmerge, const std::string &nickname, const std::string &game_key, const std::string &connect_password)
 {
- //return(NetplayStart((const char**)PortDeviceCache, PortDataLenCache, local_players, netmerge, nickname, game_key, connect_password));
  return 0;
 }
 
@@ -367,8 +297,6 @@ extern MDFNGI EmulatedWSwan;
 #ifdef WANT_SMS_EMU
 extern MDFNGI EmulatedSMS, EmulatedGG;
 #endif
-
-//extern MDFNGI EmulatedCDPlay;
 
 std::vector<MDFNGI *> MDFNSystems;
 static std::list<MDFNGI *> MDFNSystemsPrio;
@@ -518,7 +446,6 @@ MDFNGI *MDFNI_LoadCD(const char *force_module, const char *devicename)
  #endif
 
  MDFNSS_CheckStates();
- //MDFNMOV_CheckMovies();
 
  MDFN_ResetMessages();   // Save state, status messages, etc.
 
@@ -919,7 +846,6 @@ bool MDFNI_InitializeModules(const std::vector<MDFNGI *> &ExternalSystems)
   &EmulatedGG,
   #endif
 
-  //&EmulatedCDPlay
  };
  std::string i_modules_string, e_modules_string;
 
@@ -965,32 +891,32 @@ int MDFNI_Initialize(const char *basedir, const std::vector<MDFNSetting> &Driver
 	// FIXME static
 	static std::vector<MDFNSetting> dynamic_settings;
 
-        PSPOutput("Running Math tests...");
+    PSPOutput("Running Math tests...");
 
 	if(!MDFN_RunMathTests())
 	{
 	 return(0);
 	}
 
-        PSPOutput("Math tests successful!\nAllocating memory ...\n");
+    PSPOutput("Math tests successful!\nAllocating memory ...\n");
 
 	memset(PortDataCache, 0, sizeof(PortDataCache));
 	memset(PortDataLenCache, 0, sizeof(PortDataLenCache));
 	memset(PortDeviceCache, 0, sizeof(PortDeviceCache));
 
-        PSPOutput("Memory allocated!\nInitializing lzo....\n");
+    PSPOutput("Memory allocated!\nInitializing lzo....\n");
 
 	lzo_init();
 
-        PSPOutput("lzo Initialized!\nSetting Base Directory...\n");
+    PSPOutput("lzo Initialized!\nSetting Base Directory...\n");
 
 	MDFNI_SetBaseDirectory(basedir);
 
-        PSPOutput("Base Directory Set!\nInitializing Font Data...\n");
+    PSPOutput("Base Directory Set!\nInitializing Font Data...\n");
 
 	MDFN_InitFontData();
 
-        PSPOutput("Font Data Initialized!\nGenerating Dynamic Settings...\n");
+    PSPOutput("Font Data Initialized!\nGenerating Dynamic Settings...\n");
 
 	// Generate dynamic settings
 	for(unsigned int i = 0; i < MDFNSystems.size(); i++)
@@ -1013,20 +939,20 @@ int MDFNI_Initialize(const char *basedir, const std::vector<MDFNSetting> &Driver
 	 dynamic_settings.push_back(setting);
 
 	 BuildDynamicSetting(&setting, sysname, "tblur", MDFNSF_COMMON_TEMPLATE | MDFNSF_CAT_VIDEO, CSD_tblur, MDFNST_BOOL, "0");
-         dynamic_settings.push_back(setting);
+     dynamic_settings.push_back(setting);
 
-         BuildDynamicSetting(&setting, sysname, "tblur.accum", MDFNSF_COMMON_TEMPLATE | MDFNSF_CAT_VIDEO, CSD_tblur_accum, MDFNST_BOOL, "0");
-         dynamic_settings.push_back(setting);
+     BuildDynamicSetting(&setting, sysname, "tblur.accum", MDFNSF_COMMON_TEMPLATE | MDFNSF_CAT_VIDEO, CSD_tblur_accum, MDFNST_BOOL, "0");
+     dynamic_settings.push_back(setting);
 
-         BuildDynamicSetting(&setting, sysname, "tblur.accum.amount", MDFNSF_COMMON_TEMPLATE | MDFNSF_CAT_VIDEO, CSD_tblur_accum_amount, MDFNST_FLOAT, "50", "0", "100");
+     BuildDynamicSetting(&setting, sysname, "tblur.accum.amount", MDFNSF_COMMON_TEMPLATE | MDFNSF_CAT_VIDEO, CSD_tblur_accum_amount, MDFNST_FLOAT, "50", "0", "100");
 	 dynamic_settings.push_back(setting);
 	}
 
-        PSPOutput("Dyanmic Settings Generated...\nMerging settings...\n");
+    PSPOutput("Dyanmic Settings Generated...\nMerging settings...\n");
 
 	// First merge all settable settings, then load the settings from the SETTINGS FILE OF DOOOOM
 	MDFN_MergeSettings(MednafenSettings);
-        MDFN_MergeSettings(dynamic_settings);
+    MDFN_MergeSettings(dynamic_settings);
 	MDFN_MergeSettings(MDFNMP_Settings);
 
 	if(DriverSettings.size())
@@ -1040,16 +966,16 @@ int MDFNI_Initialize(const char *basedir, const std::vector<MDFNSetting> &Driver
 
 	MDFN_MergeSettings(RenamedSettings);
 
-        PSPOutput("Settings Merged! Going back to mednafen main...\n");
+    PSPOutput("Settings Merged! Going back to mednafen main...\n");
 
-        if(!MFDN_LoadSettings(basedir))
+    if(!MFDN_LoadSettings(basedir))
 	 return(0);
 
 	#ifdef WANT_DEBUGGER
 	MDFNDBG_Init();
 	#endif
 
-        return(1);
+    return(1);
 }
 
 void MDFNI_Kill(void)
@@ -1082,18 +1008,6 @@ static void ProcessAudio(EmulateSpecStruct *espec)
   int16 *const SoundBuf = espec->SoundBuf + espec->SoundBufSizeALMS * MDFNGameInfo->soundchan;
   int32 SoundBufSize = espec->SoundBufSize - espec->SoundBufSizeALMS;
   const int32 SoundBufMaxSize = espec->SoundBufMaxSize - espec->SoundBufSizeALMS;
-
-
-  #if 0
-  if(qtrecorder && (volume_save != 1 || multiplier_save != 1))
-  {
-   int32 orig_size = SoundBufPristine.size();
-
-   SoundBufPristine.resize(orig_size + SoundBufSize * MDFNGameInfo->soundchan);
-   for(int i = 0; i < SoundBufSize * MDFNGameInfo->soundchan; i++)
-    SoundBufPristine[orig_size + i] = SoundBuf[i];
-  }
-  #endif
 
   if(espec->NeedSoundReverse)
   {
@@ -1234,10 +1148,6 @@ void MDFN_MidSync(EmulateSpecStruct *espec)
 
  MDFND_MidSync(espec);
 
- //for(int x = 0; x < 16; x++)
-  //if(PortDataCache[x])
-   //MDFNMOV_AddJoy(PortDataCache[x], PortDataLenCache[x]);
-
  espec->SoundBufSizeALMS = espec->SoundBufSize;
  espec->MasterCyclesALMS = espec->MasterCycles;
 }
@@ -1269,51 +1179,11 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
   ff_resampler.buffer_size((espec->SoundRate / 2) * 2);
  }
 
- // We want to record movies without any dropped video frames and without fast-forwarding sound distortion and without custom volume.
- // The same goes for WAV recording(sans the dropped video frames bit :b).
- #if 0
- if(qtrecorder || wavrecorder)
- {
-  multiplier_save = espec->soundmultiplier;
-  espec->soundmultiplier = 1;
-
-  volume_save = espec->SoundVolume;
-  espec->SoundVolume = 1;
- }
- #endif
-
- #if 0
- if(MDFNnetplay)
- {
-  NetplayUpdate((const char**)PortDeviceCache, PortDataCache, PortDataLenCache, MDFNGameInfo->InputInfo->InputPorts);
- }
- #endif
-
- //for(int x = 0; x < 16; x++)
-  //if(PortDataCache[x])
-   //MDFNMOV_AddJoy(PortDataCache[x], PortDataLenCache[x]);
-
- //if(qtrecorder)
-  //espec->skip = 0;
-
  if(TBlur_IsOn())
   espec->skip = 0;
 
  if(espec->NeedRewind)
  {
-  #if 0
-  if(MDFNMOV_IsPlaying())
-  {
-   espec->NeedRewind = 0;
-   MDFN_DispMessage(_("Can't rewind during movie playback(yet!)."));
-  }
-  else if(MDFNnetplay)
-  {
-   espec->NeedRewind = 0;
-   MDFN_DispMessage(_("Silly-billy, can't rewind during netplay."));
-  }
-  else 
-  #endif
   if(MDFNGameInfo->GameType == GMT_PLAYER)
   {
    espec->NeedRewind = 0;
@@ -1339,36 +1209,7 @@ void MDFNI_Emulate(EmulateSpecStruct *espec)
  }
 
  ProcessAudio(espec);
- 
- #if 0
- if(qtrecorder)
- {
-  int16 *sb_backup = espec->SoundBuf;
-  int32 sbs_backup = espec->SoundBufSize;
 
-  if(SoundBufPristine.size())
-  {
-   espec->SoundBuf = &SoundBufPristine[0];
-   espec->SoundBufSize = SoundBufPristine.size() / MDFNGameInfo->soundchan;
-  }
-
-  try
-  {
-   qtrecorder->WriteFrame(espec->surface, espec->DisplayRect, espec->LineWidths, espec->SoundBuf, espec->SoundBufSize);
-  }
-  catch(std::exception &e)
-  {
-   MDFND_PrintError(e.what());
-   delete qtrecorder;
-   qtrecorder = NULL;
-  }
-
-  SoundBufPristine.clear();
-
-  espec->SoundBuf = sb_backup;
-  espec->SoundBufSize = sbs_backup;
- }
- #endif
  TBlur_Run(espec);
 }
 
@@ -1504,16 +1345,7 @@ void MDFN_DoSimpleCommand(int cmd)
 
 void MDFN_QSimpleCommand(int cmd)
 {
- //if(MDFNnetplay)
-  //MDFNNET_SendCommand(cmd, 0);
- //else
- //{
-  //if(!MDFNMOV_IsPlaying())
-  //{
    MDFN_DoSimpleCommand(cmd);
-  // MDFNMOV_AddCommand(cmd);
-  //}
- //}
 }
 
 void MDFNI_Power(void)

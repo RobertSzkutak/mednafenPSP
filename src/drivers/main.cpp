@@ -45,7 +45,6 @@
 #include "video.h"
 #include "opengl.h"
 #include "sound.h"
-#include "netplay.h"
 #include "cheat.h"
 #include "fps.h"
 #include "debugger.h"
@@ -58,15 +57,6 @@
 #include <math.h>
 
 extern void PSPOutput(char *text);
-/*
-
-void PSPOutput(char *text)
-{
-	FILE *fp = new FILE();
-        fp = fopen("output.txt", "a");
-        fprintf(fp, text);
-        fclose(fp);
-}*/
 
 static bool RemoteOn = FALSE;
 bool pending_save_state, pending_snapshot, pending_save_movie;
@@ -447,9 +437,7 @@ static MDFN_Surface *VTBuffer[2] = { NULL, NULL };
 static MDFN_Rect *VTLineWidths[2] = { NULL, NULL };
 
 static int volatile VTBackBuffer = 0;
-//static SDL_mutex *VTMutex = NULL, /**EVMutex = NULL,*/ *GameMutex = NULL;
 static SDL_mutex *GameMutex = NULL;
-//static SDL_mutex *StdoutMutex = NULL;
 
 static MDFN_Surface * volatile VTReady;
 static MDFN_Rect * volatile VTLWReady;
@@ -814,8 +802,8 @@ static int LoadGame(const char *force_module, const char *path)
 	}
 	else
 	{
-         if(!(tmp=MDFNI_LoadGame(force_module, path)))
-	  return 0;
+      if(!(tmp=MDFNI_LoadGame(force_module, path)))
+	    return 0;
 	}
 	CurGame = tmp;
 	InitGameInput(tmp);
@@ -826,11 +814,11 @@ static int LoadGame(const char *force_module, const char *path)
         NeedVideoChange = -1;
         //SDL_mutexV(VTMutex);
 
-        if(SDL_ThreadID() != MainThreadID)
-          while(NeedVideoChange)
-	  {
+      if(SDL_ThreadID() != MainThreadID)
+        while(NeedVideoChange)
+	    {
            SDL_Delay(1);
-	  }
+	    }
 	sound_active = 0;
 
 	if(MDFN_GetSettingB("sound"))
@@ -853,7 +841,7 @@ static int LoadGame(const char *force_module, const char *path)
 	if(qtrecfn)
 	{
 	// MDFNI_StartAVRecord() needs to be called after MDFNI_Load(Game/CD)
-         if(!MDFNI_StartAVRecord(qtrecfn, GetSoundRate()))
+     if(!MDFNI_StartAVRecord(qtrecfn, GetSoundRate()))
 	 {
 	  free(qtrecfn);
 	  qtrecfn = NULL;
@@ -885,11 +873,11 @@ int CloseGame(void)
 
 	SDL_WaitThread(GameThread, NULL);
 
-        if(qtrecfn)	// Needs to be before MDFNI_Closegame() for now
-         MDFNI_StopAVRecord();
+    if(qtrecfn)	// Needs to be before MDFNI_Closegame() for now
+      MDFNI_StopAVRecord();
 
-        if(soundrecfn)
-         MDFNI_StopWAVRecord();
+    if(soundrecfn)
+      MDFNI_StopWAVRecord();
 
 	if(MDFN_GetSettingB("autosave"))
 	 MDFNI_SaveState(NULL, "mcq", NULL, NULL, NULL);
@@ -931,25 +919,25 @@ static int GameLoopPaused = 0;
 
 void DebuggerFudge(void)
 {
-          LockGameMutex(0);
+    LockGameMutex(0);
 
-	  int MeowCowHowFlown = VTBackBuffer;
+	int MeowCowHowFlown = VTBackBuffer;
 
-	  // FIXME.
-	  if(!VTDisplayRects[VTBackBuffer].h)
-	   VTDisplayRects[VTBackBuffer].h = 10;
-          if(!VTDisplayRects[VTBackBuffer].w)
-           VTDisplayRects[VTBackBuffer].w = 10;
+	// FIXME.
+	if(!VTDisplayRects[VTBackBuffer].h)
+	 VTDisplayRects[VTBackBuffer].h = 10;
+     if(!VTDisplayRects[VTBackBuffer].w)
+       VTDisplayRects[VTBackBuffer].w = 10;
 
-          MDFND_Update((MDFN_Surface *)VTBuffer[VTBackBuffer], NULL, 0);
-	  VTBackBuffer = MeowCowHowFlown;
+    MDFND_Update((MDFN_Surface *)VTBuffer[VTBackBuffer], NULL, 0);
+	VTBackBuffer = MeowCowHowFlown;
 
-	  if(sound_active)
-	   WriteSoundSilence(10);
-	  else
-	   SDL_Delay(10);
+	if(sound_active)
+	  WriteSoundSilence(10);
+	else
+	  SDL_Delay(10);
 
-	  LockGameMutex(1);
+	LockGameMutex(1);
 }
 
 int64 Time64(void)
@@ -1094,60 +1082,6 @@ int GameLoop(void *arg)
 
 char *GetBaseDirectory(void)
 {
-#if 0
- char *ol;
- char *ret;
-
- ol = getenv("MEDNAFEN_HOME");
- if(ol != NULL && ol[0] != 0)
- {
-  ret = strdup(ol);
-  return(ret);
- }
-
- ol = getenv("HOME");
-
- if(ol)
- {
-  ret=(char *)malloc(strlen(ol)+1+strlen("/.mednafen"));
-  strcpy(ret,ol);
-  strcat(ret,"/.mednafen");
-  return(ret);
- }
-
- #if defined(HAVE_GETUID) && defined(HAVE_GETPWUID)
- {
-  struct passwd *psw;
-
-  psw = getpwuid(getuid());
-
-  if(psw != NULL && psw->pw_dir[0] != 0 && strcmp(psw->pw_dir, "/dev/null"))
-  {
-   ret = (char *)malloc(strlen(psw->pw_dir) + 1 + strlen("/.mednafen"));
-   strcpy(ret, psw->pw_dir);
-   strcat(ret, "/.mednafen");
-   return(ret);
-  }
- }
- #endif
-
- #ifdef WIN32
- {
-  char *sa;
-
-  ret=(char *)malloc(MAX_PATH+1);
-  GetModuleFileName(NULL,ret,MAX_PATH+1);
-
-  sa=strrchr(ret,'\\');
-  if(sa)
-   *sa = 0;
-  return(ret);
- }
- #endif
-
- ret = (char *)malloc(1);
- ret[0] = 0;
-#endif
  return "ms0:/PSP/GAME/mednafenPSP";
 }
 
@@ -1159,34 +1093,7 @@ static volatile int gte_read = 0;
 static volatile int gte_write = 0;
 
 /* This function may also be called by the main thread if a game is not loaded. */
-static void GameThread_HandleEvents(void)
-{
-/*
- SDL_Event gtevents_temp[gtevents_size];
- int numevents = 0;
-
- SDL_mutexP(EVMutex);
- while(gte_read != gte_write)
- {
-  memcpy(&gtevents_temp[numevents], (void *)&gtevents[gte_read], sizeof(SDL_Event));
-
-  numevents++;
-  gte_read = (gte_read + 1) & (gtevents_size - 1);
- }
- SDL_mutexV(EVMutex);
-
- for(int i = 0; i < numevents; i++)
- {
-  SDL_Event *event = &gtevents_temp[i];
-
-  if(EventHook)
-   EventHook(event);
-
-  //NetplayEventHook_GT(event);//WAS THIS WHERE THE INPUT CRASH WAS OCCURING????!?!?!
- }
- SDL_mutexV(EVMutex);
-*/
-}
+static void GameThread_HandleEvents(void){}
 
 void PauseGameLoop(bool p)
 {
@@ -1219,9 +1126,7 @@ void SDL_MDFN_ShowCursor(int toggle)
 
 void GT_ToggleFS(void)
 {
- //SDL_mutexP(VTMutex);
  NeedVideoChange = 1;
- //SDL_mutexV(VTMutex);
 
  if(SDL_ThreadID() != MainThreadID)
   while(NeedVideoChange)
@@ -1232,9 +1137,7 @@ void GT_ToggleFS(void)
 
 void GT_ReinitVideo(void)
 {
- //SDL_mutexP(VTMutex);
  NeedVideoChange = -1;
- //SDL_mutexV(VTMutex);
 
  if(SDL_ThreadID() != MainThreadID)
  {
@@ -1246,124 +1149,8 @@ void GT_ReinitVideo(void)
 }
 
 static bool krepeat = 0;
-void PumpWrap(void)//Crash most likely in PumpWrap
-{
-#if 0
- SDL_Event event;
- SDL_Event gtevents_temp[gtevents_size];
- int numevents = 0;
 
- bool NITI = false;
-
- //NITI = Netplay_IsTextInput(); No netplay for PSP -- POSSIBLE SOURCE OF CRASH?!?!?
-
- if(Debugger_IsActive() || NITI || IsConsoleCheatConfigActive() || Help_IsActive())
- {
-  if(!krepeat)
-   SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY, SDL_DEFAULT_REPEAT_INTERVAL);
-  krepeat = 1;
- }
- else
- {
-  if(krepeat)
-   SDL_EnableKeyRepeat(0, 0);
-  krepeat = 0;
- }
-
- #if defined(HAVE_SIGNAL) || defined(HAVE_SIGACTION)
- if(SignalSafeExitWanted)
-  NeedExitNow = true;
- #endif
-
- while(SDL_PollEvent(&event))
- {
-  if(Debugger_IsActive())
-   Debugger_Event(&event);
-  else 
-   if(IsConsoleCheatConfigActive())
-    CheatEventHook(&event);
-
-  //NetplayEventHook(&event); POSSIBLE SOURCE OF CRASH?!?!?
-
-  /* This is a very ugly hack for some joystick hats that don't behave very well. */
-  if(event.type == SDL_JOYHATMOTION)
-  {
-   SDL_Event ne[64];
-   int count;
-   //printf("Cheep: %d\n", event.jhat.value);
-   if((count = SDL_PeepEvents(ne, 64, SDL_PEEKEVENT, SDL_EVENTMASK(SDL_JOYHATMOTION))) >= 1)
-   {
-    int x;
-    int docon = 0;
-
-    for(x=0;x<count;x++)
-     if(event.jhat.which == ne[x].jhat.which)
-      docon = 1;
-    if(docon) continue;
-   }
-  } // && event.jhat.
-  //if(event.type == SDL_JOYAXISMOTION) printf("Which: %d, axis: %d, value: %d\n", event.jaxis.which, event.jaxis.axis, event.jaxis.value);
-
-  /* Handle the event, and THEN hand it over to the GUI. Order is important due to global variable mayhem(CEVT_TOGGLEFS. */
-  switch(event.type)
-  {
-   case SDL_ACTIVEEVENT: break;
-   case SDL_SYSWMEVENT: break;
-   case SDL_VIDEORESIZE: VideoResize(event.resize.w, event.resize.h); break;
-   case SDL_VIDEOEXPOSE: break;
-   case SDL_QUIT: NeedExitNow = 1;break;
-   case SDL_USEREVENT:
-		switch(event.user.code)
-		{
-		 case CEVT_SET_STATE_STATUS: MT_SetStateStatus((StateStatusStruct *)event.user.data1); break;
-                 case CEVT_SET_MOVIE_STATUS: MT_SetMovieStatus((StateStatusStruct *)event.user.data1); break;
-		 case CEVT_WANT_EXIT:
-		     if(!Netplay_TryTextExit())
-		     {
-		      SDL_Event evt;
-		      evt.quit.type = SDL_QUIT;
-		      SDL_PushEvent(&evt);
-		     }
-		     break;
-	         case CEVT_SET_GRAB_INPUT:
-                         SDL_WM_GrabInput(*(int *)event.user.data1 ? SDL_GRAB_ON : SDL_GRAB_OFF);
-                         free(event.user.data1);
-                         break;
-		 case CEVT_TOGGLEFS: NeedVideoChange = 1; break;
-		 case CEVT_VIDEOSYNC: NeedVideoChange = -1; break;
-		 case CEVT_SHOWCURSOR: SDL_ShowCursor(*(int *)event.user.data1); free(event.user.data1); break;
-	  	 case CEVT_DISP_MESSAGE: VideoShowMessage((UTF8*)event.user.data1); break;
-		 default: 
-			if(numevents < gtevents_size)
-			{
-			 memcpy(&gtevents_temp[numevents], &event, sizeof(SDL_Event));
-			 numevents++;
-			}
-			break;
-		}
-		break;
-   default: 
-           if(numevents < gtevents_size)
-           {
-            memcpy(&gtevents_temp[numevents], &event, sizeof(SDL_Event));
-            numevents++;
-           }
-	   break;
-  }
- }
-
- SDL_mutexP(EVMutex);
- for(int i = 0; i < numevents; i++)
- {
-  memcpy((void *)&gtevents[gte_write], &gtevents_temp[i], sizeof(SDL_Event));
-  gte_write = (gte_write + 1) & (gtevents_size - 1);
- }
- SDL_mutexV(EVMutex);
-
- if(!CurGame)
-  GameThread_HandleEvents();
-#endif 
-}
+void PumpWrap(void){}
 
 void MainSetEventHook(int (*eh)(const SDL_Event *event))
 {
@@ -1374,18 +1161,7 @@ static volatile int JoyModeChange = 0;
 
 void SetJoyReadMode(int mode)	// 0 for events, 1 for manual function calling to update.
 {
-#if 0
- SDL_mutexP(VTMutex);
-#endif
  JoyModeChange = mode | 0x8;
-#if 0
- SDL_mutexV(VTMutex);
-
- /* Only block if we're calling this from within the game loop(it is also called from within LoadGame(), called in the main loop). */
- if(SDL_ThreadID() != MainThreadID) //if(GameThread && (SDL_ThreadID() != SDL_GetThreadID(GameThread))) - oops, race condition with the setting of GameThread, possibly...
-  while(JoyModeChange && GameThreadRun)
-   SDL_Delay(1);
-#endif
 }
 
 
@@ -1413,14 +1189,10 @@ bool MT_FromRemote_SoundSync(void)
 
 bool MT_FromRemote_VideoSync(void)
 {
-          KillVideo();
-
-          //memset(VTBuffer[0], 0, CurGame->pitch * CurGame->fb_height);
-          //memset(VTBuffer[1], 0, CurGame->pitch * CurGame->fb_height);
-
-          if(!InitVideo(CurGame))
-	   return(0);
-	  return(1);
+    KillVideo();
+    if(!InitVideo(CurGame))
+	  return(0);
+	return(1);
 }
 
 void RefreshThrottleFPS(double multiplier)
@@ -1437,90 +1209,23 @@ void PrintSDLVersion(void)
 
 int sdlhaveogl = 0;
 
-//#include <sched.h>
-
-#if 0//#ifdef WIN32
-char *GetFileDialog(void)
-{
- OPENFILENAME ofn;
- char returned_fn[2048];
- std::string filter;
- bool first_extension = true;
-
- filter = std::string("Recognized files");
- filter.push_back(0);
-
- for(unsigned int i = 0; i < MDFNSystems.size(); i++)
- {
-  if(MDFNSystems[i]->FileExtensions)
-  {
-   const FileExtensionSpecStruct *fesc = MDFNSystems[i]->FileExtensions;
-
-   while(fesc->extension && fesc->description)
-   {
-    if(!first_extension)
-     filter.push_back(';');
-
-    filter.push_back('*');
-    filter += std::string(fesc->extension);
-
-    first_extension = false;
-    fesc++;
-   }
-  }
- }
-
- filter.push_back(0);
- filter.push_back(0);
-
- //fwrite(filter.data(), 1, filter.size(), stdout);
-
- memset(&ofn, 0, sizeof(ofn));
-
- ofn.lStructSize = sizeof(ofn);
- ofn.lpstrTitle = "Mednafen Open File";
- ofn.lpstrFilter = filter.data();
-
- ofn.nMaxFile = sizeof(returned_fn);
- ofn.lpstrFile = returned_fn;
-
- ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
-
- if(GetOpenFileName(&ofn))
-  return(strdup(returned_fn));
- 
- return(NULL);
-}
-#endif
-
-
 int MEDNAFEN_main(int argc, char *argv[], char *name)
 {
-	//struct sched_param sp;
-
-	//sp.sched_priority = 25;
-
-	//if(sched_setscheduler(getpid(), SCHED_RR, &sp))
-	//{
-	// printf("%m\n");
-	// return(-1);
-	//}
-
-        PSPOutput("Now in mednafen main!\n");
+    PSPOutput("Now in mednafen main!\n");
 
 	std::vector<MDFNGI *> ExternalSystems;
 	int ret;
 	char *needie = name;
 
-        PSPOutput("Getting base directory .. ");
+    PSPOutput("Getting base directory .. ");
 	DrBaseDirectory=GetBaseDirectory();
-        PSPOutput(DrBaseDirectory);
+    PSPOutput(DrBaseDirectory);
 
 	MDFNI_printf(_("Starting Mednafen %s\n"), MEDNAFEN_VERSION);
-        PSPOutput("\nStarting Mednafen ..\n");
+    PSPOutput("\nStarting Mednafen ..\n");
 	MDFN_indent(1);
-        PSPOutput("Mednafen started\n");
-        MDFN_printf(_("Base directory: %s\n"), DrBaseDirectory);
+    PSPOutput("Mednafen started\n");
+    MDFN_printf(_("Base directory: %s\n"), DrBaseDirectory);
 
 	#ifdef ENABLE_NLS
 	setlocale(LC_ALL, "");
@@ -1535,42 +1240,25 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	textdomain(PACKAGE);
 	#endif
 
-        PSPOutput("Initializing SDL...\n");
+    PSPOutput("Initializing SDL...\n");
 	if(SDL_Init(SDL_INIT_VIDEO)) /* SDL_INIT_VIDEO Needed for (joystick config) event processing? */
 	{
 	 fprintf(stderr, "Could not initialize SDL: %s\n", SDL_GetError());
 	 MDFNI_Kill();
 	 return(-1);
 	}
-        PSPOutput("SDL Initialized!\n");
+    PSPOutput("SDL Initialized!\n");
 
-        PSPOutput("Mapping StdoutMutext to SDL)CreateMutex()\n");
-	//if(!(StdoutMutex = SDL_CreateMutex()))
-	//{
-	// MDFN_PrintError(_("Could not create mutex: %s\n"), SDL_GetError());
-	// MDFNI_Kill();
-	// return(-1);
-	//}
-        PSPOutput("Mapped successfully!\n");
+    PSPOutput("Mapping MainThreadID to SDL_ThreadID()\n");
+    MainThreadID = SDL_ThreadID();
+    PSPOutput("Mapped Successfully!\n");
 
-        PSPOutput("Mapping MainThreadID to SDL_ThreadID()\n");
-        MainThreadID = SDL_ThreadID();
-        PSPOutput("Mapped Successfully!\n");
-
-        // Look for external emulation modules here.
-
-        PSPOutput("Initializing Mednafen Modules ..\n");
+    PSPOutput("Initializing Mednafen Modules ..\n");
 	if(!MDFNI_InitializeModules(ExternalSystems))
 	 return(-1);
-        PSPOutput("Mednafen Modules Initialized!\n");
+    PSPOutput("Mednafen Modules Initialized!\n");
 
-	//if(argc >= 2 && (!strcasecmp(argv[1], "-remote") || !strcasecmp(argv[1], "--remote")))
-         //RemoteOn = TRUE;
-
-	//if(RemoteOn)
- 	 //InitSTDIOInterface();
-
-        PSPOutput("Setting NeoDriverSettings..\n");
+    PSPOutput("Setting NeoDriverSettings..\n");
 
 	for(unsigned int x = 0; x < sizeof(DriverSettings) / sizeof(MDFNSetting); x++)
 	 NeoDriverSettings.push_back(DriverSettings[x]);
@@ -1579,24 +1267,23 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	MakeVideoSettings(NeoDriverSettings);
 	MakeInputSettings(NeoDriverSettings);
 
-        PSPOutput("NeoDriver Set!\nInitializing Mednafen...\n");
+    PSPOutput("NeoDriver Set!\nInitializing Mednafen...\n");
 
-        if(!(ret=MDFNI_Initialize(DrBaseDirectory, NeoDriverSettings)))
-         return(-1);
+    if(!(ret=MDFNI_Initialize(DrBaseDirectory, NeoDriverSettings)))
+      return(-1);
 
-        PSPOutput("Mednafen Initialized!\n");
+    PSPOutput("Mednafen Initialized!\n");
 
-	//PrintSDLVersion();
+    PSPOutput("Enabling SDL Unicode...\n");
+    SDL_EnableUNICODE(1);
+    PSPOutput("Unicode Endabled!\n");
 
-        PSPOutput("Enabling SDL Unicode...\n");
-        SDL_EnableUNICODE(1);
-        PSPOutput("Unicode Endabled!\n");
+    #if defined(HAVE_SIGNAL) || defined(HAVE_SIGACTION)
+    SetSignals(CloseStuff);
+    #endif
 
-        #if defined(HAVE_SIGNAL) || defined(HAVE_SIGACTION)
-        SetSignals(CloseStuff);
-        #endif
-
-        PSPOutput("Creating Directories...\n");
+    PSPOutput("Creating Directories...\n");
+	
 	if(!CreateDirs())
 	{
 	 ErrnoHolder ene(errno);	// TODO: Maybe we should have CreateDirs() return this instead?
@@ -1605,22 +1292,12 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	 MDFNI_Kill();
 	 return(-1);
 	}
-        PSPOutput("Directories created!\n");
+	
+    PSPOutput("Directories created!\n");
 
 	MakeMednafenArgsStruct();
 
-	#if 0 //def WIN32
-	if(argc > 1 || !(needie = GetFileDialog()))
-	#endif
-	/*if(!DoArgs(argc,argv, &needie))
-	{
-	 MDFNI_Kill();
-	 DeleteInternalArgs();
-	 KillInputSettings();
-	 return(-1);
-	}*/
-
-        if(!getenv("__GL_SYNC_TO_VBLANK"))
+    if(!getenv("__GL_SYNC_TO_VBLANK"))
 	{
  	 if(MDFN_GetSettingB("video.glvsync"))
 	 {
@@ -1639,10 +1316,6 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	   separate sound code which should be thread safe(?)).
 	*/
 
-	//InitVideo(NULL);
-
-	//VTMutex = SDL_CreateMutex();
-    //EVMutex = SDL_CreateMutex();
 	GameMutex = SDL_CreateMutex();
 
 	VTReady = NULL;
@@ -1656,40 +1329,27 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 
 	NeedExitNow = 0;
 
-	#if 0
-	{
-	 long start_ticks = SDL_GetTicks();
+    if(LoadGame(force_module_arg, needie))
+    {
+	  uint32 pitch32 = CurGame->fb_width; 
+	  MDFN_PixelFormat nf(MDFN_COLORSPACE_RGB, 0, 8, 16, 24);
 
-	 for(int i = 0; i < 65536; i++)
-	  MDFN_GetSettingB("gg.forcemono");
+	  VTBuffer[0] = new MDFN_Surface(NULL, CurGame->fb_width, CurGame->fb_height, pitch32, nf);
+      VTBuffer[1] = new MDFN_Surface(NULL, CurGame->fb_width, CurGame->fb_height, pitch32, nf);
+      VTLineWidths[0] = (MDFN_Rect *)calloc(CurGame->fb_height, sizeof(MDFN_Rect));
+      VTLineWidths[1] = (MDFN_Rect *)calloc(CurGame->fb_height, sizeof(MDFN_Rect));
+      NeedVideoChange = -1;
+      FPS_Init();
 
-	 printf("%ld\n", SDL_GetTicks() - start_ticks);
-	}
-	#endif
-
-        //needie = "boot.nes";
-        if(LoadGame(force_module_arg, needie))
-        {
-	 uint32 pitch32 = CurGame->fb_width; 
-	 //uint32 pitch32 = round_up_pow2(CurGame->fb_width);
-	 MDFN_PixelFormat nf(MDFN_COLORSPACE_RGB, 0, 8, 16, 24);
-
-	 VTBuffer[0] = new MDFN_Surface(NULL, CurGame->fb_width, CurGame->fb_height, pitch32, nf);
-         VTBuffer[1] = new MDFN_Surface(NULL, CurGame->fb_width, CurGame->fb_height, pitch32, nf);
-         VTLineWidths[0] = (MDFN_Rect *)calloc(CurGame->fb_height, sizeof(MDFN_Rect));
-         VTLineWidths[1] = (MDFN_Rect *)calloc(CurGame->fb_height, sizeof(MDFN_Rect));
-         NeedVideoChange = -1;
-         FPS_Init();
-
-         #ifdef WANT_DEBUGGER
-         MemDebugger_Init();
-	 if(MDFN_GetSettingB("debugger.autostepmode"))
-	 {
-	  Debugger_Toggle();
-	  Debugger_ForceSteppingMode();
-	 }
-         #endif
-        }
+      #ifdef WANT_DEBUGGER
+      MemDebugger_Init();
+	  if(MDFN_GetSettingB("debugger.autostepmode"))
+	  {
+	    Debugger_Toggle();
+	    Debugger_ForceSteppingMode();
+	  }
+      #endif
+    }
 	else
 	 NeedExitNow = 1;
 
@@ -1699,26 +1359,21 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	 if(RemoteOn)
 	  CheckForSTDIOMessages();
 
-	 //SDL_mutexP(VTMutex);	/* Lock mutex */
-
 	 if(JoyModeChange)
 	 {
 	  int t = JoyModeChange & 1;
-
-          PumpWrap(); // I love undefined API behavior, don't you?  SDL_JoystickEventState() seems
-		      // to clear the event buffer.
+      PumpWrap();
 	  if(t) SDL_JoystickEventState(SDL_IGNORE);
 	  else SDL_JoystickEventState(SDL_ENABLE);
-	  //printf("Joy mode: %d\n", t);
 	  JoyModeChange = 0;
 	 }
 
-         if(NeedVideoChange)
-         {
+        if(NeedVideoChange)
+        {
           KillVideo();
 
-	  for(int i = 0; i < 2; i++)
-	   ((MDFN_Surface *)VTBuffer[i])->Fill(0, 0, 0, 0);
+	      for(int i = 0; i < 2; i++)
+	          ((MDFN_Surface *)VTBuffer[i])->Fill(0, 0, 0, 0);
 
           if(NeedVideoChange == -1)
           {
@@ -1743,27 +1398,15 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 
          if(VTReady)
          {
-	  //static int last_time;
-	  //int curtime;
-
-          BlitScreen(VTReady, VTDRReady, VTLWReady);
-
-          //curtime = SDL_GetTicks();
-          //printf("%d\n", curtime - last_time);
-          //last_time = curtime;
-
-          VTReady = NULL;
+           BlitScreen(VTReady, VTDRReady, VTLWReady);
+           VTReady = NULL;
          }
 
-	 PumpWrap();
-         //SDL_mutexV(VTMutex);   /* Unlock mutex */
+	     PumpWrap();
          SDL_Delay(1);
 	}
 
 	CloseGame();
-
-	//SDL_DestroyMutex(VTMutex);
-        //SDL_DestroyMutex(EVMutex);
 
 	for(int x = 0; x < 2; x++)
 	{
@@ -1800,61 +1443,7 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
         return(0);
 }
 
-
-
 static uint32 last_btime = 0;
-
-#if 0
-// Throttle and check for frame skip
-static int ThrottleCheckFS(void)
-{
- int needskip = 0;
- bool nothrottle = MDFN_GetSettingB("nothrottle");
-
- waiter:
-
- ttime=SDL_GetTicks();
- ttime*=10000;
-
- if((ttime - ltime) < (tfreq / desiredfps ))
- {
-  if(!sound_active && !NoWaiting && !nothrottle && GameThreadRun)
-  {
-   int64 delay;
-   delay = (((tfreq/desiredfps)-(ttime-ltime)) / 10000) - 1;
-
-   if(delay >= 0)
-    SDL_Delay(delay);
-
-   goto waiter;
-  }
- }
-
- if(!MDFNDnetplay)
- {
-  if(((ttime-ltime) >= (1.5*tfreq/desiredfps)))
-  {
-   //MDFN_DispMessage("%8d %8d %8d, %8d", ttime, ltime, ttime-ltime, tfreq / desiredfps);
-   if(skipcount < 4 || (CurGameSpeed > 1 && skipcount < CurGameSpeed))     // Only skip four frames in a row at maximum.
-   {
-    skipcount ++;
-    needskip = 1;
-   } else skipcount = 0;
-   if(!sound_active)    // Only adjust base time if sound is disabled.
-   {
-    if((ttime-ltime) >= ((uint64)3.0*tfreq/desiredfps))
-     ltime=ttime;
-    else
-     ltime += tfreq / desiredfps;
-   }
-  }
-  else
-   ltime+=tfreq/desiredfps;
- }
-
- return(needskip);
-}
-#endif
 
 static void UpdateSoundSync(int16 *Buffer, int Count)
 {
@@ -1877,22 +1466,6 @@ static void UpdateSoundSync(int16 *Buffer, int Count)
   }
 
   WriteSound(Buffer, Count);
-
-#if 0
-  if(MDFNDnetplay && GetWriteSound() >= Count * 1.00) // Cheap code to fix sound buffer underruns due to accumulation of timer error during netplay.
-  {
-   int16 zbuf[128 * 2];
-   for(int x = 0; x < 128 * 2; x++) zbuf[x] = 0;
-   int t = GetWriteSound();
-   t /= CurGame->soundchan;
-   while(t > 0) 
-   {
-    WriteSound(zbuf, (t > 128 ? 128 : t));
-    t -= 128;
-   }
-   ers.SetETtoRT();
-  }
-  #endif
  }
  else
  {

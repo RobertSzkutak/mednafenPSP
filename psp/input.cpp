@@ -327,7 +327,7 @@ u16 psp_mednafen_input()
 	
 	//Thumbstick
 	
-	if (pad.Ly-128< -45)
+	if (pad.Ly-128 < -45)
 	{
 		switch(MODE)
 		{
