@@ -1425,7 +1425,6 @@ void MDFND_UpdateInput(bool VirtualDevicesOnly, bool UpdateRapidFire)
   for(unsigned int butt = 0; butt < PortButtConfig[x].size(); butt++)
   {
    uint32 bo[2];
-   uint8 *tptr = (uint8 *)PortData[x];
 
    bo[0] = PortButtBitOffsets[x][butt];
    bo[1] = PortButtExclusionBitOffsets[x][butt];
@@ -1440,6 +1439,7 @@ void MDFND_UpdateInput(bool VirtualDevicesOnly, bool UpdateRapidFire)
     }
    }
   }
+  
 /*
   // Now, axis data...
   for(int tmi = 0; tmi < PortDevice[x]->NumInputs; tmi++)

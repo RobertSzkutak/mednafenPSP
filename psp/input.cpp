@@ -124,6 +124,8 @@ u16 psp_mednafen_input()
 	sceCtrlReadBufferPositive(&pad, 1); 
 
 	u16 result = 0;
+	
+	//Buttons
 
 	if(pad.Buttons != 0)
 	{
@@ -320,6 +322,89 @@ u16 psp_mednafen_input()
 				default:
 					break;
 			}
+		}
+	}
+	
+	//Thumbstick
+	
+	if (pad.Ly-128< -45)
+	{
+		switch(MODE)
+		{
+			case MODE_NES:
+				result |= NES_UP;
+				break;
+			case MODE_SMS:
+				result |= SMS_UP;
+				break;
+			case MODE_GB:
+			    result |= GB_UP;
+				break;
+			case MODE_NGP:
+			    result |= NGP_UP;
+				break;
+			default:
+				break;
+		}
+	}
+	else if (pad.Ly-128 > 45)
+	{
+		switch(MODE)
+		{
+			case MODE_NES:
+				result |= NES_DOWN;
+				break;
+			case MODE_SMS:
+				result |= SMS_DOWN;
+				break;
+			case MODE_GB:
+		    result |= GB_DOWN;
+			break;
+		    case MODE_NGP:
+			    result |= NGP_DOWN;
+				break;
+			default:
+				break;
+		}
+	}
+	if (pad.Lx-128 < -45)
+	{
+		switch(MODE)
+		{
+			case MODE_NES:
+				result |= NES_LEFT;
+				break;
+			case MODE_SMS:
+				result |= SMS_LEFT;
+				break;
+			case MODE_GB:
+			    result |= GB_LEFT;
+				break;
+			case MODE_NGP:
+			    result |= NGP_LEFT;
+				break;
+			default:
+				break;
+		}
+	}
+	else if (pad.Lx-128 > 45)
+	{
+		switch(MODE)
+		{
+			case MODE_NES:
+				result |= NES_RIGHT;
+				break;
+			case MODE_SMS:
+				result |= SMS_RIGHT;
+				break;
+			case MODE_GB:
+			    result |= GB_RIGHT;
+				break;
+			case MODE_NGP:
+			    result |= NGP_RIGHT;
+				break;
+			default:
+				break;
 		}
 	}
 
