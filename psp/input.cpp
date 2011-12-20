@@ -327,7 +327,7 @@ u16 psp_mednafen_input()
 	
 	//Thumbstick
 	
-	if (pad.Ly-128 < -45)
+	if (pad.Ly-128 < -75)
 	{
 		switch(MODE)
 		{
@@ -347,7 +347,7 @@ u16 psp_mednafen_input()
 				break;
 		}
 	}
-	else if (pad.Ly-128 > 45)
+	else if (pad.Ly-128 > 75)
 	{
 		switch(MODE)
 		{
@@ -367,7 +367,7 @@ u16 psp_mednafen_input()
 				break;
 		}
 	}
-	if (pad.Lx-128 < -45)
+	if (pad.Lx-128 < -75)
 	{
 		switch(MODE)
 		{
@@ -387,7 +387,7 @@ u16 psp_mednafen_input()
 				break;
 		}
 	}
-	else if (pad.Lx-128 > 45)
+	else if (pad.Lx-128 > 75)
 	{
 		switch(MODE)
 		{
