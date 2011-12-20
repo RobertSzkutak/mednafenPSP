@@ -107,24 +107,24 @@ SDL_PixelFormat* getScreenFormat()
     return screen->format;
 }
 
-static SDL_Surface *IconSurface=NULL;
+//static SDL_Surface *IconSurface=NULL;
 
 static SDL_Rect screen_dest_rect;
 
-static SDL_Surface *DebuggerSurface = NULL;
-static SDL_Rect DebuggerRect;
+//static SDL_Surface *DebuggerSurface = NULL;
+//static SDL_Rect DebuggerRect;
 
-static SDL_Surface *NetSurface = NULL;
-static SDL_Rect NetRect;
+//static SDL_Surface *NetSurface = NULL;
+//static SDL_Rect NetRect;
 
-static SDL_Surface *CheatSurface = NULL;
-static SDL_Rect CheatRect;
+//static SDL_Surface *CheatSurface = NULL;
+//static SDL_Rect CheatRect;
 
-static SDL_Surface *HelpSurface = NULL;
-static SDL_Rect HelpRect;
+//static SDL_Surface *HelpSurface = NULL;
+//static SDL_Rect HelpRect;
 
-static SDL_Surface *SMSurface = NULL;
-static SDL_Rect SMRect, SMDRect;
+//static SDL_Surface *SMSurface = NULL;
+//static SDL_Rect SMRect, SMDRect;
 
 static int curbpp;
 
@@ -152,11 +152,13 @@ void ClearBackBuffer(void)
 /* Return 1 if video was killed, 0 otherwise(video wasn't initialized). */
 void KillVideo(void)
 {
+#if 0
  if(IconSurface)
  {
   SDL_FreeSurface(IconSurface);
   IconSurface = NULL;
  }
+ #endif
 
  if(source_surface)
  {
@@ -165,6 +167,7 @@ void KillVideo(void)
   source_surface = NULL;
  }
 
+ #if 0
  if(DebuggerSurface)
  {
   SDL_FreeSurface(DebuggerSurface);
@@ -194,6 +197,7 @@ void KillVideo(void)
   SDL_FreeSurface(NetSurface);
   NetSurface = NULL;
  }
+ #endif
 
  if(cur_flags & SDL_OPENGL)
   KillOpenGL();
@@ -516,7 +520,7 @@ int InitVideo(MDFNGI *gi)
   SDL_WM_SetCaption((char *)gi->name,(char *)gi->name);
  else
   SDL_WM_SetCaption("Mednafen","Mednafen");
-
+#if 0
  #ifdef WIN32
   #ifdef LSB_FIRST
   IconSurface=SDL_CreateRGBSurfaceFrom((void *)mednafen_playicon.pixel_data,32,32,32,32*4,0xFF,0xFF00,0xFF0000,0xFF000000);
@@ -531,6 +535,7 @@ int InitVideo(MDFNGI *gi)
   #endif
  #endif
  SDL_WM_SetIcon(IconSurface,0);
+ #endif
 
  int rs, gs, bs, as;
 
@@ -583,7 +588,7 @@ int InitVideo(MDFNGI *gi)
  }
  source_surface = SDL_CreateRGBSurfaceFrom(NULL, gi->fb_width, gi->fb_height, 32, gi->fb_width * sizeof(uint32), 0xFF << rs, 0xFF << gs, 0xFF << bs, 0);
 
- /*The PSP Port will never use this :
+ #if 0
  NetSurface = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA, screen->w, 18 * 5, 32, 0xFF << real_rs, 0xFF << real_gs, 0xFF << real_bs, 0xFF << real_as);
  SDL_SetColorKey(NetSurface, SDL_SRCCOLORKEY, 0);
  SDL_SetAlpha(NetSurface, SDL_SRCALPHA, 0);
@@ -592,9 +597,9 @@ int InitVideo(MDFNGI *gi)
  NetRect.h = 18 * 5;
  NetRect.x = 0;
  NetRect.y = 0;
- */
+ #endif
 
-
+#if 0
  {
   int xmu = 1;
   int ymu = 1;
@@ -623,6 +628,7 @@ int InitVideo(MDFNGI *gi)
   SMSurface = SDL_CreateRGBSurface(SDL_SWSURFACE | SDL_SRCALPHA, SMRect.w, SMRect.h, 32, 0xFF << real_rs, 0xFF << real_gs, 0xFF << real_bs, 0xFF << real_as);
   SDL_SetColorKey(SMSurface, SDL_SRCCOLORKEY, 0);
  }
+ #endif
 
  //MDFNI_SetPixelFormat(rs, gs, bs, as);
  memset(&pf_normal, 0, sizeof(pf_normal));
@@ -719,14 +725,16 @@ static bool BlitInternalMessage(void)
 
  if(CurrentMessage)
  {
+  #if 0
   SDL_FillRect(SMSurface, NULL, MK_COLOR_A(SMSurface, 0x00, 0x00, 0x00, 0xC0));
   DrawTextTransShadow((uint32 *)((uint8 *)SMSurface->pixels + SMSurface->pitch * 1), SMSurface->pitch, SMRect.w, CurrentMessage, 
 	MK_COLOR_A(SMSurface, 0xFF, 0xFF, 0xFF, 0xFF), MK_COLOR_A(SMSurface, 0x00, 0x00, 0x00, 0xFF), TRUE);
+  #endif
   free(CurrentMessage);
   CurrentMessage = NULL;
  }
 
- BlitRaw(SMSurface, &SMRect, &SMDRect);
+ //BlitRaw(SMSurface, &SMRect, &SMDRect);
  return(1);
 }
 
@@ -1048,6 +1056,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
 
  unsigned int debw, debh;
 
+ #if 0
  if(Debugger_IsActive(&debw, &debh))
  {
   if(!DebuggerSurface)
@@ -1084,6 +1093,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
 
   BlitRaw(DebuggerSurface, &DebuggerRect, &zederect);
  }
+ #endif
 #if 0
  if(CKGUI_IsActive())
  {
@@ -1106,7 +1116,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
   CKGUISurface = NULL;
  }
 #endif
-
+#if 0
  if(Help_IsActive())
  {
   if(!HelpSurface)
@@ -1147,9 +1157,11 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
   SDL_FreeSurface(HelpSurface);
   HelpSurface = NULL;
  }
+ #endif
 
  DrawSaveStates(screen, exs, eys, real_rs, real_gs, real_bs, real_as);
 
+ #if 0
  if(IsConsoleCheatConfigActive())
  {
   if(!CheatSurface)
@@ -1171,6 +1183,7 @@ void BlitScreen(MDFN_Surface *msurface, const MDFN_Rect *DisplayRect, const MDFN
   SDL_FreeSurface(CheatSurface);
   CheatSurface = NULL;
  }
+ #endif
 
  #if 0
  if(Netplay_GetTextView())
