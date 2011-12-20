@@ -95,10 +95,11 @@ int main(int argc, char *argv[])
 
 	SetupCallbacks();
 
-	SceCtrlData pad;
 	sceCtrlSetSamplingCycle(0);
 	sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
-
+    
+	SceCtrlData pad;
+	
     FILE *fp = new FILE();
     fp = fopen("output.txt", "w");
     fprintf(fp, "Hello World!\n");
