@@ -25,7 +25,6 @@
 #include "overlay.h"
 
 #include "icon.h"
-#include "netplay.h"
 #include "cheat.h"
 
 #include "scalebit.h"

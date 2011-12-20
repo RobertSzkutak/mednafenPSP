@@ -53,7 +53,6 @@
 #include "video-state.h"
 #include "remote.h"
 #include "ers.h"
-#include "../qtrecord.h"
 #include <math.h>
 
 extern void PSPOutput(char *text);

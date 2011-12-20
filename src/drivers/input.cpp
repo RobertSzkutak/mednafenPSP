@@ -27,7 +27,6 @@
 #include "sound.h"
 #include "video.h"
 #include "joystick.h"
-#include "netplay.h"
 #include "cheat.h"
 #include "fps.h"
 #include "debugger.h"

@@ -27,7 +27,6 @@
 #include "general.h"
 #include "state.h"
 #include "movie.h"
-#include "netplay.h"
 #include "video.h"
 #include "video/resize.h"
 

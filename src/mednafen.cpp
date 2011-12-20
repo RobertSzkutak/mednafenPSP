@@ -40,7 +40,6 @@
 #include	"compress/minilzo.h"
 #include	"tests.h"
 #include	"video/tblur.h"
-#include	"qtrecord.h"
 #include	"md5.h"
 #include	"clamp.h"
 #include	"Fir_Resampler.h"
