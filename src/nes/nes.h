@@ -3,7 +3,6 @@
 
 #include "../mednafen.h"
 #include "../state.h"
-#include "../movie.h"
 #include "../general.h"
 #include "../file.h"
 #include "../md5.h"

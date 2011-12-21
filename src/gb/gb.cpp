@@ -20,12 +20,10 @@
 #include "../file.h"
 #include "../general.h"
 #include "../state.h"
-#include "../movie.h"
 #include "../mempatcher.h"
 #include "../md5.h"
 
 #include <string.h>
-//#include <memory.h> PSP WHY U NO FIND DIS!?!?!
 #include <zlib.h>
 
 #include "gb.h"

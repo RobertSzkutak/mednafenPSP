@@ -26,7 +26,6 @@
 #include "driver.h"
 #include "general.h"
 #include "state.h"
-#include "movie.h"
 #include "video.h"
 #include "video/resize.h"
 

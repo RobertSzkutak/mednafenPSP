@@ -56,7 +56,6 @@
 
 #include "system.h"
 
-#include "../movie.h"
 #include "../general.h"
 #include "../mempatcher.h"
 #include "../md5.h"

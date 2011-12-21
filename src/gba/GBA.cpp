@@ -21,7 +21,6 @@
 #include "../player.h"
 #include "../file.h"
 #include "../state.h"
-#include "../movie.h"
 #include "../mempatcher.h"
 #include "../md5.h"
 #include "GBAinline.h"

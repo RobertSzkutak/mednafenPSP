@@ -18,7 +18,6 @@
 #include "pce.h"
 #include "input.h"
 #include "huc.h"
-#include "../movie.h"
 #include "../endian.h"
 
 namespace PCE_Fast
