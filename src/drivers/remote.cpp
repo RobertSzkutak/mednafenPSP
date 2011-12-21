@@ -134,12 +134,8 @@ static void ParseSTDIOCommand(char *buf)
    {
     std::string sval;
 
-    LockGameMutex(TRUE);
-
     sval = MDFN_GetSettingS(arguments[1]);
     success = TRUE;
-
-    LockGameMutex(FALSE);
 
     Remote_SendCommand("return", 2, "success", sval.c_str());
     return;
@@ -151,9 +147,7 @@ static void ParseSTDIOCommand(char *buf)
   {
    if(numargs == 3)
    {
-    LockGameMutex(TRUE);
     success = MDFNI_SetSetting(arguments[1], arguments[2]);
-    LockGameMutex(FALSE);
    }
    else
     puts("Invalid number of arguments");

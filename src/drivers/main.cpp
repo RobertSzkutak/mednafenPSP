@@ -431,25 +431,15 @@ void MakeVideoSettings(std::vector <MDFNSetting> &settings)
 
 }
 
-static SDL_Thread *GameThread;
 static MDFN_Surface *VTBuffer[2] = { NULL, NULL };
 static MDFN_Rect *VTLineWidths[2] = { NULL, NULL };
 
 static int volatile VTBackBuffer = 0;
-static SDL_mutex *GameMutex = NULL;
 
 static MDFN_Surface * volatile VTReady;
 static MDFN_Rect * volatile VTLWReady;
 static MDFN_Rect * volatile VTDRReady;
 static MDFN_Rect VTDisplayRects[2];
-
-void LockGameMutex(bool lock)
-{
- if(lock)
-  SDL_mutexP(GameMutex);
- else
-  SDL_mutexV(GameMutex);
-}
 
 static char *soundrecfn=0;	/* File name of sound recording. */
 
@@ -635,13 +625,8 @@ static void CloseStuff(int signum)
          SignalSafeExitWanted = safetryexit;
          return;
 	}
-
-        if(GameThread && SDL_ThreadID() == MainThreadID)
-	{
-	 SDL_KillThread(GameThread);		// Could this potentially deadlock?
-	 GameThread = NULL;
-	}
-        exit(1);
+	
+    exit(1);
 }
 #endif
 
@@ -807,13 +792,11 @@ static int LoadGame(const char *force_module, const char *path)
 	CurGame = tmp;
 	InitGameInput(tmp);
 
-        RefreshThrottleFPS(1);
+    RefreshThrottleFPS(1);
 
-        //SDL_mutexP(VTMutex);
-        NeedVideoChange = -1;
-        //SDL_mutexV(VTMutex);
+    NeedVideoChange = -1;
 
-      if(SDL_ThreadID() != MainThreadID)
+    if(SDL_ThreadID() != MainThreadID)
         while(NeedVideoChange)
 	    {
            SDL_Delay(1);
@@ -823,19 +806,14 @@ static int LoadGame(const char *force_module, const char *path)
 	if(MDFN_GetSettingB("sound"))
 	 sound_active = InitSound(tmp);
 
-        if(MDFN_GetSettingB("autosave"))
+    if(MDFN_GetSettingB("autosave"))
 	 MDFNI_LoadState(NULL, "mcq");
-
-	//if(netconnect)
-	 //MDFND_NetworkConnect();
 
 	ers.SetEmuClock(CurGame->MasterClock >> 32);
 
 	GameThreadRun = 1;
-	GameThread = SDL_CreateThread(GameLoop, NULL);
 
 	ffnosound = MDFN_GetSettingB("ffnosound");
-
 
 	if(qtrecfn)
 	{
@@ -849,17 +827,16 @@ static int LoadGame(const char *force_module, const char *path)
 	 }
 	}
 
-        if(soundrecfn)
-        {
+    if(soundrecfn)
+    {
  	 if(!MDFNI_StartWAVRecord(soundrecfn, GetSoundRate()))
-         {
-          free(soundrecfn);
-          soundrecfn = NULL;
-
+     {
+      free(soundrecfn);
+      soundrecfn = NULL;
 	  return(0);
-         }
-        }
-
+     }
+    }
+	
 	return 1;
 }
 
@@ -869,8 +846,6 @@ int CloseGame(void)
 	if(!CurGame) return(0);
 
 	GameThreadRun = 0;
-
-	SDL_WaitThread(GameThread, NULL);
 
     if(qtrecfn)	// Needs to be before MDFNI_Closegame() for now
       MDFNI_StopAVRecord();
@@ -883,7 +858,7 @@ int CloseGame(void)
 
 	MDFNI_CloseGame();
 
-        KillGameInput();
+    KillGameInput();
 	KillSound();
 
 	CurGame = NULL;
@@ -918,8 +893,6 @@ static int GameLoopPaused = 0;
 
 void DebuggerFudge(void)
 {
-    LockGameMutex(0);
-
 	int MeowCowHowFlown = VTBackBuffer;
 
 	// FIXME.
@@ -935,8 +908,6 @@ void DebuggerFudge(void)
 	  WriteSoundSilence(10);
 	else
 	  SDL_Delay(10);
-
-	LockGameMutex(1);
 }
 
 int64 Time64(void)
@@ -991,18 +962,44 @@ int GameLoop(void *arg)
 	 */
 	 while(NeedVideoChange)
 	 {
-	  if(!GameThreadRun) return(1);	// Might happen if video initialization failed
-	  SDL_Delay(1);
-	  }
-         do
-         {
+	  if(!GameThreadRun) 
+	   return(1);	// Might happen if video initialization failed
+	   
+	  KillVideo();
+
+	  for(int i = 0; i < 2; i++)
+	   ((MDFN_Surface *)VTBuffer[i])->Fill(0, 0, 0, 0);
+
+      if(NeedVideoChange == -1)
+      {
+       if(!InitVideo(CurGame))
+       {
+         NeedExitNow = 1;
+         break;
+       }
+      }
+      else
+      {
+       MDFNI_SetSettingB("video.fs", !MDFN_GetSettingB("video.fs"));
+
+       if(!InitVideo(CurGame))
+       {
+        MDFNI_SetSettingB("video.fs", !MDFN_GetSettingB("video.fs"));
+        InitVideo(CurGame);
+       }
+      }
+      NeedVideoChange = 0;
+	 }
+	 
+     do
+     {
 	  if(InFrameAdvance && !NeedFrameAdvance)
 	  {
 	   SDL_Delay(10);
 	  }
 	 } while(InFrameAdvance && !NeedFrameAdvance);
 
-	 if(/*MDFNDnetplay &&*/ !(NoWaiting & 0x2))	// TODO: Hacky, clean up.
+	 if(NoWaiting & 0x2)	// TODO: Hacky, clean up.
 	  ers.SetETtoRT();
 
 	 fskip = ers.NeedFrameSkip();
@@ -1015,66 +1012,70 @@ int GameLoop(void *arg)
 
  	 NeedFrameAdvance = 0;
 
-         if(NoWaiting)
+     if(NoWaiting)
 	  fskip = 1;
 
 	 VTLineWidths[VTBackBuffer][0].w = ~0;
 
 	 int ThisBackBuffer = VTBackBuffer;
 
-	 LockGameMutex(1);
-	 {
-	  EmulateSpecStruct espec;
- 	  memset(&espec, 0, sizeof(EmulateSpecStruct));
+	 EmulateSpecStruct espec;
+ 	 memset(&espec, 0, sizeof(EmulateSpecStruct));
 
-          espec.surface = (MDFN_Surface *)VTBuffer[VTBackBuffer];
-          espec.LineWidths = (MDFN_Rect *)VTLineWidths[VTBackBuffer];
-	  espec.skip = fskip;
-	  espec.soundmultiplier = CurGameSpeed;
-	  espec.NeedRewind = DNeedRewind;
+     espec.surface = (MDFN_Surface *)VTBuffer[VTBackBuffer];
+     espec.LineWidths = (MDFN_Rect *)VTLineWidths[VTBackBuffer];
+	 espec.skip = fskip;
+	 espec.soundmultiplier = CurGameSpeed;
+	 espec.NeedRewind = DNeedRewind;
 
- 	  espec.SoundRate = GetSoundRate();
-	  espec.SoundBuf = GetEmuModSoundBuffer(&espec.SoundBufMaxSize);
- 	  espec.SoundVolume = (double)MDFN_GetSettingUI("sound.volume") / 100;
+ 	 espec.SoundRate = GetSoundRate();
+	 espec.SoundBuf = GetEmuModSoundBuffer(&espec.SoundBufMaxSize);
+ 	 espec.SoundVolume = (double)MDFN_GetSettingUI("sound.volume") / 100;
 
-	  int64 before_time = Time64();
-	  int64 after_time;
+	 int64 before_time = Time64();
+	 int64 after_time;
 
-	  static double average_time = 0;
+	 static double average_time = 0;
 
-          MDFNI_Emulate(&espec);
+     MDFNI_Emulate(&espec);
 
-	  after_time = Time64();
+	 after_time = Time64();
 
-          average_time += ((after_time - before_time) - average_time) * 0.10;
+     average_time += ((after_time - before_time) - average_time) * 0.10;
 
-          assert(espec.MasterCycles);
-	  ers.AddEmuTime((espec.MasterCycles - espec.MasterCyclesALMS) / CurGameSpeed);
+     assert(espec.MasterCycles);
+	 ers.AddEmuTime((espec.MasterCycles - espec.MasterCyclesALMS) / CurGameSpeed);
 
-	  //printf("%lld %f\n", (long long)(after_time - before_time), average_time);
+	 //printf("%lld %f\n", (long long)(after_time - before_time), average_time);
 
-	  VTDisplayRects[VTBackBuffer] = espec.DisplayRect;
+	 VTDisplayRects[VTBackBuffer] = espec.DisplayRect;
 
-	  sound = espec.SoundBuf + (espec.SoundBufSizeALMS * CurGame->soundchan);
-	  ssize = espec.SoundBufSize - espec.SoundBufSizeALMS;
-	 }
-	 LockGameMutex(0);
+	 sound = espec.SoundBuf + (espec.SoundBufSizeALMS * CurGame->soundchan);
+	 ssize = espec.SoundBufSize - espec.SoundBufSizeALMS;
+	 
 	 FPS_IncVirtual();
+	 
 	 if(!fskip)
 	  FPS_IncDrawn();
 
 	 do
 	 {
-          GameThread_HandleEvents();
+      GameThread_HandleEvents();
 	  VTBackBuffer = ThisBackBuffer;
-          MDFND_Update(fskip ? NULL : (MDFN_Surface *)VTBuffer[ThisBackBuffer], sound, ssize);
-          if((InFrameAdvance && !NeedFrameAdvance) || GameLoopPaused)
+      MDFND_Update(fskip ? NULL : (MDFN_Surface *)VTBuffer[ThisBackBuffer], sound, ssize);
+      if((InFrameAdvance && !NeedFrameAdvance) || GameLoopPaused)
 	  {
-           if(ssize)
-	    for(int x = 0; x < CurGame->soundchan * ssize; x++)
-	     sound[x] = 0;
+        if(ssize)
+	     for(int x = 0; x < CurGame->soundchan * ssize; x++)
+	      sound[x] = 0;
 	  }
 	 } while(((InFrameAdvance && !NeedFrameAdvance) || GameLoopPaused) && GameThreadRun);
+
+     if(VTReady)
+     {
+       BlitScreen(VTReady, VTDRReady, VTLWReady);
+       VTReady = NULL;
+     }
 	}
 	return(1);
 }   
@@ -1169,7 +1170,6 @@ bool MT_FromRemote_SoundSync(void)
  bool ret = TRUE;
 
  GameThreadRun = 0;
- SDL_WaitThread(GameThread, NULL);
 
  KillSound();
  sound_active = 0;
@@ -1181,7 +1181,6 @@ bool MT_FromRemote_SoundSync(void)
    ret = FALSE;
  }
  GameThreadRun = 1;
- GameThread = SDL_CreateThread(GameLoop, NULL);
 
  return(ret);
 }
@@ -1196,7 +1195,7 @@ bool MT_FromRemote_VideoSync(void)
 
 void RefreshThrottleFPS(double multiplier)
 {
-        CurGameSpeed = multiplier;
+    CurGameSpeed = multiplier;
 }
 
 void PrintSDLVersion(void)
@@ -1315,8 +1314,6 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	   separate sound code which should be thread safe(?)).
 	*/
 
-	GameMutex = SDL_CreateMutex();
-
 	VTReady = NULL;
 	VTDRReady = NULL;
 	VTLWReady = NULL;
@@ -1351,59 +1348,10 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
     }
 	else
 	 NeedExitNow = 1;
-
-	while(!NeedExitNow)
-	{
-
-	 if(RemoteOn)
-	  CheckForSTDIOMessages();
-
-	 if(JoyModeChange)
-	 {
-	  int t = JoyModeChange & 1;
-      PumpWrap();
-	  if(t) SDL_JoystickEventState(SDL_IGNORE);
-	  else SDL_JoystickEventState(SDL_ENABLE);
-	  JoyModeChange = 0;
-	 }
-
-        if(NeedVideoChange)
-        {
-          KillVideo();
-
-	      for(int i = 0; i < 2; i++)
-	          ((MDFN_Surface *)VTBuffer[i])->Fill(0, 0, 0, 0);
-
-          if(NeedVideoChange == -1)
-          {
-           if(!InitVideo(CurGame))
-           {
-            NeedExitNow = 1;
-            break;
-           }
-          }
-          else
-          {
-           MDFNI_SetSettingB("video.fs", !MDFN_GetSettingB("video.fs"));
-
-           if(!InitVideo(CurGame))
-           {
-            MDFNI_SetSettingB("video.fs", !MDFN_GetSettingB("video.fs"));
-            InitVideo(CurGame);
-           }
-          }
-          NeedVideoChange = 0;
-         }
-
-         if(VTReady)
-         {
-           BlitScreen(VTReady, VTDRReady, VTLWReady);
-           VTReady = NULL;
-         }
-
-	     PumpWrap();
-         SDL_Delay(1);
-	}
+	 
+	GameThreadRun = 1;
+	GameLoop(0);
+	NeedExitNow = 1;
 
 	CloseGame();
 
@@ -1428,7 +1376,7 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 
 	KillCommandInput();
 
-        MDFNI_Kill();
+    MDFNI_Kill();
 
 	KillJoysticks();
 
@@ -1439,7 +1387,7 @@ int MEDNAFEN_main(int argc, char *argv[], char *name)
 	DeleteInternalArgs();
 	KillInputSettings();
 
-        return(0);
+    return(0);
 }
 
 static uint32 last_btime = 0;
@@ -1496,16 +1444,8 @@ void MDFND_Update(MDFN_Surface *surface, int16 *Buffer, int Count)
   if(pending_snapshot)
    MDFNI_SaveSnapshot(surface, (MDFN_Rect *)&VTDisplayRects[VTBackBuffer], (MDFN_Rect *)VTLineWidths[VTBackBuffer]);
 
-  if(pending_save_state || pending_save_movie)
-   LockGameMutex(1);
-
   if(pending_save_state)
    MDFNI_SaveState(NULL, NULL, surface, (MDFN_Rect *)&VTDisplayRects[VTBackBuffer], (MDFN_Rect *)VTLineWidths[VTBackBuffer]);
-//  if(pending_save_movie)
-  // MDFNI_SaveMovie(NULL, surface, (MDFN_Rect *)&VTDisplayRects[VTBackBuffer], (MDFN_Rect *)VTLineWidths[VTBackBuffer]);
-
-  if(pending_save_state || pending_save_movie)
-   LockGameMutex(0);
 
   pending_save_movie = pending_snapshot = pending_save_state = 0;
 

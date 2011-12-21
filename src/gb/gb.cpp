@@ -2082,7 +2082,7 @@ static int Load(const char *name, MDFNFILE *fp)
 
  gbReadBatteryFile(MDFN_MakeFName(MDFNMKF_SAV, 0, "sav").c_str());
  gblayerSettings = 0xFF;
-
+ 
  // Custom palettes
  if(!LoadCPalette("gb", &Custom_GB_ColorMap, 4))
   return(0);
@@ -2271,24 +2271,23 @@ static void MDFNGB_SetInput(int port, const char *type, void *ptr)
 static int32 snooze = 0;
 static int32 PadInterruptDelay = 0;
 
+bool linedrawn[144];
+
 static void Emulate(EmulateSpecStruct *espec)
 {
- bool linedrawn[144];
-
  if(espec->VideoFormatChanged)
   gbGenFilter(espec->surface->format);	//.Rshift, espec->surface->format.Gshift, espec->surface->format.Bshift);
 
  if(espec->SoundFormatChanged)
   MDFNGB_SetSoundRate(espec->SoundRate);
 
-
-
  espec->DisplayRect.x = 0;
  espec->DisplayRect.y = 0;
  espec->DisplayRect.w = 160;
  espec->DisplayRect.h = 144;
 
- memset(linedrawn, 0, sizeof(linedrawn));
+ for(int i = 0; i < 144; i++)
+     linedrawn[i] = false;
 
  //if(gbRom[0x147] == 0x22)
  //{
@@ -2339,9 +2338,9 @@ static void Emulate(EmulateSpecStruct *espec)
    snooze -= clockTicks;
    if(snooze <= 0)
    {
-              register_IF |= 1; // V-Blank interrupt
-              if(register_STAT & 0x10)
-                register_IF |= 2;
+    register_IF |= 1; // V-Blank interrupt
+    if(register_STAT & 0x10)
+     register_IF |= 2;
    }
   }
 
@@ -2389,8 +2388,8 @@ static void Emulate(EmulateSpecStruct *espec)
           
           // check if we reached the V-Blank period       
           if(register_LY == 144) 
-	  {
-	    doret = 1;
+	      {
+	        doret = 1;
             // Yes, V-Blank
             // set the LY increment counter
             gbLcdLYIncrementTicks = gbLcdTicks + GBLY_INCREMENT_CLOCK_TICKS;
@@ -2398,8 +2397,8 @@ static void Emulate(EmulateSpecStruct *espec)
             gbLcdMode = 1;
 
             if(register_LCDC & 0x80) 
-	    {
-	     snooze = 6;
+	        {
+	         snooze = 6;
              //register_IF |= 1; // V-Blank interrupt
              //if(register_STAT & 0x10)
              //  register_IF |= 2;
@@ -2442,60 +2441,60 @@ static void Emulate(EmulateSpecStruct *espec)
           // OAM and VRAM in use
           // next mode is H-Blank
           if(register_LY < 144) 
-	  {
-                uint32 *dest = (uint32 *)espec->surface->pixels + register_LY * espec->surface->pitch32;
+	      {
+           uint32 *dest = (uint32 *)espec->surface->pixels + register_LY * espec->surface->pitch32;
 
-		linedrawn[register_LY] = 1;
-                gbRenderLine();
-                gbDrawSprites();
+		   linedrawn[register_LY] = 1;
+           gbRenderLine();
+           gbDrawSprites();
              
-		if(gbCgbMode)
-		{
-                 for(int x = 0; x < 160;) 
-		 {
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
+	       if(gbCgbMode)
+		   {
+            for(int x = 0; x < 160;) 
+		    {
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
                       
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
 
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
 
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                      *dest++ = gbColorFilter[gbLineMix[x++]];
-                 }              
-		}
-		else // to if(gbCgbMode)
-		{
-                 for(int x = 0; x < 160; x++)
-	          dest[x] = gbMonoColorMap[gbLineMix[x]];
-		}
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+             *dest++ = gbColorFilter[gbLineMix[x++]];
+            }              
+		   }
+		   else // to if(gbCgbMode)
+		   {
+            for(int x = 0; x < 160; x++)
+	         dest[x] = gbMonoColorMap[gbLineMix[x]];
+		   }
           }
           gbLcdMode = GBLCDM_HBLANK;
           // only one LCD interrupt per line. may need to generalize...
           if(!(register_STAT & 0x40) || (register_LY != register_LYC)) 
-	  {
+	      {
             if(register_STAT & 0x08)
               register_IF |= 2;
           }
           if(gbHdmaOn) 
-	  {
+	      {
             gbDoHdma();
           }
-	  else
-	  {
-	   gbLcdTicks += GBLCD_MODE_0_CLOCK_TICKS;
-	  }
-          break;
+	      else
+	      {
+	       gbLcdTicks += GBLCD_MODE_0_CLOCK_TICKS;
+	      }
+        break;
         }
         // mark the correct lcd mode on STAT register
         register_STAT = (register_STAT & 0xfc) | gbLcdMode;

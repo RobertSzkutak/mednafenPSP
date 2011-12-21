@@ -33,6 +33,8 @@ distribution.
 
 #define printf pspDebugScreenPrintf
 
+extern void MainRequestExit(void);
+
 /* Define the module info section */
 PSP_MODULE_INFO("mednafenPSP", 0, 1, 1);
 
@@ -42,6 +44,7 @@ PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER | THREAD_ATTR_VFPU);
 /* Exit callback */
 int exit_callback(int arg1, int arg2, void *common) 
 {
+          MainRequestExit();
           sceKernelExitGame();
           return 0;
 }
