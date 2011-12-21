@@ -2206,7 +2206,10 @@ static bool gbUpdateSizes()
   }
 
   // CGB bit
-  if(gbRom[0x143] & 0x80)
+  char cgbbuff[12];
+  memcpy(cgbbuff, &gbRom[0x134], 12);
+  if(gbRom[0x143] & 0x80 || 
+  !memcmp(cgbbuff, "Zelda Colour", 12))//Added by Robert L Szkutak II for a Zelda DX ROM 
   {
     if(gbEmulatorType == 0 ||
        gbEmulatorType == 1 ||
