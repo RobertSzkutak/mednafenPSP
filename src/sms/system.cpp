@@ -224,6 +224,8 @@ static int LoadCommon(const char *name, MDFNFILE *fp)
  system_assign_device(PORT_B, DEVICE_PAD2B);
 
  MDFNMP_AddRAM(8192, 0xC000, sms.wram);
+ 
+ memset(&bitmap, 0, sizeof(bitmap_t));
 
  sms_init();
  pio_init();
