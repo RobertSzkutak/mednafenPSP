@@ -1076,6 +1076,10 @@ int GameLoop(void *arg)
        BlitScreen(VTReady, VTDRReady, VTLWReady);
        VTReady = NULL;
      }
+	 
+	 if(NeedExitNow)
+	  break;
+	 
 	}
 	return(1);
 }   
